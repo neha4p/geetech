@@ -2,11 +2,11 @@
 
 class PostCategory extends Eloquent
 {
-    protected $guarded = array();
+    protected $guarded = [];
 
     protected $table = 'post_categories';
 
-    public static $rules = array();
+    public static $rules = [];
 
     public function posts()
     {

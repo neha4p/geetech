@@ -5,7 +5,7 @@ class NestedHelper
 
     public static function get_children_from_id($list, $id)
     {
-        $new_array = array();
+        $new_array = [];
         foreach ($list as $item) :
             if ($item->parent_id == $id) :
                 array_push($new_array, $item);
@@ -17,7 +17,7 @@ class NestedHelper
 
     public static function get_children_from_id_and_remove_from_list(&$list, $id)
     {
-        $new_array = array();
+        $new_array = [];
         foreach ($list as $key => $item) :
             if ($item->parent_id == $id) :
                 unset($list[$key]);

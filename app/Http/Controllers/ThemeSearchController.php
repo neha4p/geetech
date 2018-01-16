@@ -26,7 +26,7 @@ class ThemeSearchController extends BaseController
         $videos = Video::where('active', '=', 1)->where('title', 'LIKE', '%'.$search_value.'%')->orderBy('created_at', 'desc')->get();
         $posts = Post::where('active', '=', 1)->where('title', 'LIKE', '%'.$search_value.'%')->orderBy('created_at', 'desc')->get();
 
-        $data = array(
+        $data = [
             'videos' => $videos,
             'posts' => $posts,
             'search_value' => $search_value,
@@ -35,7 +35,7 @@ class ThemeSearchController extends BaseController
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-            );
+            ];
 
         return View::make('Theme::search-list', $data);
     }

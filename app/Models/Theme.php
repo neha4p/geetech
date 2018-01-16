@@ -2,11 +2,11 @@
 
 class Theme extends Eloquent
 {
-    protected $guarded = array();
+    protected $guarded = [];
 
-    public static $rules = array();
+    public static $rules = [];
 
     public $timestamps = false;
 
-    protected $fillable = array('name', 'description', 'version', 'slug', 'active');
+    protected $fillable = ['name', 'description', 'version', 'slug', 'active'];
 }

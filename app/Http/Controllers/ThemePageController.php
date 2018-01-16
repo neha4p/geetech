@@ -24,7 +24,7 @@ class ThemePageController extends \BaseController
         //Make sure page is active
         if ((!Auth::guest() && Auth::user()->role == 'admin') || $page->active) {
             $author = User::find($page->user_id);
-            $data = array(
+            $data = [
                     'page' => $page,
                     'author' => $author,
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
@@ -32,10 +32,10 @@ class ThemePageController extends \BaseController
                     'post_categories' => PostCategory::all(),
                     'theme_settings' => ThemeHelper::getThemeSettings(),
                     'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
             return View::make('Theme::page', $data);
         } else {
-            return Redirect::to('pages')->with(array('note' => 'Sorry, this page is no longer active.', 'note_type' => 'error'));
+            return Redirect::to('pages')->with(['note' => 'Sorry, this page is no longer active.', 'note_type' => 'error']);
         }
     }
 
@@ -45,7 +45,7 @@ class ThemePageController extends \BaseController
      */
     public function pages()
     {
-        $data = array(
+        $data = [
                 'pages' => Page::orderBy('created_at', 'DESC')->get(),
                 'page_title' => 'Pages',
                 'page_description' => 'All Pages',
@@ -54,7 +54,7 @@ class ThemePageController extends \BaseController
                 'post_categories' => PostCategory::all(),
                 'theme_settings' => ThemeHelper::getThemeSettings(),
                 'pages' => Page::where('active', '=', 1)->get(),
-            );
+            ];
 
         return View::make('Theme::page-list', $data);
     }

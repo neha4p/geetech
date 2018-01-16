@@ -28,7 +28,7 @@ class ThemePostController extends \BaseController
         //Make sure post is active
         if ((!Auth::guest() && Auth::user()->role == 'admin') || $post->active) {
             $author = User::find($post->user_id);
-            $data = array(
+            $data = [
                     'post' => $post,
                     'author' => $author,
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
@@ -36,10 +36,10 @@ class ThemePostController extends \BaseController
                     'post_categories' => PostCategory::all(),
                     'theme_settings' => ThemeHelper::getThemeSettings(),
                     'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
             return View::make('Theme::post', $data);
         } else {
-            return Redirect::to('posts')->with(array('note' => 'Sorry, this post is no longer active.', 'note_type' => 'error'));
+            return Redirect::to('posts')->with(['note' => 'Sorry, this post is no longer active.', 'note_type' => 'error']);
         }
     }
 
@@ -57,7 +57,7 @@ class ThemePostController extends \BaseController
             $page = 1;
         }
 
-        $data = array(
+        $data = [
             'posts' => Post::where('active', '=', '1')->orderBy('created_at', 'DESC')->simplePaginate($this->posts_per_page),
             'current_page' => $page,
             'page_title' => 'All Posts',
@@ -68,7 +68,7 @@ class ThemePostController extends \BaseController
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-            );
+            ];
 
         return View::make('Theme::post-list', $data);
     }
@@ -83,7 +83,7 @@ class ThemePostController extends \BaseController
         }
 
         $cat = PostCategory::where('slug', '=', $category)->first();
-        $data = array(
+        $data = [
             'posts' => Post::where('active', '=', '1')->where('post_category_id', '=', $cat->id)->orderBy('created_at', 'DESC')->simplePaginate($this->posts_per_page),
             'current_page' => $page,
             'category' => $cat,
@@ -95,7 +95,7 @@ class ThemePostController extends \BaseController
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-        );
+        ];
 
         return View::make('Theme::post-list', $data);
     }

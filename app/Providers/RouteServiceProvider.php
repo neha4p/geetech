@@ -67,12 +67,12 @@ class RouteServiceProvider extends ServiceProvider
                 
                 // Create Settings Route for Plugin
         
-                Route::group(array('before' => 'admin'), function () {
+                Route::group(['before' => 'admin'], function () {
     
                     Route::get('admin/plugin/{plugin_name}', function ($plugin_name) {
                         $plugin_data = PluginData::where('plugin_slug', '=', $plugin_name)->get();
 
-                         $data = array();
+                         $data = [];
 
                         foreach ($plugin_data as $plugin) :
                             $data[$plugin->key] = $plugin->value;
@@ -99,7 +99,7 @@ class RouteServiceProvider extends ServiceProvider
                             }
                         }
                         
-                        return Redirect::to('/admin/plugin/' . $plugin_name)->with(array('note' => 'Successfully updated plugin information', 'note_type' => 'success'));
+                        return Redirect::to('/admin/plugin/' . $plugin_name)->with(['note' => 'Successfully updated plugin information', 'note_type' => 'success']);
                     });
                 });
         
@@ -131,7 +131,7 @@ class RouteServiceProvider extends ServiceProvider
 
                 if ((!Auth::user()->subscribed() && Auth::user()->role == 'subscriber') || (!$free_registration && Auth::user()->role == 'registered')) {
                     $username = Auth::user()->username;
-                    return Redirect::to('user/' . $username . '/renew_subscription')->with(array('note' => 'Uh oh, looks like you don\'t have an active subscription, please renew to gain access to all content', 'note_type' => 'error'));
+                    return Redirect::to('user/' . $username . '/renew_subscription')->with(['note' => 'Uh oh, looks like you don\'t have an active subscription, please renew to gain access to all content', 'note_type' => 'error']);
                 }
             }
         });
@@ -145,7 +145,7 @@ class RouteServiceProvider extends ServiceProvider
 
         Route::filter('demo', function () {
             if (!Auth::guest() && Auth::user()->role == 'demo') {
-                return Redirect::back()->with(array('note' => 'Sorry, unfortunately this functionality is not available in demo accounts', 'note_type' => 'error'));
+                return Redirect::back()->with(['note' => 'Sorry, unfortunately this functionality is not available in demo accounts', 'note_type' => 'error']);
             }
         });
 

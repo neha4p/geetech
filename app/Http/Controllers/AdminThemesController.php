@@ -13,11 +13,11 @@ class AdminThemesController extends Controller
 
     public function index()
     {
-        $data = array(
+        $data = [
             'admin_user' => Auth::user(),
             'themes' => ThemeHelper::get_themes(),
             'active_theme' => Setting::first()->theme
-            );
+            ];
 
         return View::make('admin.themes.index', $data);
     }
@@ -27,6 +27,6 @@ class AdminThemesController extends Controller
         $settings = Setting::first();
         $settings->theme = $slug;
         $settings->save();
-        return Redirect::to('admin/themes')->with(array('note' => 'Successfully Activated ' . ucfirst($slug) . ' Theme', 'note_type' => 'success'));
+        return Redirect::to('admin/themes')->with(['note' => 'Successfully Activated ' . ucfirst($slug) . ' Theme', 'note_type' => 'success']);
     }
 }

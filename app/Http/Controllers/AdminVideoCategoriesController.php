@@ -8,10 +8,10 @@ class AdminVideoCategoriesController extends Controller
 
     public function index()
     {
-        $data = array(
+        $data = [
             'admin_user' => Auth::user(),
             'video_categories' => json_decode(VideoCategory::orderBy('order', 'ASC')->get()->toJson()),
-            );
+            ];
 
         return View::make('admin.videos.categories.index', $data);
     }
@@ -29,7 +29,7 @@ class AdminVideoCategoriesController extends Controller
         $input['order'] = $new_category_order;
         $video_category = VideoCategory::create($input);
         if (isset($video_category->id)) {
-            return Redirect::to('admin/videos/categories')->with(array('note' => 'Successfully Added Your New Video Category', 'note_type' => 'success'));
+            return Redirect::to('admin/videos/categories')->with(['note' => 'Successfully Added Your New Video Category', 'note_type' => 'success']);
         }
     }
 
@@ -38,7 +38,7 @@ class AdminVideoCategoriesController extends Controller
         $input = Input::all();
         $category = VideoCategory::find($input['id'])->update($input);
         if (isset($category)) {
-            return Redirect::to('admin/videos/categories')->with(array('note' => 'Successfully Updated Category', 'note_type' => 'success'));
+            return Redirect::to('admin/videos/categories')->with(['note' => 'Successfully Updated Category', 'note_type' => 'success']);
         }
     }
 
@@ -50,12 +50,12 @@ class AdminVideoCategoriesController extends Controller
             $cats->parent_id = null;
             $cats->save();
         }
-        return Redirect::to('admin/videos/categories')->with(array('note' => 'Successfully Deleted Category', 'note_type' => 'success'));
+        return Redirect::to('admin/videos/categories')->with(['note' => 'Successfully Deleted Category', 'note_type' => 'success']);
     }
 
     public function edit($id)
     {
-        return View::make('admin.videos.categories.edit', array('category' => VideoCategory::find($id)));
+        return View::make('admin.videos.categories.edit', ['category' => VideoCategory::find($id)]);
     }
 
     public function order()

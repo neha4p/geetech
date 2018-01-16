@@ -38,14 +38,14 @@ class ThemeFavoriteController extends \BaseController
             
             $favorites = Favorite::where('user_id', '=', Auth::user()->id)->orderBy('created_at', 'desc')->get();
 
-            $favorite_array = array();
+            $favorite_array = [];
             foreach ($favorites as $key => $fave) {
                 array_push($favorite_array, $fave->video_id);
             }
 
             $videos = Video::where('active', '=', '1')->whereIn('id', $favorite_array)->paginate(12);
 
-            $data = array(
+            $data = [
                     'videos' => $videos,
                     'page_title' => ucfirst(Auth::user()->username) . '\'s Favorite Videos',
                     'current_page' => $page,
@@ -56,7 +56,7 @@ class ThemeFavoriteController extends \BaseController
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
 
             return View::make('Theme::video-list', $data);
         else :

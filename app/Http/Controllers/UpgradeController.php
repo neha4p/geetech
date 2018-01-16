@@ -9,7 +9,7 @@ class UpgradeController extends Controller
         $upgraded = $this->upgrade105();
         $upgraded = $this->upgrade106();
         if ($upgraded) {
-            return \Redirect::to('/')->with(array('note' => 'Successfully Updated Your Script', 'note_type' => 'success'));
+            return \Redirect::to('/')->with(['note' => 'Successfully Updated Your Script', 'note_type' => 'success']);
         } else {
             return \Redirect::to('/');
         }

@@ -34,7 +34,7 @@ class ThemeVideoController extends \BaseController
 
             $view_increment = $this->handleViewCount($id);
 
-            $data = array(
+            $data = [
                 'video' => $video,
                 'menu' => Menu::orderBy('order', 'ASC')->get(),
                 'view_increment' => $view_increment,
@@ -43,10 +43,10 @@ class ThemeVideoController extends \BaseController
                 'post_categories' => PostCategory::all(),
                 'theme_settings' => ThemeHelper::getThemeSettings(),
                 'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
             return View::make('Theme::video', $data);
         } else {
-            return Redirect::to('videos')->with(array('note' => 'Sorry, this video is no longer active.', 'note_type' => 'error'));
+            return Redirect::to('videos')->with(['note' => 'Sorry, this video is no longer active.', 'note_type' => 'error']);
         }
     }
 
@@ -63,7 +63,7 @@ class ThemeVideoController extends \BaseController
             $page = 1;
         }
 
-        $data = array(
+        $data = [
             'videos' => Video::where('active', '=', '1')->orderBy('created_at', 'DESC')->simplePaginate($this->videos_per_page),
             'page_title' => 'All Videos',
             'page_description' => 'Page ' . $page,
@@ -74,7 +74,7 @@ class ThemeVideoController extends \BaseController
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-            );
+            ];
         return View::make('Theme::video-list', $data);
     }
 
@@ -98,14 +98,14 @@ class ThemeVideoController extends \BaseController
 
         $tags = VideoTag::where('tag_id', '=', $tag->id)->get();
 
-        $tag_array = array();
+        $tag_array = [];
         foreach ($tags as $key => $tag) {
             array_push($tag_array, $tag->video_id);
         }
 
         $videos = Video::where('active', '=', '1')->whereIn('id', $tag_array)->paginate($this->videos_per_page);
 
-        $data = array(
+        $data = [
             'videos' => $videos,
             'current_page' => $page,
             'page_title' => 'Videos tagged with "' . $tag_name . '"',
@@ -116,7 +116,7 @@ class ThemeVideoController extends \BaseController
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-            );
+            ];
 
         return View::make('Theme::video-list', $data);
     }
@@ -146,7 +146,7 @@ class ThemeVideoController extends \BaseController
         }
 
 
-        $data = array(
+        $data = [
             'videos' => $videos,
             'current_page' => $page,
             'category' => $cat,
@@ -158,7 +158,7 @@ class ThemeVideoController extends \BaseController
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-        );
+        ];
 
         return View::make('Theme::video-list', $data);
     }
@@ -166,7 +166,7 @@ class ThemeVideoController extends \BaseController
     public function handleViewCount($id)
     {
         // check if this key already exists in the view_media session
-        $blank_array = array();
+        $blank_array = [];
         if (! array_key_exists($id, Session::get('viewed_video', $blank_array))) {
             try {
                 // increment view

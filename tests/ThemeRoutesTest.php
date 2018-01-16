@@ -292,7 +292,7 @@ class ThemeRoutesTest extends TestCase
 
     public function testPostLoginSuccess()
     {
-        $response = $this->call('POST', '/login', array('email' => 'admin', 'password' => 'password', '_token' => csrf_token()));
+        $response = $this->call('POST', '/login', ['email' => 'admin', 'password' => 'password', '_token' => csrf_token()]);
         //dd($response); die();
         $this->assertSessionHas('note_type', 'success');
         $this->assertRedirectedTo('/');
@@ -306,7 +306,7 @@ class ThemeRoutesTest extends TestCase
 
     public function testPostLoginError()
     {
-        $response = $this->call('POST', '/login', array('email' => 'admin', 'password' => 'password123', '_token' => csrf_token()));
+        $response = $this->call('POST', '/login', ['email' => 'admin', 'password' => 'password123', '_token' => csrf_token()]);
         $this->assertSessionHas('note_type', 'error');
         $this->assertRedirectedTo('/login');
     }

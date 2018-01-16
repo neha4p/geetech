@@ -2,11 +2,11 @@
 
 class VideoCategory extends Eloquent
 {
-    protected $guarded = array();
+    protected $guarded = [];
 
     protected $table = 'video_categories';
 
-    public static $rules = array();
+    public static $rules = [];
 
     public function videos()
     {

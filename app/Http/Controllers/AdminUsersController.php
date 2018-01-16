@@ -22,19 +22,19 @@ class AdminUsersController extends Controller
             $users = User::all();
         endif;
 
-        $data = array(
+        $data = [
             'users' => $users
-            );
+            ];
         return View::make('admin.users.index', $data);
     }
 
     public function create()
     {
-        $data = array(
+        $data = [
             'post_route' => URL::to('admin/user/store'),
             'admin_user' => Auth::user(),
             'button_text' => 'Create User',
-            );
+            ];
         return View::make('admin.users.create_edit', $data);
     }
 
@@ -51,19 +51,19 @@ class AdminUsersController extends Controller
         $input['password'] = Hash::make('password');
 
         $user = User::create($input);
-        return Redirect::to('admin/users')->with(array('note' => 'Successfully Created New User', 'note_type' => 'success'));
+        return Redirect::to('admin/users')->with(['note' => 'Successfully Created New User', 'note_type' => 'success']);
     }
 
     public function edit($id)
     {
 
         $user = User::find($id);
-        $data = array(
+        $data = [
             'user' => $user,
             'post_route' => URL::to('admin/user/update'),
             'admin_user' => Auth::user(),
             'button_text' => 'Update User',
-            );
+            ];
         return View::make('admin.users.create_edit', $data);
     }
 
@@ -90,13 +90,13 @@ class AdminUsersController extends Controller
         }
 
         $user->update($input);
-        return Redirect::to('admin/user/edit/' . $id)->with(array('note' => 'Successfully Updated User Settings', 'note_type' => 'success'));
+        return Redirect::to('admin/user/edit/' . $id)->with(['note' => 'Successfully Updated User Settings', 'note_type' => 'success']);
     }
 
     public function destroy($id)
     {
 
         User::destroy($id);
-        return Redirect::to('admin/users')->with(array('note' => 'Successfully Deleted User', 'note_type' => 'success'));
+        return Redirect::to('admin/users')->with(['note' => 'Successfully Deleted User', 'note_type' => 'success']);
     }
 }

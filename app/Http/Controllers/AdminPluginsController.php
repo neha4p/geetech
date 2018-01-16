@@ -8,19 +8,19 @@ class AdminPluginsController extends Controller
 
         $plugins = $this->get_plugins();
 
-        $data = array(
+        $data = [
             'admin_user' => Auth::user(),
             'plugins' => $plugins,
-            );
+            ];
         return View::make('admin.plugins.index', $data);
     }
 
     public function get_plugins()
     {
-        $plugins = array();
+        $plugins = [];
         $plugin_folder = 'content/plugins';
         $plugins_dir = @ opendir($plugin_folder);
-        $plugin_files = array();
+        $plugin_files = [];
         
         if ($plugins_dir) {
             while (($folder = readdir($plugins_dir) ) !== false) {
@@ -64,7 +64,7 @@ class AdminPluginsController extends Controller
             $new_plugin->active = 1;
             $new_plugin->save();
         }
-        return Redirect::to('admin/plugins')->with(array('note' => 'Successfully Activated ' . $plugin_data['name'], 'note_type' => 'success'));
+        return Redirect::to('admin/plugins')->with(['note' => 'Successfully Activated ' . $plugin_data['name'], 'note_type' => 'success']);
     }
 
     public function deactivate($slug)
@@ -73,6 +73,6 @@ class AdminPluginsController extends Controller
         $plugin = Plugin::where('slug', '=', $slug)->first();
         $plugin->active = 0;
         $plugin->save();
-        return Redirect::to('admin/plugins')->with(array('note' => 'Successfully De-activated ' . $plugin_data['name'], 'note_type' => 'success'));
+        return Redirect::to('admin/plugins')->with(['note' => 'Successfully De-activated ' . $plugin_data['name'], 'note_type' => 'success']);
     }
 }

@@ -8,10 +8,10 @@ class AdminSettingsController extends Controller
     public function index()
     {
 
-        $data = array(
+        $data = [
             'admin_user' => Auth::user(),
             'settings' => Setting::first(),
-            );
+            ];
         return View::make('admin.settings.index', $data);
     }
 
@@ -62,6 +62,6 @@ class AdminSettingsController extends Controller
 
         $settings->update($input);
 
-        return Redirect::to('admin/settings')->with(array('note' => 'Successfully Updated Site Settings!', 'note_type' => 'success'));
+        return Redirect::to('admin/settings')->with(['note' => 'Successfully Updated Site Settings!', 'note_type' => 'success']);
     }
 }

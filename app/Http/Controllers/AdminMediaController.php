@@ -26,21 +26,21 @@ class AdminMediaController extends Controller
 
         $response = $this->getFiles($dir);
 
-        return response()->json(array(
+        return response()->json([
             "name" => "files",
             "type" => "folder",
             "path" => $dir,
             "folder" => $folder,
             "items" => $response,
             "last_modified" => date('F jS, Y \a\t h:i:s A', filemtime($dir))
-        ));
+        ]);
     }
 
     private function getFiles($dir)
     {
 
         
-        $files = array();
+        $files = [];
 
         // Is there actually such a folder/file?
 
@@ -53,47 +53,47 @@ class AdminMediaController extends Controller
                 if (is_dir($dir . '/' . $f)) {
                     // The path is a folder
 
-                    $files[] = array(
+                    $files[] = [
                         "name" => $f,
                         "type" => "folder",
                         "path" => $dir . '/' . $f,
                         "items" => $this->getNumberOfFilesInDir($dir . '/' . $f),
                         "last_modified" => date('F jS, Y \a\t h:i:s A', filemtime($dir . '/' . $f))
-                    );
+                    ];
                 } else if ($this->is_image($dir . '/' . $f)) {
-                    $files[] = array(
+                    $files[] = [
                         "name" => $f,
                         "type" => "image",
                         "path" => $dir . '/' . $f,
                         "size" => filesize($dir . '/' . $f), // Gets the size of this file
                         "last_modified" => date('F jS, Y \a\t h:i:s A', filemtime($dir . '/' . $f))
-                    );
+                    ];
                 } else if (strstr(mime_content_type($dir . '/' . $f), "video/")) {
-                    $files[] = array(
+                    $files[] = [
                         "name" => $f,
                         "type" => "video",
                         "path" => $dir . '/' . $f,
                         "size" => filesize($dir . '/' . $f), // Gets the size of this file
                         "last_modified" => date('F jS, Y \a\t h:i:s A', filemtime($dir . '/' . $f))
-                    );
+                    ];
                 } else if (strstr(mime_content_type($dir . '/' . $f), "audio/")) {
-                    $files[] = array(
+                    $files[] = [
                         "name" => $f,
                         "type" => "audio",
                         "path" => $dir . '/' . $f,
                         "size" => filesize($dir . '/' . $f), // Gets the size of this file
                         "last_modified" => date('F jS, Y \a\t h:i:s A', filemtime($dir . '/' . $f))
-                    );
+                    ];
                 } else {
                     // It is a file
 
-                    $files[] = array(
+                    $files[] = [
                         "name" => $f,
                         "type" => "file",
                         "path" => $dir . '/' . $f,
                         "size" => filesize($dir . '/' . $f), // Gets the size of this file
                         "last_modified" => date('F jS, Y \a\t h:i:s A', filemtime($dir . '/' . $f))
-                    );
+                    ];
                 }
             }
         }
@@ -106,7 +106,7 @@ class AdminMediaController extends Controller
         $a = getimagesize($path);
         $image_type = $a[2];
         
-        if (in_array($image_type, array(IMAGETYPE_GIF , IMAGETYPE_JPEG ,IMAGETYPE_PNG , IMAGETYPE_BMP))) {
+        if (in_array($image_type, [IMAGETYPE_GIF , IMAGETYPE_JPEG ,IMAGETYPE_PNG , IMAGETYPE_BMP])) {
             return true;
         }
         return false;
@@ -145,7 +145,7 @@ class AdminMediaController extends Controller
             }
         }
 
-        return array('success' => $success, 'error' => $error);
+        return ['success' => $success, 'error' => $error];
     }
 
 
@@ -167,7 +167,7 @@ class AdminMediaController extends Controller
             }
         }
 
-        return array('success' => $success, 'error' => $error);
+        return ['success' => $success, 'error' => $error];
     }
 
 
@@ -204,7 +204,7 @@ class AdminMediaController extends Controller
     public function expandDirectories($base_dir)
     {
         
-        $directories = array();
+        $directories = [];
         foreach (scandir($base_dir) as $file) {
             if ($file == '.' || $file == '..') {
                 continue;
@@ -236,7 +236,7 @@ class AdminMediaController extends Controller
             $error = 'Sorry there is already a file/folder with that existing name in that folder.';
         }
 
-        return array('success' => $success, 'error' => $error);
+        return ['success' => $success, 'error' => $error];
     }
 
     public function upload()
@@ -260,6 +260,6 @@ class AdminMediaController extends Controller
             $message = $e->getMessage();
         }
 
-        return Response::json(array('success' => $success, 'message' => $message));
+        return Response::json(['success' => $success, 'message' => $message]);
     }
 }

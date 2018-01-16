@@ -4,7 +4,7 @@ class VideoTag extends Eloquent
 {
 
     protected $table = 'tag_video';
-    protected $guarded = array();
+    protected $guarded = [];
 
-    public static $rules = array();
+    public static $rules = [];
 }

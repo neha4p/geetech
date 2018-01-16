@@ -2,14 +2,14 @@
 
 class Post extends Eloquent
 {
-    protected $guarded = array();
+    protected $guarded = [];
 
 
-    public static $rules = array();
+    public static $rules = [];
 
     protected $table = 'posts';
 
-    protected $fillable = array('post_category_id', 'user_id', 'title', 'slug', 'image', 'body', 'body_guest', 'access', 'active', 'created_at');
+    protected $fillable = ['post_category_id', 'user_id', 'title', 'slug', 'image', 'body', 'body_guest', 'access', 'active', 'created_at'];
 
     public function category()
     {

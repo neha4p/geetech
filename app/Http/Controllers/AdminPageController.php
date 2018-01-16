@@ -15,11 +15,11 @@ class AdminPageController extends \BaseController
         $pages = Page::orderBy('created_at', 'DESC')->paginate(10);
         $user = Auth::user();
 
-        $data = array(
+        $data = [
             'pages' => $pages,
             'user' => $user,
             'admin_user' => Auth::user()
-            );
+            ];
 
         return View::make('admin.pages.index', $data);
     }
@@ -31,11 +31,11 @@ class AdminPageController extends \BaseController
      */
     public function create()
     {
-        $data = array(
+        $data = [
             'post_route' => URL::to('admin/pages/store'),
             'button_text' => 'Add New Page',
             'admin_user' => Auth::user()
-            );
+            ];
         return View::make('admin.pages.create_edit', $data);
     }
 
@@ -54,7 +54,7 @@ class AdminPageController extends \BaseController
 
         $page = Page::create($data);
 
-        return Redirect::to('admin/pages')->with(array('note' => 'New Page Successfully Added!', 'note_type' => 'success'));
+        return Redirect::to('admin/pages')->with(['note' => 'New Page Successfully Added!', 'note_type' => 'success']);
     }
 
     /**
@@ -67,13 +67,13 @@ class AdminPageController extends \BaseController
     {
         $page = Page::find($id);
 
-        $data = array(
+        $data = [
             'headline' => '<i class="fa fa-edit"></i> Edit Page',
             'page' => $page,
             'post_route' => URL::to('admin/pages/update'),
             'button_text' => 'Update Page',
             'admin_user' => Auth::user()
-            );
+            ];
 
         return View::make('admin.pages.create_edit', $data);
     }
@@ -102,7 +102,7 @@ class AdminPageController extends \BaseController
 
         $page->update($data);
 
-        return Redirect::to('admin/pages/edit' . '/' . $id)->with(array('note' => 'Successfully Updated Page!', 'note_type' => 'success'));
+        return Redirect::to('admin/pages/edit' . '/' . $id)->with(['note' => 'Successfully Updated Page!', 'note_type' => 'success']);
     }
 
     /**
@@ -117,6 +117,6 @@ class AdminPageController extends \BaseController
 
         Page::destroy($id);
 
-        return Redirect::to('admin/pages')->with(array('note' => 'Successfully Deleted Page', 'note_type' => 'success'));
+        return Redirect::to('admin/pages')->with(['note' => 'Successfully Deleted Page', 'note_type' => 'success']);
     }
 }

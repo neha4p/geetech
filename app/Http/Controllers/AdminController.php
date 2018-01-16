@@ -25,14 +25,14 @@ class AdminController extends Controller
         $settings = Setting::first();
 
 
-        $data = array(
+        $data = [
             'admin_user' => Auth::user(),
             'total_subscribers' => $total_subscribers,
             'new_subscribers' => $new_subscribers,
             'total_videos' => $total_videos,
             'total_posts' => $total_posts,
             'settings' => $settings
-            );
+            ];
         return View::make('admin.index', $data);
     }
 
@@ -41,10 +41,10 @@ class AdminController extends Controller
     {
         $settings = Setting::first();
         $user = Auth::user();
-        $data = array(
+        $data = [
             'settings' => $settings,
             'admin_user'    => $user,
-            );
+            ];
         return View::make('admin.settings.index', $data);
     }
 }

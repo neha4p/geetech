@@ -23,11 +23,11 @@ class AdminVideosController extends \BaseController
         
         $user = Auth::user();
 
-        $data = array(
+        $data = [
             'videos' => $videos,
             'user' => $user,
             'admin_user' => Auth::user()
-            );
+            ];
 
         return View::make('admin.videos.index', $data);
     }
@@ -39,13 +39,13 @@ class AdminVideosController extends \BaseController
      */
     public function create()
     {
-        $data = array(
+        $data = [
             'headline' => '<i class="fa fa-plus-circle"></i> New Video',
             'post_route' => URL::to('admin/videos/store'),
             'button_text' => 'Add New Video',
             'admin_user' => Auth::user(),
             'video_categories' => VideoCategory::all(),
-            );
+            ];
         return View::make('admin.videos.create_edit', $data);
     }
 
@@ -91,7 +91,7 @@ class AdminVideosController extends \BaseController
         $video = Video::create($data);
         $this->addUpdateVideoTags($video, $tags);
 
-        return Redirect::to('admin/videos')->with(array('note' => 'New Video Successfully Added!', 'note_type' => 'success'));
+        return Redirect::to('admin/videos')->with(['note' => 'New Video Successfully Added!', 'note_type' => 'success']);
     }
 
     /**
@@ -104,14 +104,14 @@ class AdminVideosController extends \BaseController
     {
         $video = Video::find($id);
 
-        $data = array(
+        $data = [
             'headline' => '<i class="fa fa-edit"></i> Edit Video',
             'video' => $video,
             'post_route' => URL::to('admin/videos/update'),
             'button_text' => 'Update Video',
             'admin_user' => Auth::user(),
             'video_categories' => VideoCategory::all(),
-            );
+            ];
 
         return View::make('admin.videos.create_edit', $data);
     }
@@ -162,7 +162,7 @@ class AdminVideosController extends \BaseController
 
         $video->update($data);
 
-        return Redirect::to('admin/videos/edit' . '/' . $id)->with(array('note' => 'Successfully Updated Video!', 'note_type' => 'success'));
+        return Redirect::to('admin/videos/edit' . '/' . $id)->with(['note' => 'Successfully Updated Video!', 'note_type' => 'success']);
     }
 
     /**
@@ -187,7 +187,7 @@ class AdminVideosController extends \BaseController
 
         Video::destroy($id);
 
-        return Redirect::to('admin/videos')->with(array('note' => 'Successfully Deleted Video', 'note_type' => 'success'));
+        return Redirect::to('admin/videos')->with(['note' => 'Successfully Deleted Video', 'note_type' => 'success']);
     }
 
     private function addUpdateVideoTags($video, $tags)

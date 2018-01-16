@@ -9,10 +9,10 @@ class AdminThemeSettingsController extends Controller
     {
         $settings = Setting::first();
         $user = Auth::user();
-        $data = array(
+        $data = [
             'settings' => $settings,
             'admin_user'    => $user,
-            );
+            ];
         return View::make('admin.settings.theme_settings', $data);
     }
 
@@ -21,11 +21,11 @@ class AdminThemeSettingsController extends Controller
         $settings = Setting::first();
         $user = Auth::user();
         
-        $data = array(
+        $data = [
             'settings' => $settings,
             'admin_user'    => $user,
             'theme_settings' => ThemeHelper::getThemeSettings(),
-            );
+            ];
         return View::make('Theme::includes.settings', $data);
     }
 
@@ -45,11 +45,11 @@ class AdminThemeSettingsController extends Controller
     private function createOrUpdateThemeSetting($theme_slug, $key, $value)
     {
         
-        $setting = array(
+        $setting = [
                 'theme_slug' => $theme_slug,
                 'key' => $key,
                 'value' => $value
-            );
+            ];
 
         $theme_setting = ThemeSetting::where('theme_slug', '=', $theme_slug)->where('key', '=', $key)->first();
 

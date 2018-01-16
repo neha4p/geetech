@@ -4,10 +4,10 @@ class Favorite extends Eloquent
 {
 
     protected $table = 'favorites';
-    protected $guarded = array();
-    public static $rules = array();
+    protected $guarded = [];
+    public static $rules = [];
 
-    protected $fillable = array('user_id', 'video_id');
+    protected $fillable = ['user_id', 'video_id'];
 
     public function user()
     {

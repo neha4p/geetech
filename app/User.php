@@ -32,12 +32,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     protected $dates = ['trial_ends_at', 'subscription_ends_at'];
 
-    public static $rules = array('username' => 'required|unique:users|min:3',
+    public static $rules = ['username' => 'required|unique:users|min:3',
                                 'email' => 'required|email|unique:users',
                                 'password' => 'required|confirmed|min:3'
-                            );
+                            ];
 
-    public static $update_rules = array('username' => 'unique:users|min:3',
+    public static $update_rules = ['username' => 'unique:users|min:3',
                                 'email' => 'email|unique:users'
-                            );
+                            ];
 }

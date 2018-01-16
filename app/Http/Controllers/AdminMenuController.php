@@ -15,11 +15,11 @@ class AdminMenuController extends \BaseController
         $menu = json_decode(Menu::orderBy('order', 'ASC')->get()->toJson());
         $user = Auth::user();
 
-        $data = array(
+        $data = [
             'menu' => $menu,
             'user' => $user,
             'admin_user' => Auth::user()
-            );
+            ];
 
         return View::make('admin.menu.index', $data);
     }
@@ -37,13 +37,13 @@ class AdminMenuController extends \BaseController
         $input['order'] = $new_menu_order;
         $menu= Menu::create($input);
         if (isset($menu->id)) {
-            return Redirect::to('admin/menu')->with(array('note' => 'Successfully Added New Menu Item', 'note_type' => 'success'));
+            return Redirect::to('admin/menu')->with(['note' => 'Successfully Added New Menu Item', 'note_type' => 'success']);
         }
     }
 
     public function edit($id)
     {
-        return View::make('admin.menu.edit', array('menu' => Menu::find($id)));
+        return View::make('admin.menu.edit', ['menu' => Menu::find($id)]);
     }
 
 
@@ -55,7 +55,7 @@ class AdminMenuController extends \BaseController
             $menu_items->parent_id = null;
             $menu_items->save();
         }
-        return Redirect::to('admin/menu')->with(array('note' => 'Successfully Deleted Menu Item', 'note_type' => 'success'));
+        return Redirect::to('admin/menu')->with(['note' => 'Successfully Deleted Menu Item', 'note_type' => 'success']);
     }
 
     public function update()
@@ -63,7 +63,7 @@ class AdminMenuController extends \BaseController
         $input = Input::all();
         $menu = Menu::find($input['id'])->update($input);
         if (isset($menu)) {
-            return Redirect::to('admin/menu')->with(array('note' => 'Successfully Updated Category', 'note_type' => 'success'));
+            return Redirect::to('admin/menu')->with(['note' => 'Successfully Updated Category', 'note_type' => 'success']);
         }
     }
 

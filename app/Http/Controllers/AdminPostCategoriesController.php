@@ -8,10 +8,10 @@ class AdminPostCategoriesController extends \BaseController
 
     public function index()
     {
-        $data = array(
+        $data = [
             'admin_user' => Auth::user(),
             'post_categories' => json_decode(PostCategory::orderBy('order', 'ASC')->get()->toJson()),
-            );
+            ];
 
         return View::make('admin.posts.categories.index', $data);
     }
@@ -29,7 +29,7 @@ class AdminPostCategoriesController extends \BaseController
         $input['order'] = $new_category_order;
         $post_category = PostCategory::create($input);
         if (isset($post_category->id)) {
-            return Redirect::to('admin/posts/categories')->with(array('note' => 'Successfully Added Your New Video Category', 'note_type' => 'success'));
+            return Redirect::to('admin/posts/categories')->with(['note' => 'Successfully Added Your New Video Category', 'note_type' => 'success']);
         }
     }
 
@@ -38,7 +38,7 @@ class AdminPostCategoriesController extends \BaseController
         $input = Input::all();
         $category = PostCategory::find($input['id'])->update($input);
         if (isset($category)) {
-            return Redirect::to('admin/posts/categories')->with(array('note' => 'Successfully Updated Category', 'note_type' => 'success'));
+            return Redirect::to('admin/posts/categories')->with(['note' => 'Successfully Updated Category', 'note_type' => 'success']);
         }
     }
 
@@ -50,12 +50,12 @@ class AdminPostCategoriesController extends \BaseController
             $cats->parent_id = null;
             $cats->save();
         }
-        return Redirect::to('admin/posts/categories')->with(array('note' => 'Successfully Deleted Category', 'note_type' => 'success'));
+        return Redirect::to('admin/posts/categories')->with(['note' => 'Successfully Deleted Category', 'note_type' => 'success']);
     }
 
     public function edit($id)
     {
-        return View::make('admin.posts.categories.edit', array('category' => PostCategory::find($id)));
+        return View::make('admin.posts.categories.edit', ['category' => PostCategory::find($id)]);
     }
 
     public function order()

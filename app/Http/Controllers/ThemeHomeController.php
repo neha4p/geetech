@@ -26,7 +26,7 @@ class ThemeHomeController extends Controller
             return Redirect::to('/')->withCookie(cookie('theme', \Input::get('theme'), 100));
         }
 
-        $data = array(
+        $data = [
             'videos' => Video::where('active', '=', '1')->orderBy('created_at', 'DESC')->simplePaginate($this->videos_per_page),
             'current_page' => 1,
             'menu' => Menu::orderBy('order', 'ASC')->get(),
@@ -35,7 +35,7 @@ class ThemeHomeController extends Controller
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-            );
+            ];
 
         //dd($data['videos']);
 

@@ -11,7 +11,7 @@ class ThemeHelper
         $theme_settings = ThemeSetting::where('theme_slug', '=', $active_theme)->get();
 
         // Create an empty array to fill with theme settings
-        $key_values = array();
+        $key_values = [];
 
         // loop through each key value and put into array accordingly
         foreach ($theme_settings as $setting) {
@@ -32,10 +32,10 @@ class ThemeHelper
 
     public static function get_themes()
     {
-        $themes = array();
+        $themes = [];
         $theme_folder = 'content/themes';
         $themes_dir = @ opendir($theme_folder);
-        $theme_files = array();
+        $theme_files = [];
         
         if ($themes_dir) {
             while (($folder = readdir($themes_dir) ) !== false) {

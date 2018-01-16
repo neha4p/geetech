@@ -12,7 +12,7 @@ class VideoController extends Controller
 {
 
     private $default_limit = 50;
-    private $public_columns = array('id', 'video_category_id', 'type', 'access', 'details', 'description', 'featured', 'duration', 'views', 'image', 'created_at', 'updated_at');
+    private $public_columns = ['id', 'video_category_id', 'type', 'access', 'details', 'description', 'featured', 'duration', 'views', 'image', 'created_at', 'updated_at'];
     /**
      * Show all videos.
      *

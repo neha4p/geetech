@@ -12,7 +12,7 @@ class PostController extends Controller
 {
 
     private $default_limit = 50;
-    private $public_columns = array('id', 'post_category_id', 'title', 'slug', 'image', 'body_guest', 'access', 'created_at', 'updated_at');
+    private $public_columns = ['id', 'post_category_id', 'title', 'slug', 'image', 'body_guest', 'access', 'created_at', 'updated_at'];
     /**
      * Show all posts.
      *

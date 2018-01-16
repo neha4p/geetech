@@ -12,11 +12,11 @@ class ThemeUserController extends BaseController
         $this->middleware('secure');
     }
 
-    public static $rules = array(
+    public static $rules = [
         'username' => 'required|unique:users',
                             'email' => 'required|email|unique:users',
                             'password' => 'required|confirmed'
-                        );
+                        ];
 
     public function index($username)
     {
@@ -24,14 +24,14 @@ class ThemeUserController extends BaseController
 
         $favorites = Favorite::where('user_id', '=', $user->id)->orderBy('created_at', 'desc')->get();
 
-        $favorite_array = array();
+        $favorite_array = [];
         foreach ($favorites as $key => $fave) {
             array_push($favorite_array, $fave->video_id);
         }
 
         $videos = Video::where('active', '=', '1')->whereIn('id', $favorite_array)->take(9)->get();
 
-        $data = array(
+        $data = [
                     'user' => $user,
                     'type' => 'profile',
                     'videos' => $videos,
@@ -40,7 +40,7 @@ class ThemeUserController extends BaseController
                     'post_categories' => PostCategory::all(),
                     'theme_settings' => ThemeHelper::getThemeSettings(),
                     'pages' => Page::where('active', '=', 1)->get(),
-        );
+        ];
         return View::make('Theme::user', $data);
     }
 
@@ -48,7 +48,7 @@ class ThemeUserController extends BaseController
     {
         if (!Auth::guest() && Auth::user()->username == $username) {
             $user = User::where('username', '=', $username)->first();
-            $data = array(
+            $data = [
                                 'user' => $user,
                                 'post_route' => URL::to('user') . '/' . $user->username . '/update',
                                 'type' => 'edit',
@@ -57,7 +57,7 @@ class ThemeUserController extends BaseController
                                 'post_categories' => PostCategory::all(),
                                 'theme_settings' => ThemeHelper::getThemeSettings(),
                                 'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
             return View::make('Theme::user', $data);
         } else {
             return Redirect::to('/');
@@ -88,16 +88,16 @@ class ThemeUserController extends BaseController
             if ($user->username != $input['username']) {
                 $username_exist = User::where('username', '=', $input['username'])->first();
                 if ($username_exist) {
-                    return Redirect::to('user/' .$user->username . '/edit')->with(array('note' => 'Sorry That Username is already in Use', 'note_type' => 'error'));
+                    return Redirect::to('user/' .$user->username . '/edit')->with(['note' => 'Sorry That Username is already in Use', 'note_type' => 'error']);
                 }
             }
 
             $user->update($input);
 
-            return Redirect::to('user/' .$user->username . '/edit')->with(array('note' => 'Successfully Updated User Info', 'note_type' => 'success'));
+            return Redirect::to('user/' .$user->username . '/edit')->with(['note' => 'Successfully Updated User Info', 'note_type' => 'success']);
         }
 
-        return Redirect::to('user/' . Auth::user()->username . '/edit ')->with(array('note' => 'Sorry, there seems to have been an error when updating the user info', 'note_type' => 'error'));
+        return Redirect::to('user/' . Auth::user()->username . '/edit ')->with(['note' => 'Sorry, there seems to have been an error when updating the user info', 'note_type' => 'error']);
     }
 
     
@@ -109,7 +109,7 @@ class ThemeUserController extends BaseController
 
         if (Auth::user()->username == $username) {
             if (Auth::user()->role == 'admin' || Auth::user()->role == 'admin') {
-                return Redirect::to('/user/' . $username . '/edit')->with(array('note' => 'This user type does not have billing info associated with their account.', 'note_type' => 'warning'));
+                return Redirect::to('/user/' . $username . '/edit')->with(['note' => 'This user type does not have billing info associated with their account.', 'note_type' => 'warning']);
             }
 
             $user = User::where('username', '=', $username)->first();
@@ -124,7 +124,7 @@ class ThemeUserController extends BaseController
 
             $invoices = $user->invoices();
 
-            $data = array(
+            $data = [
                     'user' => $user,
                     'post_route' => URL::to('user') . '/' . $user->username . '/update',
                     'type' => 'billing',
@@ -135,7 +135,7 @@ class ThemeUserController extends BaseController
                     'payment_settings' => $payment_settings,
                     'invoices' => $invoices,
                     'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
             return View::make('Theme::user', $data);
         } else {
             return Redirect::to('/');
@@ -160,7 +160,7 @@ class ThemeUserController extends BaseController
             $user = Auth::user();
             $user->subscription()->cancel();
 
-            return Redirect::to('user/' . $username . '/billing')->with(array('note' => 'Your account has been cancelled.', 'note_type' => 'success'));
+            return Redirect::to('user/' . $username . '/billing')->with(['note' => 'Your account has been cancelled.', 'note_type' => 'success']);
         }
     }
 
@@ -182,7 +182,7 @@ class ThemeUserController extends BaseController
             $user = Auth::user();
             $user->subscription('monthly')->resume();
 
-            return Redirect::to('user/' . $username . '/billing')->with(array('note' => 'Welcome back, your account has been successfully re-activated.', 'note_type' => 'success'));
+            return Redirect::to('user/' . $username . '/billing')->with(['note' => 'Welcome back, your account has been successfully re-activated.', 'note_type' => 'success']);
         }
     }
 
@@ -207,9 +207,9 @@ class ThemeUserController extends BaseController
 
             try {
                 $user->subscription('monthly')->resume($token);
-                return Redirect::to('user/' . $username . '/billing')->with(array('note' => 'Your Credit Card Info has been successfully updated.', 'note_type' => 'success'));
+                return Redirect::to('user/' . $username . '/billing')->with(['note' => 'Your Credit Card Info has been successfully updated.', 'note_type' => 'success']);
             } catch (Exception $e) {
-                return Redirect::to('/user/' . $username . '/update_cc')->with(array('note' => 'Sorry, there was an error with your card: ' . $e->getMessage(), 'note_type' => 'error'));
+                return Redirect::to('/user/' . $username . '/update_cc')->with(['note' => 'Sorry, there was an error with your card: ' . $e->getMessage(), 'note_type' => 'error']);
             }
         } else {
             return Redirect::to('user/' . $username);
@@ -233,7 +233,7 @@ class ThemeUserController extends BaseController
         $user = Auth::user();
 
         if (Auth::user()->username == $username && $user->subscribed()) {
-            $data = array(
+            $data = [
                 'user' => $user,
                 'post_route' => URL::to('user') . '/' . $user->username . '/update',
                 'type' => 'update_credit_card',
@@ -243,7 +243,7 @@ class ThemeUserController extends BaseController
                 'post_categories' => PostCategory::all(),
                 'theme_settings' => ThemeHelper::getThemeSettings(),
                 'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
 
             return View::make('Theme::user', $data);
         } else {
@@ -268,7 +268,7 @@ class ThemeUserController extends BaseController
         }
 
         if (Auth::user()->username == $username) {
-            $data = array(
+            $data = [
                     'user' => $user,
                     'post_route' => URL::to('user') . '/' . $user->username . '/update',
                     'type' => 'renew_subscription',
@@ -278,7 +278,7 @@ class ThemeUserController extends BaseController
                     'post_categories' => PostCategory::all(),
                     'theme_settings' => ThemeHelper::getThemeSettings(),
                     'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
 
             return View::make('Theme::user', $data);
         } else {
@@ -303,7 +303,7 @@ class ThemeUserController extends BaseController
         }
 
         if (Auth::user()->username == $username) {
-            $data = array(
+            $data = [
                     'user' => $user,
                     'post_route' => URL::to('user') . '/' . $user->username . '/update',
                     'type' => 'upgrade_subscription',
@@ -313,7 +313,7 @@ class ThemeUserController extends BaseController
                     'post_categories' => PostCategory::all(),
                     'theme_settings' => ThemeHelper::getThemeSettings(),
                     'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
 
             return View::make('Theme::user', $data);
         } else {
@@ -344,9 +344,9 @@ class ThemeUserController extends BaseController
                 $user->subscription('monthly')->create($token, ['email' => $user->email]);
                 $user->role = 'subscriber';
                 $user->save();
-                return Redirect::to('user/' . $username . '/billing')->with(array('note' => 'You have been successfully signed up for a subscriber membership!', 'note_type' => 'success'));
+                return Redirect::to('user/' . $username . '/billing')->with(['note' => 'You have been successfully signed up for a subscriber membership!', 'note_type' => 'success']);
             } catch (Exception $e) {
-                return Redirect::to('/user/' . $username . '/upgrade_subscription')->with(array('note' => 'Sorry, there was an error with your card: ' . $e->getMessage(), 'note_type' => 'error'));
+                return Redirect::to('/user/' . $username . '/upgrade_subscription')->with(['note' => 'Sorry, there was an error with your card: ' . $e->getMessage(), 'note_type' => 'error']);
             }
         } else {
             return Redirect::to('user/' . $username);

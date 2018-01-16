@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
 	|--------------------------------------------------------------------------
@@ -15,4 +15,4 @@ return array(
     'uploads_dir' => '/content/uploads/',
     'media_upload_function' => 'ImageHandler::upload',
     'num_results_per_page' => 15,
-);
+];

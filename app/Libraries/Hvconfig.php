@@ -3,7 +3,7 @@
 class Hvconfig
 {
 
-    private $cfg = array();
+    private $cfg = [];
     private $config_file = './config.php';
 
     public function __construct()

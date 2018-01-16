@@ -8,11 +8,11 @@ class AdminPaymentSettingsController extends Controller
     public function index()
     {
 
-        $data = array(
+        $data = [
             'admin_user' => Auth::user(),
             'settings' => Setting::first(),
             'payment_settings' => PaymentSetting::first(),
-            );
+            ];
         return View::make('admin.paymentsettings.index', $data);
     }
 
@@ -29,6 +29,6 @@ class AdminPaymentSettingsController extends Controller
 
         $payment_settings->update($input);
 
-        return Redirect::to('admin/payment_settings')->with(array('note' => 'Successfully Updated Payment Settings!', 'note_type' => 'success'));
+        return Redirect::to('admin/payment_settings')->with(['note' => 'Successfully Updated Payment Settings!', 'note_type' => 'success']);
     }
 }
