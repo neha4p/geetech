@@ -3,28 +3,27 @@
 use Closure;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 
-class VerifyCsrfToken extends BaseVerifier {
+class VerifyCsrfToken extends BaseVerifier
+{
 
-	//add an array of Routes to skip CSRF check
-	private $openRoutes = ['stripe/webhook', 'admin/plugin/*', 'api/*', 'ipn', 'admin/media/*'];
+    //add an array of Routes to skip CSRF check
+    private $openRoutes = ['stripe/webhook', 'admin/plugin/*', 'api/*', 'ipn', 'admin/media/*'];
 
-	/**
-	 * Handle an incoming request.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \Closure  $next
-	 * @return mixed
-	 */
-	public function handle($request, Closure $next)
-	{
-		foreach($this->openRoutes as $route) {
-
-      if ($request->is($route)) {
-        return $next($request);
-      }
-    }
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        foreach ($this->openRoutes as $route) {
+            if ($request->is($route)) {
+                    return $next($request);
+            }
+        }
     
-		return parent::handle($request, $next);
-	}
-
+        return parent::handle($request, $next);
+    }
 }

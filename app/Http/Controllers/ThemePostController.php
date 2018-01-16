@@ -3,7 +3,8 @@
 use \Redirect as Redirect;
 use \HelloVideo\User as User;
 
-class ThemePostController extends \BaseController {
+class ThemePostController extends \BaseController
+{
 
     private $posts_per_page = 12;
 
@@ -25,11 +26,10 @@ class ThemePostController extends \BaseController {
         $post = Post::where('slug', '=', $slug)->first();
         
         //Make sure post is active
-        if((!Auth::guest() && Auth::user()->role == 'admin') || $post->active){
-
+        if ((!Auth::guest() && Auth::user()->role == 'admin') || $post->active) {
             $author = User::find($post->user_id);
             $data = array(
-                    'post' => $post, 
+                    'post' => $post,
                     'author' => $author,
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'video_categories' => VideoCategory::all(),
@@ -38,7 +38,6 @@ class ThemePostController extends \BaseController {
                     'pages' => Page::where('active', '=', 1)->get(),
                 );
             return View::make('Theme::post', $data);
-
         } else {
             return Redirect::to('posts')->with(array('note' => 'Sorry, this post is no longer active.', 'note_type' => 'error'));
         }
@@ -50,9 +49,9 @@ class ThemePostController extends \BaseController {
      *
      */
     public function posts()
-    {   
+    {
         $page = Input::get('page');
-        if( !empty($page) ){
+        if (!empty($page)) {
             $page = Input::get('page');
         } else {
             $page = 1;
@@ -77,7 +76,7 @@ class ThemePostController extends \BaseController {
     public function category($category)
     {
         $page = Input::get('page');
-        if( !empty($page) ){
+        if (!empty($page)) {
             $page = Input::get('page');
         } else {
             $page = 1;
@@ -100,6 +99,4 @@ class ThemePostController extends \BaseController {
 
         return View::make('Theme::post-list', $data);
     }
-
-
 }

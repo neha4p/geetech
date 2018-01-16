@@ -3,7 +3,8 @@
 use \Redirect as Redirect;
 use \HelloVideo\User as User;
 
-class ThemePageController extends \BaseController {
+class ThemePageController extends \BaseController
+{
 
     public function __construct()
     {
@@ -21,11 +22,10 @@ class ThemePageController extends \BaseController {
         $page = Page::where('slug', '=', $slug)->first();
             
         //Make sure page is active
-        if((!Auth::guest() && Auth::user()->role == 'admin') || $page->active){
-
+        if ((!Auth::guest() && Auth::user()->role == 'admin') || $page->active) {
             $author = User::find($page->user_id);
             $data = array(
-                    'page' => $page, 
+                    'page' => $page,
                     'author' => $author,
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'video_categories' => VideoCategory::all(),
@@ -34,7 +34,6 @@ class ThemePageController extends \BaseController {
                     'pages' => Page::where('active', '=', 1)->get(),
                 );
             return View::make('Theme::page', $data);
-
         } else {
             return Redirect::to('pages')->with(array('note' => 'Sorry, this page is no longer active.', 'note_type' => 'error'));
         }
@@ -59,5 +58,4 @@ class ThemePageController extends \BaseController {
 
         return View::make('Theme::page-list', $data);
     }
-
 }

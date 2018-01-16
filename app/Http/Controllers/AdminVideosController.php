@@ -2,7 +2,8 @@
 
 use \Redirect as Redirect;
 
-class AdminVideosController extends \BaseController {
+class AdminVideosController extends \BaseController
+{
 
     /**
      * Display a listing of videos
@@ -14,9 +15,9 @@ class AdminVideosController extends \BaseController {
 
         $search_value = Input::get('s');
         
-        if(!empty($search_value)):
+        if (!empty($search_value)) :
             $videos = Video::where('title', 'LIKE', '%'.$search_value.'%')->orderBy('created_at', 'desc')->paginate(9);
-        else:
+        else :
             $videos = Video::orderBy('created_at', 'DESC')->paginate(9);
         endif;
         
@@ -57,13 +58,12 @@ class AdminVideosController extends \BaseController {
     {
         $validator = Validator::make($data = Input::all(), Video::$rules);
 
-        if ($validator->fails())
-        {
+        if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
         $image = (isset($data['image'])) ? $data['image'] : '';
-        if(!empty($image)){
+        if (!empty($image)) {
             $data['image'] = ImageHandler::uploadImage($data['image'], 'images');
         } else {
             $data['image'] = 'placeholder.jpg';
@@ -72,15 +72,15 @@ class AdminVideosController extends \BaseController {
         $tags = $data['tags'];
         unset($data['tags']);
         
-        if(empty($data['active'])){
+        if (empty($data['active'])) {
             $data['active'] = 0;
         }
 
-        if(empty($data['featured'])){
+        if (empty($data['featured'])) {
             $data['featured'] = 0;
         }
 
-        if(isset($data['duration'])){
+        if (isset($data['duration'])) {
                 //$str_time = $data
                 $str_time = preg_replace("/^([\d]{1,2})\:([\d]{2})$/", "00:$1:$2", $data['duration']);
                 sscanf($str_time, "%d:%d:%d", $hours, $minutes, $seconds);
@@ -91,7 +91,7 @@ class AdminVideosController extends \BaseController {
         $video = Video::create($data);
         $this->addUpdateVideoTags($video, $tags);
 
-        return Redirect::to('admin/videos')->with(array('note' => 'New Video Successfully Added!', 'note_type' => 'success') );
+        return Redirect::to('admin/videos')->with(array('note' => 'New Video Successfully Added!', 'note_type' => 'success'));
     }
 
     /**
@@ -130,8 +130,7 @@ class AdminVideosController extends \BaseController {
 
         $validator = Validator::make($data = $input, Video::$rules);
 
-        if ($validator->fails())
-        {
+        if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
@@ -139,7 +138,7 @@ class AdminVideosController extends \BaseController {
         unset($data['tags']);
         $this->addUpdateVideoTags($video, $tags);
 
-        if(isset($data['duration'])){
+        if (isset($data['duration'])) {
                 //$str_time = $data
                 $str_time = preg_replace("/^([\d]{1,2})\:([\d]{2})$/", "00:$1:$2", $data['duration']);
                 sscanf($str_time, "%d:%d:%d", $hours, $minutes, $seconds);
@@ -147,23 +146,23 @@ class AdminVideosController extends \BaseController {
                 $data['duration'] = $time_seconds;
         }
 
-        if(empty($data['image'])){
+        if (empty($data['image'])) {
             unset($data['image']);
         } else {
             $data['image'] = ImageHandler::uploadImage($data['image'], 'images');
         }
 
-        if(empty($data['active'])){
+        if (empty($data['active'])) {
             $data['active'] = 0;
         }
 
-        if(empty($data['featured'])){
+        if (empty($data['featured'])) {
             $data['featured'] = 0;
         }
 
         $video->update($data);
 
-        return Redirect::to('admin/videos/edit' . '/' . $id)->with(array('note' => 'Successfully Updated Video!', 'note_type' => 'success') );
+        return Redirect::to('admin/videos/edit' . '/' . $id)->with(array('note' => 'Successfully Updated Video!', 'note_type' => 'success'));
     }
 
     /**
@@ -177,9 +176,9 @@ class AdminVideosController extends \BaseController {
         $video = Video::find($id);
 
         // Detach and delete any unused tags
-        foreach($video->tags as $tag){
+        foreach ($video->tags as $tag) {
             $this->detachTagFromVideo($video, $tag->id);
-            if(!$this->isTagContainedInAnyVideos($tag->name)){
+            if (!$this->isTagContainedInAnyVideos($tag->name)) {
                 $tag->delete();
             }
         }
@@ -188,24 +187,24 @@ class AdminVideosController extends \BaseController {
 
         Video::destroy($id);
 
-        return Redirect::to('admin/videos')->with(array('note' => 'Successfully Deleted Video', 'note_type' => 'success') );
+        return Redirect::to('admin/videos')->with(array('note' => 'Successfully Deleted Video', 'note_type' => 'success'));
     }
 
-    private function addUpdateVideoTags($video, $tags){
+    private function addUpdateVideoTags($video, $tags)
+    {
         $tags = array_map('trim', explode(',', $tags));
 
 
-        foreach($tags as $tag){
-            
+        foreach ($tags as $tag) {
             $tag_id = $this->addTag($tag);
             $this->attachTagToVideo($video, $tag_id);
-        }  
+        }
 
         // Remove any tags that were removed from video
-        foreach($video->tags as $tag){
-            if(!in_array($tag->name, $tags)){
+        foreach ($video->tags as $tag) {
+            if (!in_array($tag->name, $tags)) {
                 $this->detachTagFromVideo($video, $tag->id);
-                if(!$this->isTagContainedInAnyVideos($tag->name)){
+                if (!$this->isTagContainedInAnyVideos($tag->name)) {
                     $tag->delete();
                 }
             }
@@ -222,11 +221,12 @@ class AdminVideosController extends \BaseController {
     /*
     /**************************************************/
 
-    private function addTag($tag){
+    private function addTag($tag)
+    {
         $tag_exists = Tag::where('name', '=', $tag)->first();
             
-        if($tag_exists){ 
-            return $tag_exists->id; 
+        if ($tag_exists) {
+            return $tag_exists->id;
         } else {
             $new_tag = new Tag;
             $new_tag->name = strtolower($tag);
@@ -244,41 +244,44 @@ class AdminVideosController extends \BaseController {
     /*
     /**************************************************/
 
-    private function attachTagToVideo($video, $tag_id){
+    private function attachTagToVideo($video, $tag_id)
+    {
         // Add New Tags to video
         if (!$video->tags->contains($tag_id)) {
             $video->tags()->attach($tag_id);
         }
     }
 
-    private function detachTagFromVideo($video, $tag_id){
+    private function detachTagFromVideo($video, $tag_id)
+    {
         // Detach the pivot table
         $video->tags()->detach($tag_id);
     }
 
-    public function isTagContainedInAnyVideos($tag_name){
+    public function isTagContainedInAnyVideos($tag_name)
+    {
         // Check if a tag is associated with any videos
         $tag = Tag::where('name', '=', $tag_name)->first();
         return (!empty($tag) && $tag->videos->count() > 0) ? true : false;
     }
 
-    private function deleteVideoImages($video){
+    private function deleteVideoImages($video)
+    {
         $ext = pathinfo($video->image, PATHINFO_EXTENSION);
-        if(file_exists(Config::get('site.uploads_dir') . 'images/' . $video->image) && $video->image != 'placeholder.jpg'){
+        if (file_exists(Config::get('site.uploads_dir') . 'images/' . $video->image) && $video->image != 'placeholder.jpg') {
             @unlink(Config::get('site.uploads_dir') . 'images/' . $video->image);
         }
 
-        if(file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $video->image) )  && $video->image != 'placeholder.jpg'){
-            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $video->image) );
+        if (file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $video->image))  && $video->image != 'placeholder.jpg') {
+            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $video->image));
         }
 
-        if(file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $video->image) )  && $video->image != 'placeholder.jpg'){
-            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $video->image) );
+        if (file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $video->image))  && $video->image != 'placeholder.jpg') {
+            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $video->image));
         }
 
-        if(file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $video->image) )  && $video->image != 'placeholder.jpg'){
-            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $video->image) );
+        if (file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $video->image))  && $video->image != 'placeholder.jpg') {
+            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $video->image));
         }
     }
-
 }

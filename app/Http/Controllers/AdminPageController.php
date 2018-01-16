@@ -2,7 +2,8 @@
 
 use \Redirect as Redirect;
 
-class AdminPageController extends \BaseController {
+class AdminPageController extends \BaseController
+{
 
     /**
      * Display a listing of videos
@@ -47,14 +48,13 @@ class AdminPageController extends \BaseController {
     {
         $validator = Validator::make($data = Input::all(), Page::$rules);
 
-        if ($validator->fails())
-        {
+        if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
         $page = Page::create($data);
 
-        return Redirect::to('admin/pages')->with(array('note' => 'New Page Successfully Added!', 'note_type' => 'success') );
+        return Redirect::to('admin/pages')->with(array('note' => 'New Page Successfully Added!', 'note_type' => 'success'));
     }
 
     /**
@@ -92,18 +92,17 @@ class AdminPageController extends \BaseController {
 
         $validator = Validator::make($data, Page::$rules);
 
-        if ($validator->fails())
-        {
+        if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        if(!isset($data['active']) || $data['active'] == ''){
+        if (!isset($data['active']) || $data['active'] == '') {
             $data['active'] = 0;
         }
 
         $page->update($data);
 
-        return Redirect::to('admin/pages/edit' . '/' . $id)->with(array('note' => 'Successfully Updated Page!', 'note_type' => 'success') );
+        return Redirect::to('admin/pages/edit' . '/' . $id)->with(array('note' => 'Successfully Updated Page!', 'note_type' => 'success'));
     }
 
     /**
@@ -118,8 +117,6 @@ class AdminPageController extends \BaseController {
 
         Page::destroy($id);
 
-        return Redirect::to('admin/pages')->with(array('note' => 'Successfully Deleted Page', 'note_type' => 'success') );
+        return Redirect::to('admin/pages')->with(array('note' => 'Successfully Deleted Page', 'note_type' => 'success'));
     }
-
-
 }

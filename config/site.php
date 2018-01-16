@@ -2,7 +2,7 @@
 
 return array(
 
-	/*
+    /*
 	|--------------------------------------------------------------------------
 	| Number of results to show per page
 	|--------------------------------------------------------------------------
@@ -11,8 +11,8 @@ return array(
 	|
 	*/
 
-	'uploads_url' => '/content/uploads/',
-	'uploads_dir' => '/content/uploads/',
-	'media_upload_function' => 'ImageHandler::upload',
-	'num_results_per_page' => 15,
+    'uploads_url' => '/content/uploads/',
+    'uploads_dir' => '/content/uploads/',
+    'media_upload_function' => 'ImageHandler::upload',
+    'num_results_per_page' => 15,
 );
