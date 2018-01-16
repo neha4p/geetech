@@ -1,5 +1,7 @@
 <?php namespace HelloVideo;
 
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -8,9 +10,9 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Laravel\Cashier\Billable;
 use Laravel\Cashier\Contracts\Billable as BillableContract;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract, BillableContract
+class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, BillableContract
 {
-    use Authenticatable, CanResetPassword, Billable;
+    use Authenticatable, Authorizable, CanResetPassword, Billable;
     /**
      * The database table used by the model.
      *

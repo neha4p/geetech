@@ -141,6 +141,7 @@ return [
 		 * Application Service Providers...
 		 */
         HelloVideo\Providers\AppServiceProvider::class,
+        HelloVideo\Providers\AuthServiceProvider::class,
         HelloVideo\Providers\EventServiceProvider::class,
         HelloVideo\Providers\RouteServiceProvider::class,
 
