@@ -13,7 +13,7 @@ class AdminVideosController extends \BaseController
     public function index()
     {
 
-        $search_value = Input::get('s');
+        $search_value = Request::get('s');
         
         if (!empty($search_value)) :
             $videos = Video::where('title', 'LIKE', '%'.$search_value.'%')->orderBy('created_at', 'desc')->paginate(9);
@@ -56,7 +56,7 @@ class AdminVideosController extends \BaseController
      */
     public function store()
     {
-        $validator = Validator::make($data = Input::all(), Video::$rules);
+        $validator = Validator::make($data = Request::all(), Video::$rules);
 
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
@@ -124,7 +124,7 @@ class AdminVideosController extends \BaseController
      */
     public function update()
     {
-        $input = Input::all();
+        $input = Request::all();
         $id = $input['id'];
         $video = Video::findOrFail($id);
 

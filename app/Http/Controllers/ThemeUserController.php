@@ -67,14 +67,14 @@ class ThemeUserController extends BaseController
     public function update($username)
     {
     
-        $input = array_except(Input::all(), '_method');
+        $input = array_except(Request::all(), '_method');
         $input['username'] = str_replace('.', '-', $input['username']);
 
         $user = User::where('username', '=', $username)->first();
 
         if (Auth::user()->id == $user->id) {
-            if (Input::hasFile('avatar')) {
-                $input['avatar'] = ImageHandler::uploadImage(Input::file('avatar'), 'avatars');
+            if (Request::hasFile('avatar')) {
+                $input['avatar'] = ImageHandler::uploadImage(Request::file('avatar'), 'avatars');
             } else {
                 $input['avatar'] = $user->avatar;
             }
@@ -203,7 +203,7 @@ class ThemeUserController extends BaseController
         $user = Auth::user();
 
         if (Auth::user()->username == $username) {
-            $token = Input::get('stripeToken');
+            $token = Request::get('stripeToken');
 
             try {
                 $user->subscription('monthly')->resume($token);
@@ -338,7 +338,7 @@ class ThemeUserController extends BaseController
         $user = User::find(Auth::user()->id);
 
         if (Auth::user()->username == $username) {
-            $token = Input::get('stripeToken');
+            $token = Request::get('stripeToken');
 
             try {
                 $user->subscription('monthly')->create($token, ['email' => $user->email]);

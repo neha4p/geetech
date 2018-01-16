@@ -18,7 +18,7 @@ class AdminVideoCategoriesController extends Controller
 
     public function store()
     {
-        $input = Input::all();
+        $input = Request::all();
         $last_category = VideoCategory::orderBy('order', 'DESC')->first();
 
         if (isset($last_category->order)) {
@@ -35,7 +35,7 @@ class AdminVideoCategoriesController extends Controller
 
     public function update()
     {
-        $input = Input::all();
+        $input = Request::all();
         $category = VideoCategory::find($input['id'])->update($input);
         if (isset($category)) {
             return Redirect::to('admin/videos/categories')->with(['note' => 'Successfully Updated Category', 'note_type' => 'success']);
@@ -60,7 +60,7 @@ class AdminVideoCategoriesController extends Controller
 
     public function order()
     {
-        $category_order = json_decode(Input::get('order'));
+        $category_order = json_decode(Request::get('order'));
         $video_categories = VideoCategory::all();
         $order = 1;
         

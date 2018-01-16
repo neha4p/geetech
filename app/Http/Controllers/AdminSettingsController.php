@@ -18,14 +18,14 @@ class AdminSettingsController extends Controller
     public function save_settings()
     {
 
-        $input = Input::all();
+        $input = Request::all();
         $settings = Setting::first();
 
-        $demo_mode = Input::get('demo_mode');
-        $enable_https = Input::get('enable_https');
-        $free_registration = Input::get('free_registration');
-        $activation_email = Input::get('activation_email');
-        $premium_upgrade = Input::get('premium_upgrade');
+        $demo_mode = Request::get('demo_mode');
+        $enable_https = Request::get('enable_https');
+        $free_registration = Request::get('free_registration');
+        $activation_email = Request::get('activation_email');
+        $premium_upgrade = Request::get('premium_upgrade');
 
         if (empty($demo_mode)) {
             $input['demo_mode'] = 0;
@@ -47,14 +47,14 @@ class AdminSettingsController extends Controller
             $input['premium_upgrade'] = 0;
         }
 
-        if (Input::hasFile('logo')) {
-            $input['logo'] = ImageHandler::uploadImage(Input::file('logo'), 'settings');
+        if (Request::hasFile('logo')) {
+            $input['logo'] = ImageHandler::uploadImage(Request::file('logo'), 'settings');
         } else {
             $input['logo'] = $settings->logo;
         }
 
-        if (Input::hasFile('favicon')) {
-            $input['favicon'] = ImageHandler::uploadImage(Input::file('favicon'), 'settings');
+        if (Request::hasFile('favicon')) {
+            $input['favicon'] = ImageHandler::uploadImage(Request::file('favicon'), 'settings');
         } else {
             $input['favicon'] = $settings->favicon;
         }

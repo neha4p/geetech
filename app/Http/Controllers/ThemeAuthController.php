@@ -60,13 +60,13 @@ class ThemeAuthController extends BaseController
 
         // get login POST data
         $email_login = [
-            'email' => Input::get('email'),
-            'password' => Input::get('password')
+            'email' => Request::get('email'),
+            'password' => Request::get('password')
         ];
 
         $username_login = [
-            'username' => Input::get('email'),
-            'password' => Input::get('password')
+            'username' => Request::get('email'),
+            'password' => Request::get('password')
         ];
 
         if (Auth::attempt($email_login) || Auth::attempt($username_login)) {
@@ -78,7 +78,7 @@ class ThemeAuthController extends BaseController
             }
 
             if (Auth::user()->subscribed() || (Auth::user()->role == 'admin' || Auth::user()->role == 'demo') || ($settings->free_registration && Auth::user()->role == 'registered')) :
-                $redirect = (Input::get('redirect', 'false')) ? Input::get('redirect') : '/';
+                $redirect = (Request::get('redirect', 'false')) ? Request::get('redirect') : '/';
                 if (Auth::user()->role == 'demo' && Setting::first()->demo_mode != 1) {
                     Auth::logout();
                     return Redirect::to($redirect)->with(['note' => 'Sorry, demo mode has been disabled', 'note_type' => 'error']);
@@ -93,7 +93,7 @@ class ThemeAuthController extends BaseController
                 return Redirect::to('user/' . $username . '/renew_subscription')->with(['note' => 'Uh oh, looks like you don\'t have an active subscription, please renew to gain access to all content', 'note_type' => 'error']);
             endif;
         } else {
-            $redirect = (Input::get('redirect', false)) ? '?redirect=' . Input::get('redirect') : '';
+            $redirect = (Request::get('redirect', false)) ? '?redirect=' . Request::get('redirect') : '';
             // auth failure! redirect to login with errors
             return Redirect::to('login' . $redirect)->with(['note' => 'Invalid login, please try again.', 'note_type' => 'error']);
         }
@@ -102,8 +102,8 @@ class ThemeAuthController extends BaseController
     public function signup()
     {
 
-        $input = Input::all();
-        $user_data = ['username' => Input::get('username'), 'email' => Input::get('email'), 'password' => Hash::make(Input::get('password')) ];
+        $input = Request::all();
+        $user_data = ['username' => Request::get('username'), 'email' => Request::get('email'), 'password' => Hash::make(Request::get('password')) ];
 
         $settings = \Setting::first();
         if (!$settings->free_registration) {
@@ -115,7 +115,7 @@ class ThemeAuthController extends BaseController
                 User::setStripeKey($payment_settings->test_secret_key);
             }
               
-            $token = Input::get('stripeToken');
+            $token = Request::get('stripeToken');
 
             unset($input['stripeToken']);
         } else {
@@ -139,7 +139,7 @@ class ThemeAuthController extends BaseController
         try {
             if ($settings->free_registration && $settings->activation_email) {
                 Mail::send('Theme::emails.verify', ['activation_code' => $user->activation_code, 'website_name' => $settings->website_name], function ($message) {
-                    $message->to(Input::get('email'), Input::get('username'))->subject('Verify your email address');
+                    $message->to(Request::get('email'), Request::get('username'))->subject('Verify your email address');
                 });
 
                 return Redirect::to('/login')->with(['note' => 'Success! One last step, be sure to verify your account by clicking on the activation link sent to your email.', 'note_type' => 'success']);
@@ -201,7 +201,7 @@ class ThemeAuthController extends BaseController
     // ********** RESET REQUEST ********** //
     public function password_request()
     {
-        $credentials = ['email' => Input::get('email')];
+        $credentials = ['email' => Request::get('email')];
         $response = Password::sendResetLink($credentials, function ($message) {
             $message->subject('Password Reset Info');
         });
@@ -235,7 +235,7 @@ class ThemeAuthController extends BaseController
     public function password_reset_post(Request $request)
     {
 
-        $credentials = $credentials = ['email' => Input::get('email'), 'password' => Input::get('password'), 'password_confirmation' => Input::get('password_confirmation'), 'token' => Input::get('token')];
+        $credentials = $credentials = ['email' => Request::get('email'), 'password' => Request::get('password'), 'password_confirmation' => Request::get('password_confirmation'), 'token' => Request::get('token')];
 
 
 

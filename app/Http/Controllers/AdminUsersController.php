@@ -14,7 +14,7 @@ class AdminUsersController extends Controller
 
     public function index()
     {
-        $search_value = Input::get('s');
+        $search_value = Request::get('s');
         
         if (!empty($search_value)) :
             $users = User::where('username', 'LIKE', '%'.$search_value.'%')->orWhere('email', 'LIKE', '%'.$search_value.'%')->orderBy('created_at', 'desc')->get();
@@ -40,10 +40,10 @@ class AdminUsersController extends Controller
 
     public function store()
     {
-        $input = Input::all();
+        $input = Request::all();
 
-        if (Input::hasFile('avatar')) {
-            $input['avatar'] = ImageHandler::uploadImage(Input::file('avatar'), 'avatars');
+        if (Request::hasFile('avatar')) {
+            $input['avatar'] = ImageHandler::uploadImage(Request::file('avatar'), 'avatars');
         } else {
             $input['avatar'] = 'default.jpg';
         }
@@ -69,12 +69,12 @@ class AdminUsersController extends Controller
 
     public function update()
     {
-        $input = Input::all();
+        $input = Request::all();
         $id = $input['id'];
         $user = User::find($id);
 
-        if (Input::hasFile('avatar')) {
-            $input['avatar'] = ImageHandler::uploadImage(Input::file('avatar'), 'avatars');
+        if (Request::hasFile('avatar')) {
+            $input['avatar'] = ImageHandler::uploadImage(Request::file('avatar'), 'avatars');
         } else {
             $input['avatar'] = $user->avatar;
         }

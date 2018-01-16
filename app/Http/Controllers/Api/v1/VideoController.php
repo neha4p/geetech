@@ -22,18 +22,18 @@ class VideoController extends Controller
     {
         $response = Video::where('active', '=', '1');
 
-        if (Input::get('offset')) {
-            $reponse = $response->skip(Input::get('offset'));
+        if (Request::get('offset')) {
+            $reponse = $response->skip(Request::get('offset'));
         }
 
-        if (Input::get('filter') && Input::get('order')) {
-            $response = $response->orderBy(Input::get('filter'), Input::get('order'));
+        if (Request::get('filter') && Request::get('order')) {
+            $response = $response->orderBy(Request::get('filter'), Request::get('order'));
         } else {
             $response = $response->orderBy('created_at', 'desc');
         }
 
-        if (Input::get('limit')) {
-            $response = $response->take(Input::get('limit'));
+        if (Request::get('limit')) {
+            $response = $response->take(Request::get('limit'));
         } else {
             $response = $response->take($this->default_limit);
         }

@@ -18,7 +18,7 @@ class ThemeSearchController extends BaseController
 
     public function index()
     {
-        $search_value = Input::get('value');
+        $search_value = Request::get('value');
 
         if (empty($search_value)) {
             return Redirect::to('/');

@@ -8,7 +8,7 @@
 				<h3><i class="entypo-user"></i> Users</h3><a href="{{ URL::to('admin/user/create') }}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add New</a>
 			</div>
 			<div class="col-md-4">	
-				<?php $search = Input::get('s'); ?>
+				<?php $search = Request::get('s'); ?>
 				<form method="get" role="form" class="search-form-full"> <div class="form-group"> <input type="text" class="form-control" name="s" id="search-input" value="@if(!empty($search)){{ $search }}@endif" placeholder="Search..."> <i class="entypo-search"></i> </div> </form>
 			</div>
 		</div>

@@ -27,7 +27,9 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \HelloVideo\Http\Middleware\Authenticate::class,
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
+        'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \HelloVideo\Http\Middleware\RedirectIfAuthenticated::class,
+        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'secure' => \HelloVideo\Http\Middleware\Secure::class,
         'isAdmin' => \HelloVideo\Http\Middleware\isAdmin::class
     ];

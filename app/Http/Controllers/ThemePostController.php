@@ -50,9 +50,9 @@ class ThemePostController extends \BaseController
      */
     public function posts()
     {
-        $page = Input::get('page');
+        $page = Request::get('page');
         if (!empty($page)) {
-            $page = Input::get('page');
+            $page = Request::get('page');
         } else {
             $page = 1;
         }
@@ -75,9 +75,9 @@ class ThemePostController extends \BaseController
 
     public function category($category)
     {
-        $page = Input::get('page');
+        $page = Request::get('page');
         if (!empty($page)) {
-            $page = Input::get('page');
+            $page = Request::get('page');
         } else {
             $page = 1;
         }

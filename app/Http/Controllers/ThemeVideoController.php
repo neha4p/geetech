@@ -56,9 +56,9 @@ class ThemeVideoController extends \BaseController
      */
     public function videos()
     {
-        $page = Input::get('page');
+        $page = Request::get('page');
         if (!empty($page)) {
-            $page = Input::get('page');
+            $page = Request::get('page');
         } else {
             $page = 1;
         }
@@ -81,9 +81,9 @@ class ThemeVideoController extends \BaseController
 
     public function tag($tag)
     {
-        $page = Input::get('page');
+        $page = Request::get('page');
         if (!empty($page)) {
-            $page = Input::get('page');
+            $page = Request::get('page');
         } else {
             $page = 1;
         }
@@ -123,9 +123,9 @@ class ThemeVideoController extends \BaseController
 
     public function category($category)
     {
-        $page = Input::get('page');
+        $page = Request::get('page');
         if (!empty($page)) {
-            $page = Input::get('page');
+            $page = Request::get('page');
         } else {
             $page = 1;
         }

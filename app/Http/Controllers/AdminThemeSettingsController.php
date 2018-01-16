@@ -34,7 +34,7 @@ class AdminThemeSettingsController extends Controller
         // Get the Active Theme
         $active_theme = Setting::first()->theme;
 
-        $input = Input::all();
+        $input = Request::all();
         foreach ($input as $key => $value) {
             $this->createOrUpdateThemeSetting($active_theme, $key, $value);
         }

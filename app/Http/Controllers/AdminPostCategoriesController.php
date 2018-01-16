@@ -18,7 +18,7 @@ class AdminPostCategoriesController extends \BaseController
 
     public function store()
     {
-        $input = Input::all();
+        $input = Request::all();
         $last_category = PostCategory::orderBy('order', 'DESC')->first();
 
         if (isset($last_category->order)) {
@@ -35,7 +35,7 @@ class AdminPostCategoriesController extends \BaseController
 
     public function update()
     {
-        $input = Input::all();
+        $input = Request::all();
         $category = PostCategory::find($input['id'])->update($input);
         if (isset($category)) {
             return Redirect::to('admin/posts/categories')->with(['note' => 'Successfully Updated Category', 'note_type' => 'success']);
@@ -60,7 +60,7 @@ class AdminPostCategoriesController extends \BaseController
 
     public function order()
     {
-        $category_order = json_decode(Input::get('order'));
+        $category_order = json_decode(Request::get('order'));
         $post_categories = PostCategory::all();
         $order = 1;
         

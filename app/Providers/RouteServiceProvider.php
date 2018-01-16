@@ -83,7 +83,7 @@ class RouteServiceProvider extends ServiceProvider
                     });
             
                     Route::post('admin/plugin/{plugin_name}', function ($plugin_name) {
-                        $input = Input::all();
+                        $input = Request::all();
                         foreach ($input as $key => $value) {
                             $pluginData = PluginData::where('plugin_slug', '=', $plugin_name)->where('key', '=', $key)->first();
                             

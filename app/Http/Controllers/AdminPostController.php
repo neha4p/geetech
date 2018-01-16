@@ -13,7 +13,7 @@ class AdminPostController extends \BaseController
     public function index()
     {
 
-        $search_value = Input::get('s');
+        $search_value = Request::get('s');
         
         if (!empty($search_value)) :
             $posts = Post::where('title', 'LIKE', '%'.$search_value.'%')->orderBy('created_at', 'desc')->paginate(10);
@@ -55,7 +55,7 @@ class AdminPostController extends \BaseController
      */
     public function store()
     {
-        $validator = Validator::make($data = Input::all(), Video::$rules);
+        $validator = Validator::make($data = Request::all(), Video::$rules);
 
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
@@ -107,7 +107,7 @@ class AdminPostController extends \BaseController
      */
     public function update()
     {
-        $data = Input::all();
+        $data = Request::all();
         $id = $data['id'];
         $post = Post::findOrFail($id);
 
