@@ -207,5 +207,4 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
-
 }
