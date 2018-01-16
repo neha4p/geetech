@@ -30,4 +30,4 @@ use Validator;
             'password' => bcrypt($data['password']),
         ]);
     }
-use HelloVideo\User;
+use App\User;

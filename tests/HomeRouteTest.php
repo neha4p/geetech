@@ -1,6 +1,6 @@
 <?php
 
-use \HelloVideo\User as User;
+use \App\User as User;
 
 class HomeRouteTest extends TestCase
 {

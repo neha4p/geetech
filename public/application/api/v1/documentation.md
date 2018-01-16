@@ -1,9 +1,9 @@
 # Welcome to the API v1
 ![Welcome to the API version 1](../../application/api/v1/images/logo.png)
 
-Welcome to version 1 alpha of the HelloVideo API. As of this writing the API v1 is not yet fully complete, there will be a few iterations of the API version 1 before it is deemed complete. 
+Welcome to version 1 alpha of the App API. As of this writing the API v1 is not yet fully complete, there will be a few iterations of the API version 1 before it is deemed complete. 
 
-In this document you will find out the basics on how to use the HelloVideo API.
+In this document you will find out the basics on how to use the App API.
 
 # Videos
 

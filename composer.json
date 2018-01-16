@@ -29,7 +29,7 @@
             "app/Libraries"
         ],
         "psr-4": {
-            "HelloVideo\\": "app/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

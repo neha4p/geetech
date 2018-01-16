@@ -1,4 +1,4 @@
-<?php namespace HelloVideo\Exceptions;
+<?php namespace App\Exceptions;
 
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;

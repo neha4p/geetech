@@ -1,7 +1,7 @@
 <?php
 
 use \Redirect as Redirect;
-use \HelloVideo\User as User;
+use \App\User as User;
 
 class ThemePostController extends \BaseController
 {

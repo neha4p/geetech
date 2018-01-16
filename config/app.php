@@ -143,10 +143,10 @@ return [
         /*
 		 * Application Service Providers...
 		 */
-        HelloVideo\Providers\AppServiceProvider::class,
-        HelloVideo\Providers\AuthServiceProvider::class,
-        HelloVideo\Providers\EventServiceProvider::class,
-        HelloVideo\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
         'Intervention\Image\ImageServiceProvider',
         'Laravel\Cashier\CashierServiceProvider',

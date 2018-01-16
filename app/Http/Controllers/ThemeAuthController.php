@@ -1,7 +1,7 @@
 <?php
 
 use \Auth as Auth;
-use \HelloVideo\User as User;
+use \App\User as User;
 use \Redirect as Redirect;
 use Illuminate\Contracts\Auth\PasswordBroker;
 

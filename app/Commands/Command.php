@@ -1,4 +1,4 @@
-<?php namespace HelloVideo\Commands;
+<?php namespace App\Commands;
 
 abstract class Command
 {

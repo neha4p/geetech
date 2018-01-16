@@ -1,6 +1,6 @@
 <?php
 
-use \HelloVideo\User as User;
+use \App\User as User;
 use Carbon\Carbon as Carbon;
 
 class AdminController extends Controller

@@ -8,7 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="HelloVideo Admin Panel" />
+	<meta name="description" content="App Admin Panel" />
 	<meta name="author" content="" />
 
 	<title>{{ $settings->website_name . ' - ' . $settings->website_description }}</title>
