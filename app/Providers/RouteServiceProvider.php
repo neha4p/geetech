@@ -5,7 +5,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Support\Facades\Route;
 use \Auth as Auth;
 use \View as View;
-use \Redirect as Redirect;
+use Redirect;
 use \Plugin as Plugin;
 use \PluginData as PluginData;
 use \Input as Input;
@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = null;
+    protected $namespace = 'App\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -29,14 +29,13 @@ class RouteServiceProvider extends ServiceProvider
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function boot(Router $router)
+    public function boot()
     {
-        parent::boot($router);
+        parent::boot();
 
-        //
         $settings = \Setting::first();
         $root_dir = __DIR__ . '/../../public/';
-        
+
         if (\Cookie::get('theme')) {
             $theme = \Crypt::decrypt(\Cookie::get('theme'));
             define('THEME', $theme);
@@ -48,7 +47,6 @@ class RouteServiceProvider extends ServiceProvider
                 }
             endif;
         }
-        
 
         \Config::set('mail.from', ['address' => $settings->system_email, 'name' => $settings->website_name]);
 
@@ -111,7 +109,7 @@ class RouteServiceProvider extends ServiceProvider
             die('error in RouteServiceProvider.php with plugins');
         }
         
-
+/*
         Route::filter('auth', function () {
             if (Auth::guest()) {
                 return Redirect::guest('login');
@@ -154,6 +152,8 @@ class RouteServiceProvider extends ServiceProvider
                 return Redirect::to('/');
             }
         });
+
+        */
     }
 
     /**
@@ -164,10 +164,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $router->group(['namespace' => $this->namespace], function ($router) {
-            require app_path('Http/routes.php');
-        });
-
         $this->mapWebRoutes($router);
 
         $this->mapApiRoutes($router);
@@ -185,7 +181,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $router->group([
             'namespace' => $this->namespace,
-            'middleware' => ['web', 'hasTeam'],
+            'middleware' => ['web'],
         ], function ($router) {
             require base_path('routes/web.php');
         });

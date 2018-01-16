@@ -1,13 +1,25 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Redirect;
+use Video;
+use Menu;
+use VideoCategory;
+use PostCategory;
+use ThemeHelper;
+use Favorite;
+use Page;
+use View;
+use Auth;
+use Session;
+use Request;
 
-class ThemeFavoriteController extends \BaseController
+
+class ThemeFavoriteController extends BaseController
 {
 
     public function __construct()
     {
-        $this->middleware('secure');
+
     }
 
     // Add Media Like

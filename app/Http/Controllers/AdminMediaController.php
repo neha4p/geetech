@@ -1,14 +1,14 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Redirect;
+use Request;
 
 class AdminMediaController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('isAdmin');
+
     }
 
     public function index()

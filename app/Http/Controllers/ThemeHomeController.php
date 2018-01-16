@@ -1,4 +1,17 @@
-<?php
+<?php namespace App\Http\Controllers;
+
+use Redirect;
+use Setting;
+use Video;
+use Menu;
+use VideoCategory;
+use PostCategory;
+use ThemeHelper;
+use Page;
+use View;
+use Auth;
+use Session;
+
 
 class ThemeHomeController extends Controller
 {
@@ -7,7 +20,7 @@ class ThemeHomeController extends Controller
 
     public function __construct()
     {
-        $this->middleware('secure');
+        //
         $settings = Setting::first();
         $this->videos_per_page = $settings->videos_per_page;
     }

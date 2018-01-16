@@ -1,6 +1,6 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Redirect;
 
 class AdminPaymentSettingsController extends Controller
 {

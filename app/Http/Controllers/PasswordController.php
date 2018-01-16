@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 
 use \Auth as Auth;
 use \App\User as User;
-use \Redirect as Redirect;
+use Redirect;
 
 class PasswordController extends Controller
 {

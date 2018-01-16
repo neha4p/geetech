@@ -1,8 +1,15 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Request;
+use Redirect;
+use Video;
+use Auth;
+use View;
+use VideoCategory;
+use Validator;
+use Tag;
 
-class AdminVideosController extends \BaseController
+class AdminVideosController extends BaseController
 {
 
     /**
@@ -41,7 +48,7 @@ class AdminVideosController extends \BaseController
     {
         $data = [
             'headline' => '<i class="fa fa-plus-circle"></i> New Video',
-            'post_route' => URL::to('admin/videos/store'),
+            'post_route' => '/admin/videos/store',
             'button_text' => 'Add New Video',
             'admin_user' => Auth::user(),
             'video_categories' => VideoCategory::all(),
@@ -107,7 +114,7 @@ class AdminVideosController extends \BaseController
         $data = [
             'headline' => '<i class="fa fa-edit"></i> Edit Video',
             'video' => $video,
-            'post_route' => URL::to('admin/videos/update'),
+            'post_route' => '/admin/videos/update',
             'button_text' => 'Update Video',
             'admin_user' => Auth::user(),
             'video_categories' => VideoCategory::all(),

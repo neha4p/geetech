@@ -1,15 +1,27 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Redirect;
+use Setting;
+use Video;
+use Menu;
+use VideoCategory;
+use PostCategory;
+use ThemeHelper;
+use Page;
+use View;
+use Auth;
+use Session;
+use Request;
+use Favorite;
 
-class ThemeVideoController extends \BaseController
+class ThemeVideoController extends BaseController
 {
 
     private $videos_per_page = 12;
 
     public function __construct()
     {
-        $this->middleware('secure');
+
         $settings = Setting::first();
         $this->videos_per_page = $settings->videos_per_page;
     }

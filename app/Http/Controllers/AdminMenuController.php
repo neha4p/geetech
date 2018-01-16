@@ -1,8 +1,12 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Redirect;
+use Auth;
+use View;
+use Menu;
+use Request;
 
-class AdminMenuController extends \BaseController
+class AdminMenuController extends BaseController
 {
 
     /**

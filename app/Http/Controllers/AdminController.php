@@ -1,7 +1,13 @@
-<?php
+<?php namespace App\Http\Controllers;
 
 use \App\User as User;
 use Carbon\Carbon as Carbon;
+use Video;
+use Post;
+use Setting;
+use View;
+use Auth;
+
 
 class AdminController extends Controller
 {

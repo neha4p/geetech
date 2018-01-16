@@ -1,14 +1,23 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
 use \App\User as User;
+use Redirect;
+use Menu;
+use VideoCategory;
+use PostCategory;
+use ThemeHelper;
+use Page;
+use View;
+use Auth;
+use Session;
 
-class ThemePageController extends \BaseController
+
+class ThemePageController extends BaseController
 {
 
     public function __construct()
     {
-        $this->middleware('secure');
+
     }
 
     /**

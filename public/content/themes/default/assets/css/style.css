@@ -1347,6 +1347,7 @@ form.search .form-search .fa {
 /********** END SIDEBAR **********/
 #social_share {
   padding-bottom: 20px;
+  display: none;
 }
 #social_share p {
   margin-bottom: 8px;

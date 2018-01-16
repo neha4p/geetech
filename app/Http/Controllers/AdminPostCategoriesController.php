@@ -1,8 +1,14 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Redirect;
+use Auth;
+use View;
+use Request;
+use Validator;
+use Url;
+use PostCategory;
 
-class AdminPostCategoriesController extends \BaseController
+class AdminPostCategoriesController extends BaseController
 {
 
 

@@ -195,7 +195,7 @@
 						<li>
 							<a href="{{ URL::to('admin/plugins') }}">All Plugins</a>
 						</li>
-						<?php $PluginsController = new AdminPluginsController(); ?>
+						<?php /*$PluginsController = new \AdminPluginsController(); ?>
 						<?php $plugins = $PluginsController->get_plugins(); ?>
 						@foreach($plugins as $plugin)
             				<?php $this_plugin = Plugin::where('slug', '=', $plugin['slug'])->first(); ?>
@@ -204,7 +204,7 @@
             						<a href="/admin/plugin/{{ $this_plugin->slug }}">{{ $this_plugin->name }}</a>
             					</li>
             				<?php endif; ?>
-	            		@endforeach
+	            		@endforeach */?>
 	            	</ul>
 				</li>
 				<li class="">
@@ -248,8 +248,8 @@
 				<ul class="user-info pull-left pull-none-xsm">
 					<!-- Profile Info -->
 					<li class="profile"><!-- add class "pull-right" if you want to place this from right -->
-							<img src="{{ Config::get('site.uploads_dir') . 'avatars/' . Auth::user()->avatar }}" alt="" class="img-circle" width="26" />
-							<span>Howdy, {{ ucfirst(Auth::user()->username) }}</span>
+							<img src="{{ config('site.uploads_dir') . 'avatars/'  }}" alt="" class="img-circle" width="26" />
+							<span>Howdy, </span>
 					</li>
 				</ul>
 			</div>
@@ -264,7 +264,7 @@
 						<span class="label label-warning" style="font-size:12px; background:#A8D432">Version 1.1.1</span>
 					</li>
 					<li>
-						<a href="http://hellovideoapp.com/login" target="_blank">
+						<a href="/login" target="_blank">
 							<span class="label label-danger" style="font-size:12px; background:#FC9A24">Updates <i class="entypo-download right"></i></span>
 						</a>
 					</li>
@@ -299,7 +299,7 @@
 		<!-- Footer -->
 		<footer class="main">
 			
-			&copy; 2015 <strong>Hello Video</strong> Premium Video CMS
+
 		
 		</footer>
 	</div>

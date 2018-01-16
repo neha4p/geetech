@@ -1,6 +1,10 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Redirect;
+use Auth;
+use View;
+use Request;
+use VideoCategory;
 
 class AdminVideoCategoriesController extends Controller
 {

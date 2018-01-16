@@ -1,7 +1,19 @@
-<?php
+<?php namespace App\Http\Controllers;
 
 use App\User as User;
-use \Redirect as Redirect;
+use Redirect;
+use Setting;
+use Video;
+use Menu;
+use VideoCategory;
+use PostCategory;
+use ThemeHelper;
+use Page;
+use View;
+use Auth;
+use Session;
+use Favorite;
+use PaymentSetting;
 
 class ThemeUserController extends BaseController
 {
@@ -9,7 +21,7 @@ class ThemeUserController extends BaseController
 
     public function __construct()
     {
-        $this->middleware('secure');
+
     }
 
     public static $rules = [
@@ -50,7 +62,7 @@ class ThemeUserController extends BaseController
             $user = User::where('username', '=', $username)->first();
             $data = [
                                 'user' => $user,
-                                'post_route' => URL::to('user') . '/' . $user->username . '/update',
+                                'post_route' => '/user/' . $user->username . '/update',
                                 'type' => 'edit',
                                 'menu' => Menu::orderBy('order', 'ASC')->get(),
                                 'video_categories' => VideoCategory::all(),
@@ -126,7 +138,7 @@ class ThemeUserController extends BaseController
 
             $data = [
                     'user' => $user,
-                    'post_route' => URL::to('user') . '/' . $user->username . '/update',
+                    'post_route' => Url::to('user') . '/' . $user->username . '/update',
                     'type' => 'billing',
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'video_categories' => VideoCategory::all(),
@@ -235,7 +247,7 @@ class ThemeUserController extends BaseController
         if (Auth::user()->username == $username && $user->subscribed()) {
             $data = [
                 'user' => $user,
-                'post_route' => URL::to('user') . '/' . $user->username . '/update',
+                'post_route' => Url::to('user') . '/' . $user->username . '/update',
                 'type' => 'update_credit_card',
                 'menu' => Menu::orderBy('order', 'ASC')->get(),
                 'payment_settings' => $payment_settings,
@@ -270,7 +282,7 @@ class ThemeUserController extends BaseController
         if (Auth::user()->username == $username) {
             $data = [
                     'user' => $user,
-                    'post_route' => URL::to('user') . '/' . $user->username . '/update',
+                    'post_route' => Url::to('user') . '/' . $user->username . '/update',
                     'type' => 'renew_subscription',
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'payment_settings' => $payment_settings,
@@ -305,7 +317,7 @@ class ThemeUserController extends BaseController
         if (Auth::user()->username == $username) {
             $data = [
                     'user' => $user,
-                    'post_route' => URL::to('user') . '/' . $user->username . '/update',
+                    'post_route' => Url::to('user') . '/' . $user->username . '/update',
                     'type' => 'upgrade_subscription',
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'payment_settings' => $payment_settings,

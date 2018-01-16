@@ -1,4 +1,9 @@
-<?php
+<?php namespace App\Http\Controllers;
+
+use Redirect;
+use View;
+use Auth;
+use Session;
 
 class UpgradeController extends Controller
 {

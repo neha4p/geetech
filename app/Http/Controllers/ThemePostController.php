@@ -1,16 +1,28 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
 use \App\User as User;
+use Redirect;
+use Setting;
+use Menu;
+use VideoCategory;
+use PostCategory;
+use ThemeHelper;
+use Page;
+use Post;
+use View;
+use Auth;
+use Session;
+use Request;
 
-class ThemePostController extends \BaseController
+
+class ThemePostController extends BaseController
 {
 
     private $posts_per_page = 12;
 
     public function __construct()
     {
-        $this->middleware('secure');
+
         $settings = Setting::first();
         $this->posts_per_page = $settings->posts_per_page;
     }

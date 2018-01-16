@@ -1,4 +1,9 @@
-<?php
+<?php namespace App\Http\Controllers;
+
+use Auth;
+use View;
+use Plugin;
+use Redirect;
 
 class AdminPluginsController extends Controller
 {

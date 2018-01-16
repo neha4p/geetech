@@ -75,6 +75,13 @@ abstract class AbstractEncoder
     abstract protected function processIco();
 
     /**
+     * Processes and returns image as WebP encoded string
+     *
+     * @return string
+     */
+    abstract protected function processWebp();
+
+    /**
      * Process a given image
      *
      * @param  Image   $image
@@ -135,6 +142,7 @@ abstract class AbstractEncoder
                 break;
 
             case 'ico':
+            case 'image/x-ico':
             case 'image/x-icon':
             case 'image/vnd.microsoft.icon':
                 $this->result = $this->processIco();
@@ -144,12 +152,20 @@ abstract class AbstractEncoder
             case 'image/vnd.adobe.photoshop':
                 $this->result = $this->processPsd();
                 break;
+
+            case 'webp':
+            case 'image/webp':
+            case 'image/x-webp':
+                $this->result = $this->processWebp();
+                break;
                 
             default:
                 throw new \Intervention\Image\Exception\NotSupportedException(
                     "Encoding format ({$format}) is not supported."
                 );
         }
+
+        $this->setImage(null);
 
         return $image->setEncoded($this->result);
     }

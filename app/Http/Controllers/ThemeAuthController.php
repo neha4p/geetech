@@ -1,16 +1,27 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Auth as Auth;
-use \App\User as User;
-use \Redirect as Redirect;
+use Auth;
+use User;
 use Illuminate\Contracts\Auth\PasswordBroker;
+use Redirect;
+use Request;
+use Setting;
+use Menu;
+use VideoCategory;
+use PostCategory;
+use ThemeHelper;
+use Page;
+use View;
+use Session;
+use PaymentSetting;
+use Input;
 
 class ThemeAuthController extends BaseController
 {
 
     public function __construct()
     {
-        $this->middleware('secure');
+
     }
     
     /*

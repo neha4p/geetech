@@ -35,7 +35,7 @@
 					?>
 					</a>
 				</td>
-				<td>@if(Auth::user()->role == 'demo')email n/a in demo mode @else{{ $user->email }}@endif</td>
+				<td></td>
 				<td>
 					@if($user->role == 'subscriber')
 						<div class="label label-success"><i class="fa fa-user"></i>
@@ -54,6 +54,7 @@
 				</td>
 				<td>{{ $user->active }}</td>
 				<td>
+					<?php /*
 					@if( $user->onGracePeriod() )
 						<div class="label label-warning"><i class="fa fa-meh-o"></i> Grace Period</div> 
 					@elseif( $user->cancelled() )
@@ -61,7 +62,7 @@
 					@elseif( $user->subscribed() || ($user->role == 'admin' || $user->role == 'demo') )
 						<div class="label label-success"><i class="fa fa-ticket"></i> Subscribed</div>
 					@endif
-					
+					*/?>
 				</td>
 				<td>
 					<a href="{{ URL::to('admin/user/edit') . '/' . $user->id }}" class="btn btn-xs btn-info"><span class="fa fa-edit"></span> Edit</a>

@@ -9,10 +9,10 @@
     "type": "project",
     "require": {
         "laravel/framework": "5.5.*",
-        "intervention/image": "2.1.1",
-        "laravel/cashier": "4.0.0",
-        "laravel/socialite": "~2.0",
-        "league/flysystem-aws-s3-v3": "^1.0",
+        "intervention/image": "*",
+        "laravel/cashier": "*",
+        "laravel/socialite": "*",
+        "league/flysystem-aws-s3-v3": "*",
         "php": ">=7.0.0",
         "laravel/tinker": "~1.0",
         "fideloper/proxy": "~3.3"

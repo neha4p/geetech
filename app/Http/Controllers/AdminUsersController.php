@@ -1,7 +1,11 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Redirect;
 use \App\User as User;
+use Request;
+use View;
+use Url;
+use Auth;
 
 class AdminUsersController extends Controller
 {

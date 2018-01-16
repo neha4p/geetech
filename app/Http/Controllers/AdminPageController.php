@@ -1,8 +1,8 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Redirect;
 
-class AdminPageController extends \BaseController
+class AdminPageController extends BaseController
 {
 
     /**

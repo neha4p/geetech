@@ -95,7 +95,7 @@ return [
 
     'key' => env('APP_KEY') ?: '75c024I47iQ22GmXdIddgYFl54qB0yT6',
 
-    'cipher' => MCRYPT_RIJNDAEL_128,
+    'cipher' => 'AES-256-CBC',
 
     /*
 	|--------------------------------------------------------------------------
@@ -186,7 +186,7 @@ return [
         'Auth'      => 'Illuminate\Support\Facades\Auth',
         'Blade'     => 'Illuminate\Support\Facades\Blade',
         'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
-        'Bus' => Illuminate\Support\Facades\Bus::class,
+        'Bus'       => Illuminate\Support\Facades\Bus::class,
         'Cache'     => 'Illuminate\Support\Facades\Cache',
         'Config'    => 'Illuminate\Support\Facades\Config',
         'Cookie'    => 'Illuminate\Support\Facades\Cookie',

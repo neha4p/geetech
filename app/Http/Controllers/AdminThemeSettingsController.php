@@ -1,6 +1,11 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-use \Redirect as Redirect;
+use Redirect;
+use Setting;
+use Auth;
+use View;
+use ThemeHelper;
+use ThemeSetting;
 
 class AdminThemeSettingsController extends Controller
 {
