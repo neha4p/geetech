@@ -73,7 +73,7 @@
 		<div class="clear"></div>
 		<div id="social_share">
 	    	<p>Share This Video:</p>
-			<?php include('partials/social-share.php'); ?>
+			<?php //include('partials/social-share.php'); ?>
 		</div>
 
 		<div class="clear"></div>

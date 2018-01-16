@@ -56,7 +56,7 @@
 		<div class="video-details-container"><?= $video->details ?></div>
 
 		<div class="clear"></div>
-		<h2 id="tags">Tags: 
+		<!--<h2 id="tags">Tags:
 		<?php foreach($video->tags as $key => $tag): ?>
 
 			<span><a href="/videos/tag/<?= $tag->name ?>"><?= $tag->name ?></a></span><?php if($key+1 != count($video->tags)): ?>,<?php endif; ?>
@@ -67,7 +67,7 @@
 		<div class="clear"></div>
 		<div id="social_share">
 	    	<p>Share This Video:</p>
-			<?php include('partials/social-share.php'); ?>
+			<?php //include('partials/social-share.php'); ?>
 		</div>
 
 		<div class="clear"></div>
@@ -75,7 +75,7 @@
 		<div id="comments">
 			<div id="disqus_thread"></div>
 		</div>
-    
+    -->
 	</div>
 	
 		
