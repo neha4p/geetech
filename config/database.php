@@ -1,5 +1,16 @@
 <?php
 
+$url = getenv('JAWSDB_URL');
+if (isset($url)) {
+    $dbparts = parse_url($url);
+    if (isset($dbparts['host'])) {
+        putenv("DB_HOST=".$dbparts['host']);
+        putenv("DB_DATABASE=".ltrim($dbparts['path'], '/'));
+        putenv("DB_USERNAME=".$dbparts['user']);
+        putenv("DB_PASSWORD=".$dbparts['pass']);
+    }
+}
+
 return [
 
 	/*
@@ -58,10 +69,12 @@ return [
 			'database'  => env('DB_DATABASE', 'forge'),
 			'username'  => env('DB_USERNAME', 'forge'),
 			'password'  => env('DB_PASSWORD', ''),
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-			'strict'    => false,
+            'unix_socket'  => env('DB_SOCKET', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => env('DB_STRICT', false),
+            'engine'    => 'InnoDB',
 		],
 
 		'pgsql' => [
@@ -114,11 +127,12 @@ return [
 
 		'cluster' => false,
 
-		'default' => [
-			'host'     => '127.0.0.1',
-			'port'     => 6379,
-			'database' => 0,
-		],
+        'default' => [
+            'host' => parse_url(env('REDIS_URL'), PHP_URL_HOST),
+            'password' => parse_url(env('REDIS_URL'), PHP_URL_PASS),
+            'port' => parse_url(env('REDIS_URL'), PHP_URL_PORT),
+            'database' => 0,
+        ],
 
 	],
 
