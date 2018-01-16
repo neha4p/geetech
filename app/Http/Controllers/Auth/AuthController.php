@@ -1,11 +1,5 @@
-<?php namespace HelloVideo\Services;
-
-use HelloVideo\User;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Validator;
-use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
-
-class Registrar implements RegistrarContract
-{
 
     /**
      * Get a validator for an incoming registration request.
@@ -13,7 +7,7 @@ class Registrar implements RegistrarContract
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    public function validator(array $data)
+    protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
@@ -28,7 +22,7 @@ class Registrar implements RegistrarContract
      * @param  array  $data
      * @return User
      */
-    public function create(array $data)
+    protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
@@ -36,4 +30,4 @@ class Registrar implements RegistrarContract
             'password' => bcrypt($data['password']),
         ]);
     }
-}
+use HelloVideo\User;
