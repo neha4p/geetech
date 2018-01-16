@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Auth\Authenticatable;
@@ -12,6 +13,7 @@ use Laravel\Cashier\Contracts\Billable as BillableContract;
 
 class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, BillableContract
 {
+    use Notifiable;
     use Authenticatable, Authorizable, CanResetPassword, Billable;
     /**
      * The database table used by the model.
