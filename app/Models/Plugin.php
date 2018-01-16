@@ -1,8 +1,8 @@
 <?php
 
-class Plugin extends Eloquent {
+class Plugin extends Eloquent
+{
 
-	protected $guarded = array();
-	public static $rules = array();
-
+    protected $guarded = [];
+    public static $rules = [];
 }

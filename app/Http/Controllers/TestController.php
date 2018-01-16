@@ -1,22 +1,22 @@
-<?php 
+<?php
 
-class TestController extends Controller {
+class TestController extends Controller
+{
 
-	public function __construct()
-	{
-		//$this->middleware('secure');
-	}
+    public function __construct()
+    {
+        //$this->middleware('secure');
+    }
 
-	/*
+    /*
 	|--------------------------------------------------------------------------
 	| Home Controller
 	|--------------------------------------------------------------------------
 	*/
 
-	public function index()
-	{
+    public function index()
+    {
 
-		echo 'test';
-	}
-
+        echo 'test';
+    }
 }

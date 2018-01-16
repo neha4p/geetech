@@ -2,7 +2,8 @@
 
 use \Redirect as Redirect;
 
-class ThemeVideoController extends \BaseController {
+class ThemeVideoController extends \BaseController
+{
 
     private $videos_per_page = 12;
 
@@ -25,16 +26,15 @@ class ThemeVideoController extends \BaseController {
 
 
         //Make sure video is active
-        if((!Auth::guest() && Auth::user()->role == 'admin') || $video->active){
-
+        if ((!Auth::guest() && Auth::user()->role == 'admin') || $video->active) {
             $favorited = false;
-            if(!Auth::guest()):
+            if (!Auth::guest()) :
                 $favorited = Favorite::where('user_id', '=', Auth::user()->id)->where('video_id', '=', $video->id)->first();
             endif;
 
             $view_increment = $this->handleViewCount($id);
 
-            $data = array(
+            $data = [
                 'video' => $video,
                 'menu' => Menu::orderBy('order', 'ASC')->get(),
                 'view_increment' => $view_increment,
@@ -43,11 +43,10 @@ class ThemeVideoController extends \BaseController {
                 'post_categories' => PostCategory::all(),
                 'theme_settings' => ThemeHelper::getThemeSettings(),
                 'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
             return View::make('Theme::video', $data);
-
         } else {
-            return Redirect::to('videos')->with(array('note' => 'Sorry, this video is no longer active.', 'note_type' => 'error'));
+            return Redirect::to('videos')->with(['note' => 'Sorry, this video is no longer active.', 'note_type' => 'error']);
         }
     }
 
@@ -56,15 +55,15 @@ class ThemeVideoController extends \BaseController {
      *
      */
     public function videos()
-    {   
+    {
         $page = Input::get('page');
-        if( !empty($page) ){
+        if (!empty($page)) {
             $page = Input::get('page');
         } else {
             $page = 1;
         }
 
-        $data = array(
+        $data = [
             'videos' => Video::where('active', '=', '1')->orderBy('created_at', 'DESC')->simplePaginate($this->videos_per_page),
             'page_title' => 'All Videos',
             'page_description' => 'Page ' . $page,
@@ -75,21 +74,21 @@ class ThemeVideoController extends \BaseController {
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-            );
+            ];
         return View::make('Theme::video-list', $data);
     }
 
 
     public function tag($tag)
-    {   
+    {
         $page = Input::get('page');
-        if( !empty($page) ){
+        if (!empty($page)) {
             $page = Input::get('page');
         } else {
             $page = 1;
         }
 
-        if(!isset($tag)){
+        if (!isset($tag)) {
             return Redirect::to('videos');
         }
 
@@ -99,14 +98,14 @@ class ThemeVideoController extends \BaseController {
 
         $tags = VideoTag::where('tag_id', '=', $tag->id)->get();
 
-        $tag_array = array();
-        foreach($tags as $key => $tag){
+        $tag_array = [];
+        foreach ($tags as $key => $tag) {
             array_push($tag_array, $tag->video_id);
         }
 
         $videos = Video::where('active', '=', '1')->whereIn('id', $tag_array)->paginate($this->videos_per_page);
 
-        $data = array(
+        $data = [
             'videos' => $videos,
             'current_page' => $page,
             'page_title' => 'Videos tagged with "' . $tag_name . '"',
@@ -117,7 +116,7 @@ class ThemeVideoController extends \BaseController {
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-            );
+            ];
 
         return View::make('Theme::video-list', $data);
     }
@@ -125,7 +124,7 @@ class ThemeVideoController extends \BaseController {
     public function category($category)
     {
         $page = Input::get('page');
-        if( !empty($page) ){
+        if (!empty($page)) {
             $page = Input::get('page');
         } else {
             $page = 1;
@@ -135,9 +134,9 @@ class ThemeVideoController extends \BaseController {
 
         $parent_cat = VideoCategory::where('parent_id', '=', $cat->id)->first();
 
-        if(!empty($parent_cat->id)){
+        if (!empty($parent_cat->id)) {
             $parent_cat2 = VideoCategory::where('parent_id', '=', $parent_cat->id)->first();
-            if(!empty($parent_cat2->id)){
+            if (!empty($parent_cat2->id)) {
                 $videos = Video::where('active', '=', '1')->where('video_category_id', '=', $cat->id)->orWhere('video_category_id', '=', $parent_cat->id)->orWhere('video_category_id', '=', $parent_cat2->id)->orderBy('created_at', 'DESC')->simplePaginate(9);
             } else {
                 $videos = Video::where('active', '=', '1')->where('video_category_id', '=', $cat->id)->orWhere('video_category_id', '=', $parent_cat->id)->orderBy('created_at', 'DESC')->simplePaginate(9);
@@ -147,7 +146,7 @@ class ThemeVideoController extends \BaseController {
         }
 
 
-        $data = array(
+        $data = [
             'videos' => $videos,
             'current_page' => $page,
             'category' => $cat,
@@ -159,17 +158,17 @@ class ThemeVideoController extends \BaseController {
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-        );
+        ];
 
         return View::make('Theme::video-list', $data);
     }
 
-    public function handleViewCount($id){
+    public function handleViewCount($id)
+    {
         // check if this key already exists in the view_media session
-        $blank_array = array();
-        if (! array_key_exists($id, Session::get('viewed_video', $blank_array) ) ) {
-            
-            try{
+        $blank_array = [];
+        if (! array_key_exists($id, Session::get('viewed_video', $blank_array))) {
+            try {
                 // increment view
                 $video = Video::find($id);
                 $video->views = $video->views + 1;
@@ -177,12 +176,11 @@ class ThemeVideoController extends \BaseController {
                 // Add key to the view_media session
                 Session::put('viewed_video.'.$id, time());
                 return true;
-            } catch (Exception $e){
+            } catch (Exception $e) {
                 return false;
             }
         } else {
             return false;
         }
     }
-
 }

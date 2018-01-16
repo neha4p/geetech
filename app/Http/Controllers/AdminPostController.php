@@ -2,7 +2,8 @@
 
 use \Redirect as Redirect;
 
-class AdminPostController extends \BaseController {
+class AdminPostController extends \BaseController
+{
 
     /**
      * Display a listing of videos
@@ -14,19 +15,19 @@ class AdminPostController extends \BaseController {
 
         $search_value = Input::get('s');
         
-        if(!empty($search_value)):
+        if (!empty($search_value)) :
             $posts = Post::where('title', 'LIKE', '%'.$search_value.'%')->orderBy('created_at', 'desc')->paginate(10);
-        else:
+        else :
             $posts = Post::orderBy('created_at', 'DESC')->paginate(10);
         endif;
 
         $user = Auth::user();
 
-        $data = array(
+        $data = [
             'posts' => $posts,
             'user' => $user,
             'admin_user' => Auth::user()
-            );
+            ];
 
         return View::make('admin.posts.index', $data);
     }
@@ -38,12 +39,12 @@ class AdminPostController extends \BaseController {
      */
     public function create()
     {
-        $data = array(
+        $data = [
             'post_route' => URL::to('admin/posts/store'),
             'button_text' => 'Add New Post',
             'admin_user' => Auth::user(),
             'post_categories' => PostCategory::all(),
-            );
+            ];
         return View::make('admin.posts.create_edit', $data);
     }
 
@@ -56,25 +57,24 @@ class AdminPostController extends \BaseController {
     {
         $validator = Validator::make($data = Input::all(), Video::$rules);
 
-        if ($validator->fails())
-        {
+        if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
         $image = (isset($data['image'])) ? $data['image'] : '';
-        if(!empty($image)){
+        if (!empty($image)) {
             $data['image'] = ImageHandler::uploadImage($data['image'], 'images');
         } else {
             $data['image'] = 'placeholder.jpg';
         }
 
-        if(empty($data['active'])){
+        if (empty($data['active'])) {
             $data['active'] = 0;
         }
 
         $post = Post::create($data);
 
-        return Redirect::to('admin/posts')->with(array('note' => 'New Post Successfully Added!', 'note_type' => 'success') );
+        return Redirect::to('admin/posts')->with(['note' => 'New Post Successfully Added!', 'note_type' => 'success']);
     }
 
     /**
@@ -87,14 +87,14 @@ class AdminPostController extends \BaseController {
     {
         $post = Post::find($id);
 
-        $data = array(
+        $data = [
             'headline' => '<i class="fa fa-edit"></i> Edit Post',
             'post' => $post,
             'post_route' => URL::to('admin/posts/update'),
             'button_text' => 'Update Post',
             'admin_user' => Auth::user(),
             'post_categories' => PostCategory::all(),
-            );
+            ];
 
         return View::make('admin.posts.create_edit', $data);
     }
@@ -113,24 +113,23 @@ class AdminPostController extends \BaseController {
 
         $validator = Validator::make($data, Post::$rules);
 
-        if ($validator->fails())
-        {
+        if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        if(empty($data['image'])){
+        if (empty($data['image'])) {
             unset($data['image']);
         } else {
             $data['image'] = ImageHandler::uploadImage($data['image'], 'images');
         }
 
-        if(empty($data['active'])){
+        if (empty($data['active'])) {
             $data['active'] = 0;
         }
 
         $post->update($data);
 
-        return Redirect::to('admin/posts/edit' . '/' . $id)->with(array('note' => 'Successfully Updated Post!', 'note_type' => 'success') );
+        return Redirect::to('admin/posts/edit' . '/' . $id)->with(['note' => 'Successfully Updated Post!', 'note_type' => 'success']);
     }
 
     /**
@@ -147,27 +146,27 @@ class AdminPostController extends \BaseController {
 
         Post::destroy($id);
 
-        return Redirect::to('admin/posts')->with(array('note' => 'Successfully Deleted Post', 'note_type' => 'success') );
+        return Redirect::to('admin/posts')->with(['note' => 'Successfully Deleted Post', 'note_type' => 'success']);
     }
 
-    private function deletePostImages($post){
+    private function deletePostImages($post)
+    {
         $ext = pathinfo($post->image, PATHINFO_EXTENSION);
 
-        if(file_exists(Config::get('site.uploads_dir') . 'images/' . $post->image) && $post->image != 'placeholder.jpg'){
+        if (file_exists(Config::get('site.uploads_dir') . 'images/' . $post->image) && $post->image != 'placeholder.jpg') {
             @unlink(Config::get('site.uploads_dir') . 'images/' . $post->image);
         }
 
-        if(file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $post->image) ) && $post->image != 'placeholder.jpg'){
-            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $post->image) );
+        if (file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $post->image)) && $post->image != 'placeholder.jpg') {
+            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $post->image));
         }
 
-        if(file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $post->image) ) && $post->image != 'placeholder.jpg'){
-            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $post->image) );
+        if (file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $post->image)) && $post->image != 'placeholder.jpg') {
+            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $post->image));
         }
 
-        if(file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $post->image) ) && $post->image != 'placeholder.jpg'){
-            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $post->image) );
+        if (file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $post->image)) && $post->image != 'placeholder.jpg') {
+            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $post->image));
         }
     }
-
 }

@@ -1,9 +1,10 @@
 <?php
 
-class ThemeSetting extends Eloquent {
-	protected $guarded = array();
+class ThemeSetting extends Eloquent
+{
+    protected $guarded = [];
 
-	public static $rules = array();
+    public static $rules = [];
 
-	protected $fillable = array('theme_slug', 'key', 'value');
+    protected $fillable = ['theme_slug', 'key', 'value'];
 }

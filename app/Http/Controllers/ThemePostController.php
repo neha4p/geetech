@@ -3,7 +3,8 @@
 use \Redirect as Redirect;
 use \HelloVideo\User as User;
 
-class ThemePostController extends \BaseController {
+class ThemePostController extends \BaseController
+{
 
     private $posts_per_page = 12;
 
@@ -25,22 +26,20 @@ class ThemePostController extends \BaseController {
         $post = Post::where('slug', '=', $slug)->first();
         
         //Make sure post is active
-        if((!Auth::guest() && Auth::user()->role == 'admin') || $post->active){
-
+        if ((!Auth::guest() && Auth::user()->role == 'admin') || $post->active) {
             $author = User::find($post->user_id);
-            $data = array(
-                    'post' => $post, 
+            $data = [
+                    'post' => $post,
                     'author' => $author,
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'video_categories' => VideoCategory::all(),
                     'post_categories' => PostCategory::all(),
                     'theme_settings' => ThemeHelper::getThemeSettings(),
                     'pages' => Page::where('active', '=', 1)->get(),
-                );
+                ];
             return View::make('Theme::post', $data);
-
         } else {
-            return Redirect::to('posts')->with(array('note' => 'Sorry, this post is no longer active.', 'note_type' => 'error'));
+            return Redirect::to('posts')->with(['note' => 'Sorry, this post is no longer active.', 'note_type' => 'error']);
         }
     }
 
@@ -50,15 +49,15 @@ class ThemePostController extends \BaseController {
      *
      */
     public function posts()
-    {   
+    {
         $page = Input::get('page');
-        if( !empty($page) ){
+        if (!empty($page)) {
             $page = Input::get('page');
         } else {
             $page = 1;
         }
 
-        $data = array(
+        $data = [
             'posts' => Post::where('active', '=', '1')->orderBy('created_at', 'DESC')->simplePaginate($this->posts_per_page),
             'current_page' => $page,
             'page_title' => 'All Posts',
@@ -69,7 +68,7 @@ class ThemePostController extends \BaseController {
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-            );
+            ];
 
         return View::make('Theme::post-list', $data);
     }
@@ -77,14 +76,14 @@ class ThemePostController extends \BaseController {
     public function category($category)
     {
         $page = Input::get('page');
-        if( !empty($page) ){
+        if (!empty($page)) {
             $page = Input::get('page');
         } else {
             $page = 1;
         }
 
         $cat = PostCategory::where('slug', '=', $category)->first();
-        $data = array(
+        $data = [
             'posts' => Post::where('active', '=', '1')->where('post_category_id', '=', $cat->id)->orderBy('created_at', 'DESC')->simplePaginate($this->posts_per_page),
             'current_page' => $page,
             'category' => $cat,
@@ -96,10 +95,8 @@ class ThemePostController extends \BaseController {
             'post_categories' => PostCategory::all(),
             'theme_settings' => ThemeHelper::getThemeSettings(),
             'pages' => Page::where('active', '=', 1)->get(),
-        );
+        ];
 
         return View::make('Theme::post-list', $data);
     }
-
-
 }

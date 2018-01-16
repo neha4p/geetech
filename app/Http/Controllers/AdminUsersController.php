@@ -3,90 +3,100 @@
 use \Redirect as Redirect;
 use \HelloVideo\User as User;
 
-class AdminUsersController extends Controller {
+class AdminUsersController extends Controller
+{
 
-	/**
-	 * Setup the layout used by the controller.
-	 *
-	 * @return void
-	 */
+    /**
+     * Setup the layout used by the controller.
+     *
+     * @return void
+     */
 
-	public function index()
-	{
+    public function index()
+    {
         $search_value = Input::get('s');
         
-        if(!empty($search_value)):
+        if (!empty($search_value)) :
             $users = User::where('username', 'LIKE', '%'.$search_value.'%')->orWhere('email', 'LIKE', '%'.$search_value.'%')->orderBy('created_at', 'desc')->get();
-        else:
+        else :
             $users = User::all();
         endif;
 
-		$data = array(
-			'users' => $users
-			);
-		return View::make('admin.users.index', $data);
-	}
+        $data = [
+            'users' => $users
+            ];
+        return View::make('admin.users.index', $data);
+    }
 
-    public function create(){
-        $data = array(
+    public function create()
+    {
+        $data = [
             'post_route' => URL::to('admin/user/store'),
             'admin_user' => Auth::user(),
             'button_text' => 'Create User',
-            );
+            ];
         return View::make('admin.users.create_edit', $data);
     }
 
-    public function store(){
+    public function store()
+    {
         $input = Input::all();
 
-        if(Input::hasFile('avatar')){
+        if (Input::hasFile('avatar')) {
             $input['avatar'] = ImageHandler::uploadImage(Input::file('avatar'), 'avatars');
-        } else{ $input['avatar'] = 'default.jpg'; }
+        } else {
+            $input['avatar'] = 'default.jpg';
+        }
 
         $input['password'] = Hash::make('password');
 
         $user = User::create($input);
-        return Redirect::to('admin/users')->with(array('note' => 'Successfully Created New User', 'note_type' => 'success') );
+        return Redirect::to('admin/users')->with(['note' => 'Successfully Created New User', 'note_type' => 'success']);
     }
 
-	public function edit($id){
+    public function edit($id)
+    {
 
-    	$user = User::find($id);
-    	$data = array(
-    		'user' => $user,
-    		'post_route' => URL::to('admin/user/update'),
-    		'admin_user' => Auth::user(),
-    		'button_text' => 'Update User',
-    		);
-    	return View::make('admin.users.create_edit', $data);
+        $user = User::find($id);
+        $data = [
+            'user' => $user,
+            'post_route' => URL::to('admin/user/update'),
+            'admin_user' => Auth::user(),
+            'button_text' => 'Update User',
+            ];
+        return View::make('admin.users.create_edit', $data);
     }
 
-    public function update(){
-    	$input = Input::all();
+    public function update()
+    {
+        $input = Input::all();
         $id = $input['id'];
         $user = User::find($id);
 
-    	if(Input::hasFile('avatar')){
-        	$input['avatar'] = ImageHandler::uploadImage(Input::file('avatar'), 'avatars');
-        } else { $input['avatar'] = $user->avatar; }
+        if (Input::hasFile('avatar')) {
+            $input['avatar'] = ImageHandler::uploadImage(Input::file('avatar'), 'avatars');
+        } else {
+            $input['avatar'] = $user->avatar;
+        }
 
-        if(empty($input['active'])){
+        if (empty($input['active'])) {
             $input['active'] = 0;
         }
 
-        if($input['password'] == ''){
-        	$input['password'] = $user->password;
-        } else{ $input['password'] = Hash::make($input['password']); }
+        if ($input['password'] == '') {
+            $input['password'] = $user->password;
+        } else {
+            $input['password'] = Hash::make($input['password']);
+        }
 
-    	$user->update($input);
-    	return Redirect::to('admin/user/edit/' . $id)->with(array('note' => 'Successfully Updated User Settings', 'note_type' => 'success') );
+        $user->update($input);
+        return Redirect::to('admin/user/edit/' . $id)->with(['note' => 'Successfully Updated User Settings', 'note_type' => 'success']);
     }
 
     public function destroy($id)
     {
 
         User::destroy($id);
-        return Redirect::to('admin/users')->with(array('note' => 'Successfully Deleted User', 'note_type' => 'success') );
+        return Redirect::to('admin/users')->with(['note' => 'Successfully Deleted User', 'note_type' => 'success']);
     }
-
 }

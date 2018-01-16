@@ -1,11 +1,12 @@
 <?php
 
-class PaymentSetting extends Eloquent {
-	protected $guarded = array();
+class PaymentSetting extends Eloquent
+{
+    protected $guarded = [];
 
-	public static $rules = array();
+    public static $rules = [];
 
-	public $timestamps = false;
+    public $timestamps = false;
 
-	protected $fillable = array('live_mode', 'test_secret_key', 'test_publishable_key', 'live_secret_key', 'live_publishable_key');
+    protected $fillable = ['live_mode', 'test_secret_key', 'test_publishable_key', 'live_secret_key', 'live_publishable_key'];
 }
