@@ -16,7 +16,7 @@ class Kernel extends HttpKernel
         'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
         'Illuminate\Session\Middleware\StartSession',
         'Illuminate\View\Middleware\ShareErrorsFromSession',
-        'HelloVideo\Http\Middleware\VerifyCsrfToken',
+        \HelloVideo\Http\Middleware\VerifyCsrfToken::class,
     ];
 
     /**
@@ -25,10 +25,10 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => 'HelloVideo\Http\Middleware\Authenticate',
+        'auth' => \HelloVideo\Http\Middleware\Authenticate::class,
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-        'guest' => 'HelloVideo\Http\Middleware\RedirectIfAuthenticated',
-        'secure' => 'HelloVideo\Http\Middleware\Secure',
-        'isAdmin' => 'HelloVideo\Http\Middleware\isAdmin'
+        'guest' => \HelloVideo\Http\Middleware\RedirectIfAuthenticated::class,
+        'secure' => \HelloVideo\Http\Middleware\Secure::class,
+        'isAdmin' => \HelloVideo\Http\Middleware\isAdmin::class
     ];
 }

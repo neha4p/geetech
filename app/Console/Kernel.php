@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'HelloVideo\Console\Commands\Inspire',
+        \HelloVideo\Console\Commands\Inspire::class,
     ];
 
     /**

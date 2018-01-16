@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-    'model' => 'HelloVideo\User',
+    'model' => HelloVideo\User::class,
 
     /*
 	|--------------------------------------------------------------------------

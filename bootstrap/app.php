@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     'Illuminate\Contracts\Http\Kernel',
-    'HelloVideo\Http\Kernel'
+    \HelloVideo\Http\Kernel::class
 );
 
 $app->singleton(
     'Illuminate\Contracts\Console\Kernel',
-    'HelloVideo\Console\Kernel'
+    \HelloVideo\Console\Kernel::class
 );
 
 $app->singleton(
     'Illuminate\Contracts\Debug\ExceptionHandler',
-    'HelloVideo\Exceptions\Handler'
+    \HelloVideo\Exceptions\Handler::class
 );
 
 /*
