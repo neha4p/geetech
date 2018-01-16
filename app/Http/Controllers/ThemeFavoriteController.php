@@ -13,7 +13,7 @@ class ThemeFavoriteController extends \BaseController
     // Add Media Like
     public function favorite()
     {
-        $video_id = Input::get('video_id');
+        $video_id = Request::get('video_id');
         $favorite = Favorite::where('user_id', '=', Auth::user()->id)->where('video_id', '=', $video_id)->first();
         if (isset($favorite->id)) {
             $favorite->delete();
@@ -30,7 +30,7 @@ class ThemeFavoriteController extends \BaseController
     {
 
         if (!Auth::guest()) :
-            $page = Input::get('page');
+            $page = Request::get('page');
 
             if (empty($page)) {
                 $page = 1;

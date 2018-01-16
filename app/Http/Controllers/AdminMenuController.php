@@ -26,7 +26,7 @@ class AdminMenuController extends \BaseController
 
     public function store()
     {
-        $input = Input::all();
+        $input = Request::all();
         $last_menu_item = Menu::orderBy('order', 'DESC')->first();
 
         if (isset($last_menu_item->order)) {
@@ -60,7 +60,7 @@ class AdminMenuController extends \BaseController
 
     public function update()
     {
-        $input = Input::all();
+        $input = Request::all();
         $menu = Menu::find($input['id'])->update($input);
         if (isset($menu)) {
             return Redirect::to('admin/menu')->with(['note' => 'Successfully Updated Category', 'note_type' => 'success']);
@@ -69,7 +69,7 @@ class AdminMenuController extends \BaseController
 
     public function order()
     {
-        $menu_item_order = json_decode(Input::get('order'));
+        $menu_item_order = json_decode(Request::get('order'));
         $post_categories = Menu::all();
         $order = 1;
         

@@ -21,9 +21,9 @@ class ThemeHomeController extends Controller
     public function index()
     {
 
-        if (\Input::get('theme')) {
-            \Cookie::queue('theme', \Input::get('theme'), 100);
-            return Redirect::to('/')->withCookie(cookie('theme', \Input::get('theme'), 100));
+        if (\Request::get('theme')) {
+            \Cookie::queue('theme', \Request::get('theme'), 100);
+            return Redirect::to('/')->withCookie(cookie('theme', \Request::get('theme'), 100));
         }
 
         $data = [

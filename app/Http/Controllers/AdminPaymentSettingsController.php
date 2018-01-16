@@ -19,7 +19,7 @@ class AdminPaymentSettingsController extends Controller
     public function save_payment_settings()
     {
 
-        $input = Input::all();
+        $input = Request::all();
 
         $payment_settings = PaymentSetting::first();
 

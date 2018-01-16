@@ -46,7 +46,7 @@ class AdminPageController extends \BaseController
      */
     public function store()
     {
-        $validator = Validator::make($data = Input::all(), Page::$rules);
+        $validator = Validator::make($data = Request::all(), Page::$rules);
 
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
@@ -86,7 +86,7 @@ class AdminPageController extends \BaseController
      */
     public function update()
     {
-        $data = Input::all();
+        $data = Request::all();
         $id = $data['id'];
         $page = Page::findOrFail($id);
 
