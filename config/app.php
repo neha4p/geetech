@@ -141,8 +141,6 @@ return [
 		 * Application Service Providers...
 		 */
         'HelloVideo\Providers\AppServiceProvider',
-        'HelloVideo\Providers\BusServiceProvider',
-        'HelloVideo\Providers\ConfigServiceProvider',
         'HelloVideo\Providers\EventServiceProvider',
         'HelloVideo\Providers\RouteServiceProvider',
 
