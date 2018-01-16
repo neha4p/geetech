@@ -2,7 +2,7 @@
 
 use \App\User as User;
 
-class ThemeRoutesTest extends TestCase
+class ThemeRoutesTest extends BrowserKitTestCase
 {
 
 

@@ -2,7 +2,7 @@
 
 use \App\User as User;
 
-class AdminRoutesTest extends TestCase
+class AdminRoutesTest extends BrowserKitTestCase
 {
 
     public function testAdmin()

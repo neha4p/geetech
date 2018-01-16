@@ -2,7 +2,7 @@
 
 use \App\User as User;
 
-class HomeRouteTest extends TestCase
+class HomeRouteTest extends BrowserKitTestCase
 {
 
     private $base_url = 'http://newsite.dev/hellovideo/public/';
