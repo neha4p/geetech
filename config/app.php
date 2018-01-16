@@ -149,7 +149,6 @@ return [
         'Illuminate\Redis\RedisServiceProvider',
         'Illuminate\Auth\Passwords\PasswordResetServiceProvider',
         'Illuminate\Session\SessionServiceProvider',
-        Laravel\Tinker\TinkerServiceProvider::class,
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
