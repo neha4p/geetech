@@ -82,12 +82,12 @@
             <?php  if(Auth::user()){ ?>
             <div class="col-md-2" id="left-sidebar">
                 <div class="background"></div>
-                        <h4>Guide</h4>
+                        <!--<h4>Guide</h4>
                         <div class="guide-menu">
                             <a href="/"><i class="hv-home-house-streamline"></i> Home</a>
                             <a href="/videos"><i class="hv-tv"></i> Videos</a>
                             <a href="/posts"><i class="hv-book-read-streamline"></i> Articles</a>
-                        </div>
+                        </div> -->
 
                         <h4>Menu</h4>
                        <?php include('menu.php'); ?>

@@ -13,7 +13,7 @@
 					<div class="clear"></div>
 				</div>
 				<div class="col-md-3">
-					<h4>Video Categories</h3>
+					<h3>Video Categories</h3>
 					<ul>
 						<?php foreach($video_categories as $category): ?>
 							<li><a href="<?= ($settings->enable_https) ? secure_url('videos/category') : URL::to('videos/category'); ?><?= '/' . $category->slug; ?>"><?= $category->name; ?></a></li>
@@ -21,7 +21,7 @@
 					</ul>
 				</div>
 				<div class="col-md-3">
-					<h4>Post Categories</h3>
+					<h3>Post Categories</h3>
 					<ul>
 						<?php foreach($post_categories as $category): ?>
 							<li><a href="<?= ($settings->enable_https) ? secure_url('posts/category') : URL::to('posts/category'); ?><?= '/' . $category->slug; ?>"><?= $category->name; ?></a></li>
@@ -29,7 +29,7 @@
 					</ul>
 				</div>
 				<div class="col-md-2">
-					<h4>Links</h3>
+					<h3>Links</h3>
 					<ul>
 						<?php foreach($pages as $page): ?>
 							<li><a href="<?= ($settings->enable_https) ? secure_url('page') : URL::to('page'); ?><?= '/' . $page->slug ?>"><?= $page->title ?></a></li>

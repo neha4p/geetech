@@ -1,0 +1,948 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class VideosTableSeeder extends Seeder
+{
+
+    /**
+     * Auto generated seed file
+     *
+     * @return void
+     */
+    public function run()
+    {
+        
+
+        \DB::table('videos')->delete();
+        
+        \DB::table('videos')->insert(array (
+            
+            array (
+                'id' => 1,
+                'user_id' => 1,
+                'video_category_id' => 18,
+                'title' => '4 Handy Tools to Make Gmail Better',
+                'type' => 'embed',
+                'access' => 'guest',
+                'details' => '<p>A video originally by Revision3 talking about 4 awesome tools and chrome extensions to make gmail better. Here are the tools below:</p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/sndlatr-beta-for-gmail/nfddgbpdnaeliohhkbdbcmenpnkepkgn" target="_blank">Sndlatr Beta</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/right-inbox-for-gmail/mflnemhkomgploogccdmcloekbloobgb" target="_blank">Right Inbox</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/streak-for-gmail/pnnfemgpilpdaojpnkjdgfgbnnjojfik" target="_blank">Streak</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/send-from-gmail-by-google/pgphcomnlaojlmmcjmiddhdapjpbgeoc" target="_blank">Send From Gmail</a></li>
+</ul>
+<p>View the original source here:&nbsp;<a href="https://revision3.com/tekzillabites/4-handy-tools-to-make-gmail-better/" target="_blank">https://revision3.com/tekzillabites/4-handy-tools-to-make-gmail-better/</a></p>',
+                'description' => 'Checkout this short video talking about some Chrome extensions to make Gmail better.',
+                'active' => 1,
+                'featured' => 1,
+                'duration' => 200,
+                'views' => 1,
+                'image' => 'October2014/4-handy-tools-to-make-gmail-better.jpg',
+                'embed_code' => '<iframe src="https://embed.revision3.com/player/embed?videoId=35835&external=true&width=640&height=360" width="640" height="360" allowFullScreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-10-03 03:02:12',
+                'updated_at' => '2018-01-23 16:01:38',
+            ),
+            
+            array (
+                'id' => 2,
+                'user_id' => 1,
+                'video_category_id' => 0,
+                'title' => 'History of TMNT!',
+                'type' => 'embed',
+                'access' => 'subscriber',
+                'details' => '<p>You remember that beloved show Teenage Mutant Ninja Turtles. In this video you will get a brief run down of the history of Teenage Mutant Ninja Turtles. The Teenage Mutant Ninja Turtles originated from a Comic Book back in 1984. This beloved comic book then evolved into the loved cartoon show that many people still remember. The famous cartoon show began in 1986 and lasted for 10 years. Since then there have been many remakes of the Teenage Mutant Ninja Turtles that still air on TV today.</p>
+<p>Learn More about the Ninja Turtles on their <a href="http://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles" target="_blank">Wikipedia Page</a>.</p>
+<p><a href="http://revision3.com/variant/history-of-tmnt/" target="_blank">View the original source of this video here.</a></p>',
+                'description' => 'Today Arris tells you all you need to know about the Teenage Mutant Ninja Turtles!',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 0,
+                'views' => 0,
+                'image' => 'October2014/history-of-tmnt.jpg',
+                'embed_code' => '<iframe src="http://embed.revision3.com/player/embed?videoId=37113&external=true&width=640&height=360" width="640" height="360" allowFullScreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-10-04 16:31:57',
+                'updated_at' => '2015-02-28 15:26:59',
+            ),
+            
+            array (
+                'id' => 9,
+                'user_id' => 1,
+                'video_category_id' => 18,
+                'title' => 'Getting Started With The HackRF',
+                'type' => 'embed',
+                'access' => 'guest',
+                'details' => '<p>Shannon starts up the HackRF to show some of it\'s capabilities. Follow along and learn about this new software defined radio peripheral capable of transmission or reception of radio signals!</p>
+<p>&nbsp;</p>
+<p><strong>HackRF - Getting Started and 2 Radio Frequencies at Once</strong>&nbsp;Pentoo, a Linux distribution with full support for HackRF and GNU Radio. Download the latest Pentoo .iso image from one of the mirrors listed at<a class="autolink" href="http://pentoo.ch/download/">http://pentoo.ch/download/</a>. Then burn the .iso to a DVD or use UNetbootin to install the .iso on a USB flash drive. Boot your computer using the DVD or USB flash drive to run Pentoo. Once Pentoo is running, type startx at the command line to launch the desktop environment. Accept the "default config" in the first dialog box and then launch a Terminal Emulator window using the icon at the bottom of the screen. At the time of writing, the current Pentoo .iso (2014.0-RC3) has a minor bug that you need to work around by typing "eselect lapack set 1" at the command line in the terminal window before trying to use GNU Radio. You only need to do this once after starting up Pentoo, but you\'ll have to do it every time you boot an unmodified .iso. To verify that your HackRF is detected, type "hackrf_info" at the command line. It should produce a few lines of output including "Found HackRF board." The 3V3, 1V8, RF, and USB LEDs should all be illuminated and are various colors. Now you can use programs such as gnuradio-companion or gqrx to start experimenting with your HackRF. Open GNu-radio companion via terminal and open the first HackRF map file.</p>',
+                'description' => 'Shannon starts up the HackRF to show some of it\'s capabilities. Follow along and learn about this new software defined radio peripheral capable of transmission or reception of radio signals!',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 0,
+                'views' => 0,
+                'image' => 'October2014/getting-started-with-the-hackrf.jpg',
+                'embed_code' => '<iframe src="http://embed.revision3.com/player/embed?videoId=40322&external=true&width=640&height=360" width="640" height="360" allowFullScreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-10-08 02:07:13',
+                'updated_at' => '2015-02-04 14:39:19',
+            ),
+            
+            array (
+                'id' => 11,
+                'user_id' => 1,
+                'video_category_id' => 18,
+                'title' => 'Top 5 Super Smash Bros 3DS Glitches!',
+                'type' => 'embed',
+                'access' => 'guest',
+                'details' => '<p><strong>Reina runs down the top 5 glitches for Super Smash Bros 3DS!</strong></p>
+<p>Super Smash Bros. 3DS is not without it\'s flaws. Reina Scully breaks down the top five glitches of the 3DS\'s featured fighter.</p>',
+                'description' => 'Reina runs down the top 5 glitches for Super Smash Bros 3DS!',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 170,
+                'views' => 0,
+                'image' => 'October2014/top-5-super-smash-bros-glitches.jpg',
+                'embed_code' => '<iframe src="http://embed.revision3.com/player/embed?videoId=48086&external=true&width=640&height=360" width="640" height="360" allowFullScreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-10-10 18:57:51',
+                'updated_at' => '2015-02-04 14:39:09',
+            ),
+            
+            array (
+                'id' => 12,
+                'user_id' => 1,
+                'video_category_id' => 18,
+                'title' => 'Going Retro with the RetroN 5!',
+                'type' => 'embed',
+                'access' => 'subscriber',
+                'details' => '<h3>The Sourcefed office plays its favorite classic games with the RetroN5.</h3>
+<p>The RetroN 5 is a revolutionary new way to play all of your old cartridges for Nintendo, Super Nintendo, Sega Genesis, Game Boy, and Game Boy Advance. It even has a built in Game Genie, so you can cheat as much as you want! Just plug it into your television and play the classics in HD!<br /><br /></p>
+<h3>More About the RetroN 5!</h3>
+<p>Check out RetroN\'s website:&nbsp;<a href="http://www.retron5.com/" target="_blank"><strong>retron5.com</strong></a></p>',
+                'description' => 'The Sourcefed office plays it\'s favorite classic games with the RetroN5.',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 465,
+                'views' => 2,
+                'image' => 'October2014/going-retro-with-the-retron-5.jpg',
+                'embed_code' => '<iframe src="http://embed.revision3.com/player/embed?videoId=48225&external=true&width=640&height=360" width="640" height="360" allowFullScreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-10-10 19:09:30',
+                'updated_at' => '2018-01-16 23:25:21',
+            ),
+            
+            array (
+                'id' => 13,
+                'user_id' => 1,
+                'video_category_id' => 18,
+                'title' => 'What Most Schools Don\'t Teach',
+                'type' => 'embed',
+                'access' => 'guest',
+                'details' => '<p>Knowing how to code is like knowing how to read and write was in medival times. You can certainly get along without it, but you do so by living in ignorance of many of the wonders around you.&nbsp;<br /><br />Learn about a new "superpower" that isn\'t being taught in in 90% of US schools.<br /><br />Starring Bill Gates, Mark Zuckerberg, will.i.am, Chris Bosh, Jack Dorsey, Tony Hsieh, Drew Houston, Gabe Newell, Ruchi Sanghvi, Elena Silenok, Vanessa Hurst, and Hadi Partovi. Directed by Lesley Chilcott.</p>',
+                'description' => 'Knowing how to code is like knowing how to read and write was in medival times. You can certainly get along without it, but you do so by living in ignorance of many of the wonders around you. ',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 343,
+                'views' => 1,
+                'image' => 'October2014/what-most-schools-dont-teach-you.jpg',
+                'embed_code' => '<iframe width="640" height="360" src="//www.youtube.com/embed/Q0z-C8Ke2FQ" frameborder="0" allowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-10-10 19:26:43',
+                'updated_at' => '2015-02-04 14:38:44',
+            ),
+            
+            array (
+                'id' => 14,
+                'user_id' => 1,
+                'video_category_id' => 20,
+                'title' => 'Tonight Show with Jimmy Fallon',
+                'type' => 'embed',
+                'access' => 'guest',
+                'details' => '<p><em><strong>The Tonight Show Starring Jimmy Fallon</strong></em>&nbsp;is an American&nbsp;late-night&nbsp;talk show&nbsp;hosted by&nbsp;Jimmy&nbsp;Fallon on NBC. The show premiered on February 17, 2014 and is produced by Broadway Video and Universal Television. It is the seventh incarnation of NBC\'s long-running Tonight Show franchise, with Fallon serving as the sixth host. The show also stars sidekick and announcer Steve Higgins and house band The Roots.The Tonight Show is produced by former Daily Show executive producer Josh Lieb and executive produced by Lorne Michaels. The show records from Studio 6B in Rockefeller Center, New York City.</p>
+<p>The program airs weeknights at 11:34 p.m. ET/PT. The show opens with Fallon\'s topical monologue, then transitions into comedic sketches/games, concluding with a guest interview and musical performance. The show\'s debut episode attracted positive reviews from professional television critics, and received 11.3 million viewers in the United States.</p>
+<p>Check out more of Jimmy Fallon on his Youtube channel at:&nbsp;<a href="https://www.youtube.com/user/latenight" target="_blank">https://www.youtube.com/user/latenight</a></p>',
+                'description' => 'The Tonight Show Starring Jimmy Fallon is an American late-night talk show hosted by Jimmy Fallon on NBC.',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 55,
+                'views' => 3,
+                'image' => 'October2014/tonight-show-with-jimmy-fallon.jpg',
+                'embed_code' => '<iframe width="640" height="360" src="//www.youtube.com/embed/UnAUk2Gb2dI" frameborder="0" allowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-10-10 20:15:05',
+                'updated_at' => '2018-01-24 21:50:45',
+            ),
+            
+            array (
+                'id' => 15,
+                'user_id' => 1,
+                'video_category_id' => 0,
+                'title' => 'Introducing Carrot',
+                'type' => 'embed',
+                'access' => 'subscriber',
+                'details' => '<h2 class="text-align-center"><strong>EASY TO USE. EASIER TO LOVE.</strong></h2>
+<p id="yui_3_17_2_1_1412972453252_476">You shouldn&rsquo;t have to fumble around with juicers or peelers to get a great vegetable experience. With Carrot, simply lift and chew. That&rsquo;s it. Carrot works with your body to do all the hard stuff, so you can get back to doing what you love.</p>
+<p>&nbsp;</p>
+<p><img src="/content/uploads//images/October2014/introducing-carrot-1.png" alt="Introducing Carrot" width="500" height="281" /></p>
+<p>&nbsp;</p>
+<h2 class="text-align-center"><strong>ROOTED IN DESIGN.</strong></h2>
+<p>From the moment you pick up your Carrot, you&rsquo;ll notice the care and attention that went into every detail. The unique texture, the striking colors and the pleasing crunch provide a world class experience for each of your senses.&nbsp;</p>
+<p>&nbsp;</p>
+<h2 class="text-align-center"><strong>THE EASY WAY. YOUR WAY.</strong></h2>
+<p>You\'re unique. Your Carrot should be too. Carrot can be prepared in an unlimited number of ways. Carrot can be boiled, cooked, or even baked into a cake. You can even hold Carrot in your mouth and pretend it&rsquo;s a long cigar. Carrot is made for anything, leaving you ready to take on everything.</p>
+<p>&nbsp;</p>
+<h2 class="text-align-center"><strong>ANTIOXIDANT. PRO HEALTH.</strong></h2>
+<p>Carrot doesn&rsquo;t just taste great. Carrot also provides an array of powerful nutrients, including Beta Carotene, Vitamin A, and Vitamin K. Carrot has even been shown to reduce the risk of colon cancer.* With Carrot, you won&rsquo;t just be feeling&nbsp;great. You&rsquo;ll be feeling your best.</p>',
+                'description' => 'Carrot is designed with you in mind. It\'s a seamless experience, meticulously crafted, from beginning to end. It\'s not just a vegetable, it\'s what a vegetable should be.',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 75,
+                'views' => 2,
+                'image' => 'October2014/introducing-carrot.jpg',
+                'embed_code' => '<iframe src="//player.vimeo.com/video/108138933" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-10-10 20:25:33',
+                'updated_at' => '2018-01-16 20:24:20',
+            ),
+            
+            array (
+                'id' => 16,
+                'user_id' => 1,
+                'video_category_id' => 0,
+                'title' => 'NORWAY - A Time-Lapse Adventure',
+                'type' => 'embed',
+                'access' => 'subscriber',
+                'details' => '<h1>Awesome Time-Lapse</h1>
+<p>This is a time-lapse video resulting from a 15,000 km (almost 10,000 miles) long road trip and tens of thousands of images taken along the way over the last 5 months. The journey has covered all of Norway&rsquo;s 19 counties, from the far south to the Russian border in the Northeast.</p>
+<p>The aim of this 5 minute short film is to show the variety of Norway, everything from the deep fjords in the Southwest, to the moon landscape in the North, the Aurora Borealis (Nothern Lights) and the settlements and cities around the country, both in summer and wintertime. The video shows some of the most scenic places in Norway, such as Lofoten, Senja, Helgelandskysten, Geirangerfjorden, N&aelig;r&oslash;yfjorden and Preikestolen.</p>
+<p>If you are interested in reading the tales, seeing behind-the-scenes photos from the journey and a map of the route driven, head over to rustadmedia.com</p>
+<p>The soundtrack is custom-made for this film by the very talented fellow Norwegian Jogeir Daae M&aelig;land.<br />You can buy the song on iTunes:&nbsp;<a href="http://bit.ly/1pCQSLd" target="_blank" rel="nofollow">bit.ly/1pCQSLd</a><br />Listen to more of his music here:&nbsp;<a href="https://soundcloud.com/j-daae-maeland" target="_blank" rel="nofollow">soundcloud.com/j-daae-maeland</a></p>
+<p>All the locations in the video are to be found at&nbsp;<a href="http://www.rustadmedia.com/locations" target="_blank" rel="nofollow">rustadmedia.com/locations</a><br />The gear used is listed on the front page of rustadmedia.com<br />The project is supported with gear from Syrp&nbsp;<a href="http://www.syrp.co.nz/" target="_blank" rel="nofollow">syrp.co.nz</a></p>',
+                'description' => 'Short 5-minute time-lapse film in Norway. Breathtaking scenery in this awesome video.',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 333,
+                'views' => 2,
+                'image' => 'October2014/norway-timelapse.jpg',
+                'embed_code' => '<iframe src="//player.vimeo.com/video/107469289" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-10-10 20:37:54',
+                'updated_at' => '2015-02-28 15:28:55',
+            ),
+            
+            array (
+                'id' => 17,
+                'user_id' => 1,
+                'video_category_id' => 18,
+                'title' => 'Best Android Tablets 2014',
+                'type' => 'embed',
+                'access' => 'guest',
+                'details' => '<p>In this quick video you can learn find out about the best Android Tablets of 2014. Get an in-depth review of the top tablets to find out which tablet fits you best. You can checkout the original source from the Revision3 article here:&nbsp;http://revision3.com/androidauthority/best-android-tablets-2014/</p>',
+                'description' => 'Check out the Best Android Tablets of 2014!  Find out the tablet that fits you best.',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 476,
+                'views' => 0,
+                'image' => 'December2014/best-android-tables-2014.jpg',
+                'embed_code' => '<iframe src="http://embed.revision3.com/player/embed?videoId=58793&external=true&width=640&height=360" width="640" height="360" allowFullScreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-12-26 15:53:47',
+                'updated_at' => '2015-02-04 14:38:15',
+            ),
+            
+            array (
+                'id' => 18,
+                'user_id' => 1,
+                'video_category_id' => 18,
+                'title' => 'Foundation with Tim Ferris',
+                'type' => 'embed',
+                'access' => 'subscriber',
+                'details' => '<p>In this episode 15 of Foundation Kevin interviews one of his friends and well-known author&nbsp;Tim Ferris. Checkout more foundation videos from Foundations website at http://foundation.bz</p>',
+                'description' => 'Kevin interviews one of his friends and well-known author Tim Ferris. Checkout this interview to learn more about Tim Ferris and how he became who he is today.',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 3250,
+                'views' => 0,
+                'image' => 'December2014/foundation-with-tim-ferris.jpg',
+                'embed_code' => '<iframe width="560" height="315" src="//www.youtube.com/embed/ccFYnEGWoOc" frameborder="0" allowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-12-27 03:06:32',
+                'updated_at' => '2015-02-28 15:26:30',
+            ),
+            
+            array (
+                'id' => 19,
+                'user_id' => 1,
+                'video_category_id' => 18,
+                'title' => 'The Treehouse Show - Episode 88',
+                'type' => 'embed',
+                'access' => 'guest',
+            'details' => '<p>In this episode of The Treehouse Show, Nick Pettit (@nickrp) and Jason Seifer (@jseifer) talk about the latest in web design, web development, HTML5, front end development and more. In episode 88 you will learn about Gulp JS, Sketch 3, Bud, and much more.</p>
+<p>Here are the links for the week:<br /><br />gulp.js - the streaming build system<br /><a class="yt-uix-redirect-link" dir="ltr" title="http://gulpjs.com/" href="http://gulpjs.com/" target="_blank" rel="nofollow">http://gulpjs.com/</a><br /><br />What is new in Sketch 3&nbsp; &mdash; Medium<br /><a class="yt-uix-redirect-link" dir="ltr" title="http://medium.com/p/4b92d8b25f3" href="http://medium.com/p/4b92d8b25f3" target="_blank" rel="nofollow">http://medium.com/p/4b92d8b25f3</a><br /><br />azer/bud<br /><a class="yt-uix-redirect-link" dir="ltr" title="http://github.com/azer/bud" href="http://github.com/azer/bud" target="_blank" rel="nofollow">http://github.com/azer/bud</a><br /><br />qrohlf/trianglify<br /><a class="yt-uix-redirect-link" dir="ltr" title="http://github.com/qrohlf/trianglify" href="http://github.com/qrohlf/trianglify" target="_blank" rel="nofollow">http://github.com/qrohlf/trianglify</a><br /><br />sindresorhus/multiline<br /><a class="yt-uix-redirect-link" dir="ltr" title="http://github.com/sindresorhus/multiline" href="http://github.com/sindresorhus/multiline" target="_blank" rel="nofollow">http://github.com/sindresorhus/multiline</a><br /><br />How to Use steps() in CSS Animations - Designmodo<br /><a class="yt-uix-redirect-link" dir="ltr" title="http://designmodo.com/steps-css-animations/" href="http://designmodo.com/steps-css-animations/" target="_blank" rel="nofollow">http://designmodo.com/steps-css-anima...</a><br /><br />PACE &mdash; Automatic page load progress bars<br /><a class="yt-uix-redirect-link" dir="ltr" title="http://github.hubspot.com/pace/docs/welcome/" href="http://github.hubspot.com/pace/docs/welcome/" target="_blank" rel="nofollow">http://github.hubspot.com/pace/docs/w...</a><br /><br />Pesticide - Kill Your Css Layout Bugs<br /><a class="yt-uix-redirect-link" dir="ltr" title="http://pesticide.io/" href="http://pesticide.io/" target="_blank" rel="nofollow">http://pesticide.io/</a></p>',
+            'description' => 'In this episode of The Treehouse Show, Nick Pettit (@nickrp) and Jason Seifer (@jseifer) talk about the latest in web design, web development, HTML5, front end development and more.',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 909,
+                'views' => 0,
+                'image' => 'December2014/treehouse-show.jpg',
+                'embed_code' => '<iframe width="560" height="315" src="//www.youtube.com/embed/82urkb3mJaQ?list=PLFDA5B0CD72326128" frameborder="0" allowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2015-02-23 16:04:01',
+                'updated_at' => '2015-02-28 15:22:23',
+            ),
+            
+            array (
+                'id' => 20,
+                'user_id' => 1,
+                'video_category_id' => 11,
+                'title' => 'Alma',
+                'type' => 'embed',
+                'access' => 'guest',
+                'details' => '<p>On a snowy day in Barcelona, a girl named Alma is wandering a street. Encountering a chalkboard inscribed with the countless given names of various children, she includes her own name. Before continuing her stroll, where she is suddenly captivated by a toy store overflowing with dolls across from the chalkboard. Taking notice of a doll physically identical to her through a window that resembles the mouth of a monster, she tries to enter the vacant, deserted, silent shop to retrieve the toy for herself. But the front door is locked. After giving up trying to open it, Alma begins to walk away, only for the door to mysteriously open. She returns and enters the store.</p>
+<p><img style="float: right; margin-left: 20px;" title="Alma" src="/content/uploads/images/January2015/FILE-20150103-16126JMX6QC73F42.jpg" alt="" width="500" height="251" />Alma tries to retrieve the doll but nearly steps on a small toy boy riding a bike who tries to escape but the door closes in front of him. As Alma starts to climb a shelf the doll somehow moved to, the eyes of the other children dolls suddenly start moving and watching her. While trying to snatch it off of the shelf, the moment she touches it a fast sequence of various brief, quick clips of petrifying footage flashes across the screen before suddenly taking focus on the entire shop from Alma\'s perspective on the shelf-top.</p>
+<p>Afterwards, it is revealed that Alma\'s inner consciousness has somehow been withdrawn from her body into that of the doll resembling her. As all of the other dolls sitting atop the shelf suddenly roll their eyes, focusing on her (in revelation of the dark, true intentions of that particular store), a different doll is raised to the shop window bearing resemblance to another child, implying that the cycle will continue on another victim.</p>',
+                'description' => 'Alma is a short film produced by ex-Pixar animator Rodrigo Blaas. It was received notable recognition at the Fantastic Fest awards.',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 329,
+                'views' => 1694,
+                'image' => 'December2014/alma-short-film.jpg',
+                'embed_code' => '<iframe src="//player.vimeo.com/video/4749536" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2015-02-23 16:22:01',
+                'updated_at' => '2018-01-24 21:20:01',
+            ),
+            
+            array (
+                'id' => 22,
+                'user_id' => 1,
+                'video_category_id' => 18,
+                'title' => 'AE Tuts Logo Reveal',
+                'type' => 'embed',
+                'access' => 'guest',
+                'details' => '<p>This is a quick AE Tuts logo reveal created in After Effects. Using After Effects you can use a ton of presets and effects to make the logo reveal that fits you best.</p>',
+                'description' => 'This is a quick AE Tuts logo reveal created in After Effects. Using After Effects you can use a ton of presets and effects to make the logo reveal that fits you best.',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 9,
+                'views' => 0,
+                'image' => 'December2014/ae-tuts.jpg',
+                'embed_code' => '<iframe width="560" height="315" src="//www.youtube.com/embed/nYzoQVea1NI" frameborder="0" allowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2014-12-27 18:55:31',
+                'updated_at' => '2015-02-04 14:37:14',
+            ),
+            
+            array (
+                'id' => 23,
+                'user_id' => 1,
+                'video_category_id' => 0,
+                'title' => 'The Coast',
+                'type' => 'embed',
+                'access' => 'guest',
+                'details' => '<p class="first">Borderlands. The bridge between two worlds. Where the known meets mystery. Powerful, unforgiving&ndash;and exactly what Hayden Peters was looking for.</p>
+<p>Trading the city for the daily sting of salt water on his skin, Hayden reveals how life on the coast brings him balance like no other place on earth could.</p>
+<p>From&nbsp;<a href="http://www.wazeemotionpictures.com/" target="_blank" rel="nofollow">wazeemotionpictures.com</a>, makers of the award-winning films Of Souls + Water, Dream and Nobody\'s River.<br />Presented By NRS&nbsp;<a href="http://www.nrs.com/" target="_blank" rel="nofollow">nrs.com</a><br />Directed by Skip Armstrong</p>
+<p>Music by Ben Lukas Boysen<br /><a href="https://itunes.apple.com/us/album/gravity/id659491608" target="_blank" rel="nofollow">itunes.apple.com/us/album/gravity/id659491608</a></p>
+<p>Inquiries<br />Skip Armstrong - skip@wazeemotionpictures.com</p>',
+                'description' => 'Borderlands. The bridge between two worlds. Where the known meets mystery. Powerful, unforgiving–and exactly what Hayden Peters was looking for.',
+                'active' => 1,
+                'featured' => 0,
+                'duration' => 403,
+                'views' => 4,
+                'image' => 'January2015/the-coast-video.jpg',
+                'embed_code' => '<iframe src="//player.vimeo.com/video/115014610" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+                'mp4_url' => '',
+                'webm_url' => '',
+                'ogg_url' => '',
+                'created_at' => '2015-02-23 16:05:01',
+                'updated_at' => '2015-02-28 15:21:55',
+            ),
+            
+            array (
+                'id' => 24,
+                'user_id' => 1,
+                'video_category_id' => 11,
+                'title' => 'Hug It Out',
+                'type' => 'embed',
+                'access' => 'subscriber',
+                'details' => '<p class="first">More at&nbsp;<a href="http://alepixel.tv/" target="_blank" rel="nofollow">alepixel.tv</a>&nbsp;&amp;&nbsp;<a href="https://www.behance.net/gallery/21854313/Hug-it-Out" target="_blank" rel="nofollow">behance.net/gallery/21854313/Hug-it-Out</a></p>
+<p>Our good friends at Demo Duck (<a href="http://vimeo.com/demoduck">vimeo.com/demoduck</a>) asked us to make a video about the health benefits of hugging. So we proposed writing a catchy song and telling the story through a set of fun characters: a depressed clown, a stressed out worker, and a very distracted teen.</p>
+<p>We all collaborated on the lyrics, lead by Justin from Diamond Youth who did all the music and singing. Then for character design and illustration we had the pleasure to collaborate with the great Ana Sanfelippo and Eugenia Mello who did an awesome job. Finally we had a crazy but fun ride rigging and animating all of the very different 14 characters to fully bring them to life.<br />It was an ideal project and we all had a lot of fun making it happen. So share it and spread the word if you like it! :)</p>',
+            'description' => 'A catchy song telling the story through a set of fun characters: a depressed clown, a stressed out worker, and a very distracted teen.',
+            'active' => 1,
+            'featured' => 0,
+            'duration' => 92,
+            'views' => 4,
+            'image' => 'January2015/hug-it-out.jpg',
+            'embed_code' => '<iframe src="//player.vimeo.com/video/113336111?color=3be6c3" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+            'mp4_url' => '',
+            'webm_url' => '',
+            'ogg_url' => '',
+            'created_at' => '2015-02-23 16:08:01',
+            'updated_at' => '2015-02-28 15:21:11',
+        ),
+        
+        array (
+            'id' => 25,
+            'user_id' => 1,
+            'video_category_id' => 20,
+            'title' => 'Nick Offerman Reads \'Twas the Night Before Christmas',
+            'type' => 'embed',
+            'access' => 'guest',
+            'details' => '<p>Jimmy runs out of time to read \'Twas the Night Before Christmas, so Nick Offerman tells a shortened, more casual rendition.<br /><br />Subscribe NOW to The Tonight Show Starring Jimmy Fallon:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://bit.ly/1nwT1aN" href="http://bit.ly/1nwT1aN" target="_blank" rel="nofollow">http://bit.ly/1nwT1aN</a><br /><br />Watch The Tonight Show Starring Jimmy Fallon Weeknights&nbsp;<a href="https://www.youtube.com/watch?v=i8KF6-VuIQk">11:35</a>/10:35c<br />Get more Jimmy Fallon:&nbsp;<br />Follow Jimmy:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://Twitter.com/JimmyFallon" href="http://twitter.com/JimmyFallon" target="_blank" rel="nofollow">http://Twitter.com/JimmyFallon</a><br />Like Jimmy:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="https://Facebook.com/JimmyFallon" href="https://facebook.com/JimmyFallon" target="_blank" rel="nofollow">https://Facebook.com/JimmyFallon</a><br /><br />Get more The Tonight Show Starring Jimmy Fallon:&nbsp;<br />Follow The Tonight Show:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://Twitter.com/FallonTonight" href="http://twitter.com/FallonTonight" target="_blank" rel="nofollow">http://Twitter.com/FallonTonight</a><br />Like The Tonight Show:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="https://Facebook.com/FallonTonight" href="https://facebook.com/FallonTonight" target="_blank" rel="nofollow">https://Facebook.com/FallonTonight</a><br />The Tonight Show Tumblr:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://fallontonight.tumblr.com/" href="http://fallontonight.tumblr.com/" target="_blank" rel="nofollow">http://fallontonight.tumblr.com/</a><br /><br />Get more NBC:&nbsp;<br />NBC YouTube:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://bit.ly/1dM1qBH" href="http://bit.ly/1dM1qBH" target="_blank" rel="nofollow">http://bit.ly/1dM1qBH</a><br />Like NBC:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://Facebook.com/NBC" href="http://facebook.com/NBC" target="_blank" rel="nofollow">http://Facebook.com/NBC</a><br />Follow NBC:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://Twitter.com/NBC" href="http://twitter.com/NBC" target="_blank" rel="nofollow">http://Twitter.com/NBC</a><br />NBC Tumblr:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://nbctv.tumblr.com/" href="http://nbctv.tumblr.com/" target="_blank" rel="nofollow">http://nbctv.tumblr.com/</a><br />NBC Google+:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="https://plus.google.com/+NBC/posts" href="https://plus.google.com/+NBC/posts" target="_blank" rel="nofollow">https://plus.google.com/+NBC/posts</a><br /><br />The Tonight Show Starring Jimmy Fallon features hilarious highlights from the show including: comedy sketches, music parodies, celebrity interviews, ridiculous games, and, of course, Jimmy\'s Thank You Notes and hashtags! You\'ll also find behind the scenes videos and other great web exclusives.<br /><br />Nick Offerman Reads \'Twas the Night Before Christmas<br /><a class="yt-uix-redirect-link" dir="ltr" title="http://www.youtube.com/fallontonight" href="http://www.youtube.com/fallontonight" target="_blank" rel="nofollow">http://www.youtube.com/fallontonight</a></p>',
+            'description' => 'Jimmy runs out of time to read \'Twas the Night Before Christmas, so Nick Offerman tells a shortened, more casual rendition.',
+            'active' => 1,
+            'featured' => 0,
+            'duration' => 83,
+            'views' => 1,
+            'image' => 'January2015/nick-offerman.jpg',
+            'embed_code' => '<iframe width="560" height="315" src="//www.youtube.com/embed/i8KF6-VuIQk" frameborder="0" allowfullscreen></iframe>',
+            'mp4_url' => '',
+            'webm_url' => '',
+            'ogg_url' => '',
+            'created_at' => '2014-10-01 03:02:12',
+            'updated_at' => '2015-02-28 15:23:55',
+        ),
+        
+        array (
+            'id' => 26,
+            'user_id' => 1,
+            'video_category_id' => 11,
+            'title' => 'Inside Out Trailer',
+            'type' => 'embed',
+            'access' => 'guest',
+        'details' => '<p>From Pixar Animation Studios, &ldquo;Inside Out&rdquo; opens in UK cinemas on July 24, 2015.<br /><br />From an adventurous balloon ride above the clouds to a monster-filled metropolis, Academy Award&reg;-winning director Pete Docter (&ldquo;Monsters, Inc.,&rdquo; &ldquo;Up&rdquo;) has taken audiences to unique and imaginative places. In Disney&bull;Pixar&rsquo;s original movie &ldquo; Inside Out,&rdquo; he will take us to the most extraordinary location of all&mdash;inside the mind.&nbsp;<br /><br />Growing up can be a bumpy road, and it\'s no exception for Riley, who is uprooted from her Midwest life when her father starts a new job in San Francisco. Like all of us, Riley is guided by her emotions &ndash; Joy (Amy Poehler), Fear (Bill Hader), Anger (Lewis Black), Disgust (Mindy Kaling) and Sadness (Phyllis Smith). The emotions live in Headquarters, the control center inside Riley&rsquo;s mind, where they help advise her through everyday life. As Riley and her emotions struggle to adjust to a new life in San Francisco, turmoil ensues in Headquarters. Although Joy, Riley\'s main and most important emotion, tries to keep things positive, the emotions conflict on how best to navigate a new city, house and school.</p>
+<p>Checkout the original trailer below:</p>
+<p>&nbsp;</p>
+<p><iframe style="float: left; margin-right: 10px;" src="//www.youtube.com/embed/MIGECPlJPqg" width="560" height="315" frameborder="0" allowfullscreen=""></iframe></p>',
+            'description' => 'Growing up can be a bumpy road, and it\'s no exception for Riley, who is uprooted from her Midwest life when her father starts a new job in San Francisco...',
+            'active' => 1,
+            'featured' => 0,
+            'duration' => 130,
+            'views' => 0,
+            'image' => 'January2015/inside-out.jpg',
+            'embed_code' => '<iframe width="560" height="315" src="//www.youtube.com/embed/_MC3XuMvsDI" frameborder="0" allowfullscreen></iframe>',
+            'mp4_url' => '',
+            'webm_url' => '',
+            'ogg_url' => '',
+            'created_at' => '2015-02-23 16:10:01',
+            'updated_at' => '2015-02-28 15:20:27',
+        ),
+        
+        array (
+            'id' => 27,
+            'user_id' => 1,
+            'video_category_id' => 11,
+            'title' => 'Minions Movie',
+            'type' => 'embed',
+            'access' => 'subscriber',
+            'details' => '<p>Gru is recruited by an organization to stop Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.<br /><br />The Movieclips Trailers channel is your destination for the hottest new trailers the second they drop. Whether it\'s the latest studio release, an indie horror flick, an evocative documentary, or that new RomCom you\'ve been waiting for, the Movieclips team is here day and night to make sure all the best new movie trailers are here for you the moment they\'re released.<br /><br />In addition to being the #1 Movie Trailers Channel on YouTube, we deliver amazing and engaging original videos each week. Watch our exclusive Ultimate Trailers, Showdowns, Instant Trailer Reviews, Monthly MashUps, Movie News, and so much more to keep you in the know.</p>',
+            'description' => 'Gru is recruited by an organization to stop Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.',
+            'active' => 1,
+            'featured' => 0,
+            'duration' => 167,
+            'views' => 7,
+            'image' => 'January2015/minions.jpg',
+            'embed_code' => '<iframe width="560" height="315" src="//www.youtube.com/embed/eisKxhjBnZ0" frameborder="0" allowfullscreen></iframe>',
+            'mp4_url' => '',
+            'webm_url' => '',
+            'ogg_url' => '',
+            'created_at' => '2015-02-23 16:07:01',
+            'updated_at' => '2015-03-04 01:04:04',
+        ),
+        
+        array (
+            'id' => 28,
+            'user_id' => 1,
+            'video_category_id' => 11,
+            'title' => 'Big Buck Bunny',
+            'type' => 'file',
+            'access' => 'guest',
+        'details' => '<p><img style="margin-right: 15px; float: left;" title="Big Buck Bunny" src="/content/uploads/images/January2015/FILE-20150122-06546DBSQ4HQT5HR.jpg" alt="" width="150" height="auto" />The plot follows a day of the life of Big Buck Bunny when he meets three bullying rodents, Frank (the leader of the rodents), Rinky and Gamera. The rodents amuse themselves by harassing helpless creatures of the forest by throwing fruits, nuts and rocks at them.</p>
+<p>After the deaths of two of Bunny\'s favorite butterflies and an offensive attack on Bunny himself, Bunny sets aside his gentle nature and orchestrates a complex plan to avenge the two butterflies.</p>
+<p>Checkout the original page here:&nbsp;<a href="https://peach.blender.org/">https://peach.blender.org/</a></p>
+<p>And find out more on their IMDB page here:&nbsp;<a href="http://www.imdb.com/title/tt1254207/">http://www.imdb.com/title/tt1254207/</a></p>
+<p>&nbsp;</p>',
+        'description' => 'Big Buck Bunny (code-named Peach) is a short computer-animated comedy film by the Blender Institute, part of the Blender Foundation. Like the foundation\'s previous film Elephants Dream, the film was made using Blender, a free software application for animation made by the same foundation.',
+            'active' => 1,
+            'featured' => 0,
+            'duration' => 33,
+            'views' => 7,
+            'image' => 'January2015/big-buck-bunny.jpg',
+            'embed_code' => '',
+            'mp4_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/big-buck-bunny.mp4',
+            'webm_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/big-buck-bunny.webm',
+            'ogg_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/big-buck-bunny.ogv',
+            'created_at' => '2015-02-23 16:24:01',
+            'updated_at' => '2015-02-28 15:19:10',
+        ),
+        
+        array (
+            'id' => 29,
+            'user_id' => 1,
+            'video_category_id' => 14,
+            'title' => 'The Hobbit: The Battle of the Five Armies',
+            'type' => 'file',
+            'access' => 'guest',
+            'details' => '<p>From Academy Award&reg;-winning filmmaker Peter Jackson comes "The Hobbit: The Battle of the Five Armies," the third in a trilogy of films adapting the enduringly popular masterpiece The Hobbit, by J.R.R. Tolkien.&nbsp;<br /><br />"The Hobbit: The Battle of the Five Armies" brings to an epic conclusion the adventures of Bilbo Baggins, Thorin Oakenshield and the Company of Dwarves. Having reclaimed their homeland from the Dragon Smaug, the Company has unwittingly unleashed a deadly force into the world. Enraged, Smaug rains his fiery wrath down upon the defenseless men, women and children of Lake-town.&nbsp;<br /><br />Obsessed above all else with his reclaimed treasure, Thorin sacrifices friendship and honor to hoard it as Bilbo&rsquo;s frantic attempts to make him see reason drive the Hobbit towards a desperate and dangerous choice. But there are even greater dangers ahead. Unseen by any but the Wizard Gandalf, the great enemy Sauron has sent forth legions of Orcs in a stealth attack upon the Lonely Mountain.&nbsp;<br /><br />As darkness converges on their escalating conflict, the races of Dwarves, Elves and Men must decide &ndash; unite or be destroyed. Bilbo finds himself fighting for his life and the lives of his friends in the epic Battle of the Five Armies, as the future of Middle-earth hangs in the balance.</p>
+<p>Be sure to checkout more at:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="https://www.facebook.com/TheHobbitMovie" href="https://www.facebook.com/TheHobbitMovie" target="_blank" rel="nofollow">https://www.facebook.com/TheHobbitMovie</a></p>',
+            'description' => '“The Hobbit: The Battle of the Five Armies” brings to an epic conclusion the adventures of Bilbo Baggins, Thorin Oakenshield and the Company of Dwarves. Having reclaimed their homeland from the Dragon Smaug, the Company has unwittingly unleashed a deadly force into the world. Enraged, Smaug rains his fiery wrath down upon the defenseless men, women and children of Lake-town. ',
+            'active' => 1,
+            'featured' => 0,
+            'duration' => 123,
+            'views' => 9,
+            'image' => 'February2015/the-hobbit.jpg',
+            'embed_code' => '',
+            'mp4_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/the-hobbit.mp4',
+            'webm_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/the-hobbit.webm',
+            'ogg_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/the-hobbit.ogv',
+            'created_at' => '2015-02-23 16:09:01',
+            'updated_at' => '2015-03-01 20:41:05',
+        ),
+        
+        array (
+            'id' => 30,
+            'user_id' => 1,
+            'video_category_id' => 11,
+            'title' => 'Johnny Express',
+            'type' => 'embed',
+            'access' => 'subscriber',
+            'details' => '<h2 class="first">It\'s 2150</h2>
+<p>There are all sorts of Aliens living throughout space.</p>
+<p>Johnny is a Space Delivery Man who travels to different planets to deliver packages.&nbsp;Johnny is lazy and his only desire is to sleep in his autopilot spaceship.&nbsp;When the spaceship arrives at the destination, all he has to do is simply deliver the box,&nbsp;however, it never goes as planned. Johnny encounters strange and bizarre planets&nbsp;and always seems to cause trouble on his delivery route.<br /><br />Will he be able to finish his mission without trouble?</p>
+<p>Checkout the original here:&nbsp;http://vimeo.com/94502406</p>',
+            'description' => 'Johnny is a Space Delivery Man who travels to different planets to deliver packages. Johnny is lazy and his only desire is to sleep in his autopilot spaceship.',
+            'active' => 1,
+            'featured' => 0,
+            'duration' => 327,
+            'views' => 8,
+            'image' => 'January2015/johnny-express.jpg',
+            'embed_code' => '<iframe src="//player.vimeo.com/video/94502406" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+            'mp4_url' => '',
+            'webm_url' => '',
+            'ogg_url' => '',
+            'created_at' => '2015-02-23 16:33:01',
+            'updated_at' => '2015-03-01 21:10:07',
+        ),
+        
+        array (
+            'id' => 31,
+            'user_id' => 1,
+            'video_category_id' => 13,
+            'title' => 'DevinSupertramp\'s Biggest Fails',
+            'type' => 'embed',
+            'access' => 'subscriber',
+            'details' => '<h2><img style="float: left; margin-right: 20px;" title="DevinSupertramp\'s Biggest Fails" src="/content/uploads/images/January2015/FILE-20150129-0704KXS1CLX5QGP8.jpg" alt="" width="280" height="auto" />Biggest Fails!</h2>
+<p>Crashes, bumps, and bruises! Checkout this awesome compilation of ground-hitting fails. This video contains biking, wheelchair stunts, scooter tricks, wakeboarding fun, various watersports, and much more awesome and epic fails!</p>
+<p>You can checkout more awesome crashes in more videos. Click on the tags below to find similar videos :)</p>',
+        'description' => 'This video contains some awesome crashes and fails.',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 261,
+        'views' => 4,
+        'image' => 'January2015/devin-super-tramp-biggest-fails.jpg',
+        'embed_code' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/bILjxXw8dwc" frameborder="0" allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2015-01-29 15:21:35',
+        'updated_at' => '2015-02-28 15:25:55',
+    ),
+    
+    array (
+        'id' => 32,
+        'user_id' => 1,
+        'video_category_id' => 21,
+        'title' => 'Does My Dog Know What I\'m Thinking?',
+        'type' => 'embed',
+        'access' => 'guest',
+    'details' => '<p>Do you ever talk to your dog? Do they ever talk back? Humans and dogs have a truly amazing relationship, developed along an evolutionary journey that goes back nearly 10,000 years. Do they really understand what we say, think, and feel? Recent research suggests dogs know more about our language and emotions than you might think.<br /><br />CORRECTION: Chaser is a she. Oops!<br /><br />Meet Chaser the border collie:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://www.nytimes.com/2011/01/18/science/18dog.html?pagewanted=all&amp;_r=1&amp;" href="http://www.nytimes.com/2011/01/18/science/18dog.html?pagewanted=all&amp;_r=1&amp;" target="_blank" rel="nofollow">http://www.nytimes.com/2011/01/18/sci...</a>&nbsp;<br />See Chaser in action:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="https://www.youtube.com/user/pilleyjw" href="https://www.youtube.com/user/pilleyjw" target="_blank" rel="nofollow">https://www.youtube.com/user/pilleyjw</a>&nbsp;<br /><br />Dogs can process words&rsquo; emotion separate from meaning:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://www.cell.com/current-biology/pdf/S0960-9822(14)01339-6.pdf" href="http://www.cell.com/current-biology/pdf/S0960-9822(14)01339-6.pdf" target="_blank" rel="nofollow">http://www.cell.com/current-biology/p...</a>&nbsp;<br /><br />Left-gaze bias in dogs and humans:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0036076" href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0036076" target="_blank" rel="nofollow">http://www.plosone.org/article/info%3...</a>&nbsp;<br /><br />Charles Darwin&rsquo;s &ldquo;Expression of the Emotions in Man and Animals&rdquo;&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="https://archive.org/details/expressionofemot1872darw" href="https://archive.org/details/expressionofemot1872darw" target="_blank" rel="nofollow">https://archive.org/details/expressio...</a>&nbsp;<br /><br />Decoding dog barks:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://www.apa.org/monitor/may05/dogs.aspx" href="http://www.apa.org/monitor/may05/dogs.aspx" target="_blank" rel="nofollow">http://www.apa.org/monitor/may05/dogs...</a>&nbsp;<br /><br />Have an idea for an episode or an amazing science question you want answered? Leave a comment below!</p>',
+        'description' => 'Do you ever talk to your dog? Do they ever talk back? Humans and dogs have a truly amazing relationship, developed along an evolutionary journey that goes back nearly 10,000 years. Do they really understand what we say, think, and feel? Recent research suggests dogs know more about our language and emotions than you might think.',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 393,
+        'views' => 2,
+        'image' => 'January2015/does-my-dog-know-what-im-thinking.jpg',
+        'embed_code' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/UnMULQDHIjk" frameborder="0" allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2015-01-29 15:48:07',
+        'updated_at' => '2015-02-04 14:34:17',
+    ),
+    
+    array (
+        'id' => 33,
+        'user_id' => 1,
+        'video_category_id' => 14,
+        'title' => 'Jurassic World Trailer',
+        'type' => 'embed',
+        'access' => 'guest',
+        'details' => '<p>Steven Spielberg returns to executive produce the long-awaited next installment of his groundbreaking Jurassic Park series, Jurassic World. Colin Trevorrow directs the epic action-adventure from a screenplay he wrote with Derek Connolly. Frank Marshall and Patrick Crowley join the team as producers.<br /><br />Jurassic World will be released in 3D by Universal Pictures on June 12, 2015.</p>
+<p>Checkout the movie website here:&nbsp;<a class="yt-uix-redirect-link" dir="ltr" title="http://www.jurassicworldmovie.com/" href="http://www.jurassicworldmovie.com/" target="_blank" rel="nofollow">http://www.jurassicworldmovie.com/</a></p>',
+        'description' => 'Steven Spielberg returns to executive produce the long-awaited next installment of his groundbreaking Jurassic Park series, Jurassic World. Colin Trevorrow directs the epic action-adventure from a screenplay he wrote with Derek Connolly. Frank Marshall and Patrick Crowley join the team as producers.',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 160,
+        'views' => 6,
+        'image' => 'January2015/jurassic-world.jpg',
+        'embed_code' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/RFinNxS5KN4" frameborder="0" allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2015-02-23 16:03:01',
+        'updated_at' => '2018-01-16 22:49:39',
+    ),
+    
+    array (
+        'id' => 34,
+        'user_id' => 1,
+        'video_category_id' => 13,
+        'title' => 'The Coastal Crew - Wetness',
+        'type' => 'embed',
+        'access' => 'guest',
+        'details' => '<p class="first">The only thing you hear going down the trail is your bike, you\'re tuned into every sound it makes. One of the most satisfying things is a tire pattering down the trail, squashing muck, sliding over roots and smashing puddles. Unfortunately this lush, raw sound is often lost in most videos, overtaken by the music. Curtis Robinson takes advantage of winter conditions and makes some noise with his Stumpjumper FSR EVO.</p>
+<p><a href="http://www.specialized.com/stumpjumper-fsr" target="_blank" rel="nofollow">specialized.com/stumpjumper-fsr</a><br /><a href="http://www.iamspecialized.com/" target="_blank" rel="nofollow">iamspecialized.com</a></p>
+<p>&nbsp;</p>
+<p>Checkout the official page on vimeo here:&nbsp;<a href="http://vimeo.com/112233728">http://vimeo.com/112233728</a></p>
+<p>&nbsp;</p>',
+        'description' => 'The only thing you hear going down the trail is your bike, you\'re tuned into every sound it makes. One of the most satisfying things is a tire pattering down the trail, squashing muck, sliding over roots and smashing puddles. Unfortunately this lush, raw sound is often lost in most videos, overtaken by the music. Curtis Robinson takes advantage of winter conditions and makes some noise with his Stumpjumper FSR EVO.',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 128,
+        'views' => 8,
+        'image' => 'January2015/wetness-video.jpg',
+        'embed_code' => '<iframe src="//player.vimeo.com/video/112233728" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2015-02-23 16:15:01',
+        'updated_at' => '2015-02-28 15:20:04',
+    ),
+    
+    array (
+        'id' => 36,
+        'user_id' => 1,
+        'video_category_id' => 21,
+        'title' => 'Theory of supply & demand',
+        'type' => 'embed',
+        'access' => 'guest',
+        'details' => '<p class="first">Educational and lagged short movie which explain supply &amp; demand to students from an American university.</p>
+<p>Directed, designed &amp; animated by Cyril Izarn (<a href="http://www.cyrilizarn.com/" target="_blank" rel="nofollow">cyrilizarn.com</a>) &amp; Pat Grivet (<a href="http://www.hellopoyt.com/" target="_blank" rel="nofollow">hellopoyt.com/</a>)<br />Script, production: Demoduck (<a href="http://www.demoduck.com/" target="_blank" rel="nofollow">demoduck.com</a>)</p>',
+        'description' => 'Educational and lagged short movie which explain supply & demand to students from an American university.',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 172,
+        'views' => 2,
+        'image' => 'February2015/supply-and-demand.jpg',
+        'embed_code' => '<iframe src="//player.vimeo.com/video/95757264" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2015-02-15 06:59:44',
+        'updated_at' => '2015-06-15 03:30:14',
+    ),
+    
+    array (
+        'id' => 37,
+        'user_id' => 1,
+        'video_category_id' => 13,
+        'title' => 'Sports Center Top 10 - Unexpected Sports Moments',
+        'type' => 'embed',
+        'access' => 'guest',
+        'details' => '<p>Amazing Goals, Outstanding Plays, and Incredible Moments. You\'ve got to checkout these&nbsp;Sports Center top 10 Moments. There\'s Hockey, Football, Soccer and much more. Checkout the original video here:&nbsp;https://www.youtube.com/watch?v=qvBsvjs9SB8</p>',
+        'description' => 'Checkout these Sports Center top 10 Moments. There\'s Hockey, Football, Soccer and much more',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 221,
+        'views' => 2,
+        'image' => 'February2015/sports-center-top-10.jpg',
+        'embed_code' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/qvBsvjs9SB8" frameborder="0" allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2014-10-02 03:02:12',
+        'updated_at' => '2015-02-28 15:23:40',
+    ),
+    
+    array (
+        'id' => 38,
+        'user_id' => 1,
+        'video_category_id' => 15,
+        'title' => 'Border',
+        'type' => 'embed',
+        'access' => 'guest',
+        'details' => '<p class="first">An exploration of the absurdity of the lines created by human beings called \'borders\'. Two people meet on such a line. One takes this more seriously than the other but, step-by-step, they find a peaceful solution.</p>
+<p class="first">Part of the 12 Minutes About Peace project.</p>
+<p>By plan78 animation studio.<br />Production : S.O.I.L.</p>
+<p>12 Minutes About Peace:<br />One of the most imaginative projects to mark the centenary of the First World War is 12 Minutes About Peace, a collection of 12 one-minute animated shorts on the theme of peace. They were made by both emerging as well as established talents in Flemish animation.</p>
+<p>Peace was chosen as a theme in order to encourage contemporary perspectives and also to accentuate the positive, rather than focus exclusively on the negatives of war. Nevertheless, animators were allowed to address the theme in the way they wanted and with a free choice in form and technique. Films could benarrative or abstract, with or without dialogue, and draw on the widest range of animation styles. However, each film could only be one minute in length.</p>',
+        'description' => 'An exploration of the absurdity of the lines created by human beings called \'borders\'. Two people meet on such a line. One takes this more seriously than the other but, step-by-step, they find a peaceful solution.',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 67,
+        'views' => 3,
+        'image' => 'February2015/borders.jpg',
+        'embed_code' => '<iframe src="//player.vimeo.com/video/119107623?color=ff9933&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2015-02-20 14:41:57',
+        'updated_at' => '2018-01-16 20:26:32',
+    ),
+    
+    array (
+        'id' => 39,
+        'user_id' => 1,
+        'video_category_id' => 15,
+        'title' => 'Harvard Sailing Team - Boys Will Be Girls',
+        'type' => 'embed',
+        'access' => 'subscriber',
+        'details' => '<p>Boys Will Be Girls - Harvard Sailing Team\'s #1 sketch comedy video! From watching The Biggest Loser, to eating Pinkberry, to deciding "Our Diet Starts Tomorrow" - don\'t you test these besties!</p>
+<p>Checkout this hilarious video of what it would be like if boys acted more like girls.</p>
+<p>A skit by Untucked films.</p>',
+        'description' => 'Boys Will Be Girls - Harvard Sailing Team\'s #1 sketch comedy video! From watching The Biggest Loser, to eating Pinkberry, to deciding "Our Diet Starts Tomorrow" - don\'t you test these besties!',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 249,
+        'views' => 2,
+        'image' => 'February2015/harvard-sailing-team.jpg',
+        'embed_code' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/gspaoaecNAg" frameborder="0" allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2015-02-20 15:00:35',
+        'updated_at' => '2015-02-28 15:30:11',
+    ),
+    
+    array (
+        'id' => 40,
+        'user_id' => 1,
+        'video_category_id' => 17,
+        'title' => 'How To Make A Surf Video',
+        'type' => 'embed',
+        'access' => 'guest',
+        'details' => '<p>Learn how to capture sweet surf action with aesthetic grace in this collaboration between Vimeo Video School and Korduroy.tv</p>
+<p>Check out the full lesson here&ndash;&nbsp;<a href="https://vimeo.com/videoschool/lesson/256/how-to-make-a-surf-video">vimeo.com/videoschool/lesson/256/how-to-make-a-surf-video</a></p>',
+        'description' => 'Learn how to capture sweet surf action with aesthetic grace in this collaboration between Vimeo Video School and Korduroy.tv.',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 247,
+        'views' => 1,
+        'image' => 'February2015/how-to-make-a-surf-video.jpg',
+        'embed_code' => '<iframe src="//player.vimeo.com/video/47658794" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2015-02-21 02:39:42',
+        'updated_at' => '2015-02-21 17:56:14',
+    ),
+    
+    array (
+        'id' => 41,
+        'user_id' => 1,
+        'video_category_id' => 17,
+        'title' => 'Do More With Your DSLR',
+        'type' => 'embed',
+        'access' => 'guest',
+        'details' => '<p class="first">Introducing the first installment in our new video series: Do More With Your DSLR.</p>
+<p>This in-depth tutorial shows you how to make the most of the lighting conditions in your shooting environment. For anyone wondering about white balance, in search of ISO info, or freaked out by f-stops, this one\'s for you.</p>
+<p>Read the full Video School lesson here:&nbsp;<a href="https://vimeo.com/videoschool/lesson/174/do-more-with-your-dslr-working-with-available-light">vimeo.com/videoschool/lesson/174/do-more-with-your-dslr-working-with-available-light</a></p>
+<p>Check out the other lesson in the series as well:<br /><a href="https://vimeo.com/videoschool/lesson/175/do-more-with-your-dslr-ii-building-a-rig">vimeo.com/videoschool/lesson/175/do-more-with-your-dslr-ii-building-a-rig</a></p>',
+        'description' => 'This in-depth tutorial shows you how to make the most of the lighting conditions in your shooting environment. For anyone wondering about white balance, in search of ISO info, or freaked out by f-stops, this one\'s for you.',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 395,
+        'views' => 6,
+        'image' => 'February2015/do-more-with-your-dslr.jpg',
+        'embed_code' => '<iframe src="//player.vimeo.com/video/36557938?color=ffffff" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2014-09-28 03:02:12',
+        'updated_at' => '2015-02-28 22:16:36',
+    ),
+    
+    array (
+        'id' => 42,
+        'user_id' => 1,
+        'video_category_id' => 22,
+        'title' => 'All-in-one Salmon Pockets',
+        'type' => 'embed',
+        'access' => 'guest',
+        'details' => '<p>Checkout this all-in-one Salmon Pockets. Healthy, nutritious and easy to make in 25-minutes. Annessa Chumbley walks us through the 6 ingredients needed for this delicious and healthy fast food meal. You can find more videos from their Vimeo Channel Here&nbsp;<a href="https://vimeo.com/tdgmotion" target="_blank">https://vimeo.com/tdgmotion</a>.</p>
+<p>Additionally, checkout other cooking tags below to find more delicious meals that you can cook up.</p>',
+        'description' => 'All-in-one Salmon Pockets. Healthy, nutritious and easy to make in 25-minutes. Annessa Chumbley walks us through the 6 ingredients needed for this delicious and healthy fast food meal.',
+        'active' => 1,
+        'featured' => 0,
+        'duration' => 68,
+        'views' => 0,
+        'image' => 'February2015/all-in-one-salmon-pockets.jpg',
+        'embed_code' => '<iframe src="//player.vimeo.com/video/120092061" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+        'mp4_url' => '',
+        'webm_url' => '',
+        'ogg_url' => '',
+        'created_at' => '2015-02-22 02:35:01',
+        'updated_at' => '2015-02-22 02:35:01',
+    ),
+    
+    array (
+        'id' => 43,
+        'user_id' => 1,
+        'video_category_id' => 22,
+        'title' => 'Quick Tip: Garbage Greens',
+        'type' => 'embed',
+        'access' => 'guest',
+        'details' => '<p>Next time you\'re about to throw away those beet greens, think again! You can use these greens for all sorts of things. Here are just a few health benefits of eating these greens.</p>
+<ol>
+<li>Stay Young</li>
+<li>Lower Your Cholesterol</li>
+<li>Preserve Vision Health</li>
+<li>Boost Bone Health</li>
+<li>Prevent Colon Cancer</li>
+</ol>
+<p>And so much more :)</p>',
+    'description' => 'Next time you\'re about to throw away those beet greens, think again!',
+    'active' => 1,
+    'featured' => 0,
+    'duration' => 30,
+    'views' => 0,
+    'image' => 'February2015/quick-tip-garbage-greens.jpg',
+    'embed_code' => '<iframe src="//player.vimeo.com/video/118735934?color=f0f2f2&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+    'mp4_url' => '',
+    'webm_url' => '',
+    'ogg_url' => '',
+    'created_at' => '2015-02-22 02:39:08',
+    'updated_at' => '2015-02-22 02:39:08',
+),
+
+array (
+    'id' => 44,
+    'user_id' => 1,
+    'video_category_id' => 22,
+    'title' => 'Pancake Day',
+    'type' => 'embed',
+    'access' => 'guest',
+    'details' => '<p>Who doesn\'t love pancakes?! Here\'s a little video to show how great they are. This short film is created by the team at&nbsp;thevisualsteam.com.</p>
+<p>Be sure to checkout their channel for more awesome videos.</p>',
+    'description' => 'Who doesn\'t love pancakes?! Here\'s a little video to show how great they are.',
+    'active' => 1,
+    'featured' => 0,
+    'duration' => 16,
+    'views' => 1,
+    'image' => 'February2015/pancake-day.jpg',
+    'embed_code' => '<iframe src="//player.vimeo.com/video/119866125" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+    'mp4_url' => '',
+    'webm_url' => '',
+    'ogg_url' => '',
+    'created_at' => '2015-02-22 14:56:01',
+    'updated_at' => '2015-02-23 01:47:02',
+),
+
+array (
+    'id' => 45,
+    'user_id' => 1,
+    'video_category_id' => 14,
+    'title' => 'The Amazing Spider-man 2 Trailer',
+    'type' => 'file',
+    'access' => 'subscriber',
+    'details' => '<p><img style="margin-right: 15px; float: left;" title="The Amazing Spider-man 2 Trailer" src="/content/uploads/images/February2015/FILE-20150223-08314JKSGW6PC9J9.jpg" alt="" width="120" height="auto" />For Peter Parker, life is busy. Between taking out the bad guys as Spider-Man and spending time with the person he loves, Gwen Stacy, high school graduation cannot come quickly enough. Peter has not forgotten about the promise he made to Gwen&rsquo;s father to protect her by staying away, but that is a promise he cannot keep. Things will change for Peter when a new villain, Electro, emerges, an old friend, Harry Osborn, returns, and Peter uncovers new clues about his past.</p>',
+    'description' => 'It\'s great to be Spider-Man. For Peter Parker, there\'s no feeling quite like swinging between skyscrapers, embracing being the hero, and spending time with Gwen. But being Spider-Man comes at a price: only Spider-Man can protect his fellow New Yorkers from the formidable villains that threaten the city. With the emergence of Electr, Peter must confront a foe far more powerful than he. And as his old friend, Harry Osborn, returns, Peter comes to realize that all of his enemies have one thing in common: OsCorp.',
+    'active' => 1,
+    'featured' => 0,
+    'duration' => 168,
+    'views' => 10,
+    'image' => 'February2015/the-amazing-spiderman-2.jpg',
+    'embed_code' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/DlM2CWNTQ84" frameborder="0" allowfullscreen></iframe>',
+    'mp4_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/the-amazing-spiderman-2.mp4',
+    'webm_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/the-amazing-spiderman-2.webm',
+    'ogg_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/the-amazing-spiderman-2.ogv',
+    'created_at' => '2015-02-23 16:32:01',
+    'updated_at' => '2018-01-16 23:01:43',
+),
+
+array (
+    'id' => 46,
+    'user_id' => 1,
+    'video_category_id' => 14,
+    'title' => 'The Avengers Age of Ultron Trailer',
+    'type' => 'file',
+    'access' => 'guest',
+    'details' => '<p>With S.H.I.E.L.D. destroyed and the Avengers needing a hiatus from stopping threats, Tony Stark jumpstarts a dormant peacekeeping program, Ultron: a self-aware, self-teaching, artificial intelligence. However, his plan backfires when Ultron decides that humans are the main enemy and sets out to eradicate them from Earth, leaving it up to Iron Man, Captain America, Thor, the Hulk, Black Widow and Hawkeye, along with support from Nick Fury and Maria Hill, to stop him. Along the way the Avengers encounter the powerful twins Pietro and Wanda Maximoff, as well as the familiar Vision.</p>
+<p>The sequel was announced in May 2012, after the successful release of The Avengers. Whedon, the director of the first film, was brought back on board in August and a release date was set. By April 2013, Whedon had completed a draft of the script, and casting began in June with the re-signing of Downey. Second unit filming began in February 2014 in South Africa with principal photography taking place between March and August 2014. The film was primarily shot at Shepperton Studios in Surrey, with additional footage filmed in Italy, South Korea, Bangladesh, New York, and various locations around England.</p>
+<p>Avengers: Age of Ultron is scheduled for release on May 1, 2015 in North America, in 3D and IMAX 3D. Two sequels, Avengers: Infinity War Part 1 and Avengers: Infinity War Part 2, are scheduled to be released on May 4, 2018 and May 3, 2019, respectively.</p>',
+    'description' => 'With S.H.I.E.L.D. destroyed and the Avengers needing a hiatus from stopping threats, Tony Stark tries to jumpstart a dormant peacekeeping program, things go awry and it is up to the Avengers to stop the villainous Ultron from enacting his terrible plans.',
+    'active' => 1,
+    'featured' => 0,
+    'duration' => 100,
+    'views' => 14,
+    'image' => 'February2015/avengers.jpg',
+    'embed_code' => '<iframe src="//player.vimeo.com/video/109787436" width="500" height="209" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+    'mp4_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/avengers-age-of-ultron.mp4',
+    'webm_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/avengers-age-of-ultron.webm',
+    'ogg_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/avengers-age-of-ultron.ogv',
+    'created_at' => '2015-02-23 16:50:43',
+    'updated_at' => '2018-01-24 21:42:33',
+),
+
+array (
+    'id' => 47,
+    'user_id' => 1,
+    'video_category_id' => 19,
+    'title' => 'Teenage Mutant Ninja Turtles',
+    'type' => 'file',
+    'access' => 'subscriber',
+    'details' => '<p>April O\'Neil is a news reporter for Channel 6 Eyewitness News in New York City investigating a crime wave by a clan of thieves called the Foot Clan. After her latest lead; a dock worker, refuses to give her information, she returns to the dock at night only to witness the Foot raiding the cargo containers. They are attacked by an unseen vigilante, which April fails to capture on her phone\'s camera but notices a symbol left behind. However, April\'s supervisor Bernadette Thompson and her co-workers are oblivious to her beliefs of the vigilante\'s existence. At a charity event she is covering for the company Sacks Industries, she expresses her gratitude to her father\'s lab partner before he died, Eric Sacks.</p>
+<p>Frustrated by the vigilante, the Foot Clan\'s leader Shredder has them hold a subway station of people hostage in order to draw him out. April goes to the scene, for evidence but ends up becoming a hostage herself. The lights go out, and four figures appear to face the clan, taking them out and freeing the hostages. April tracks them to a rooftop, and manages to take their picture, but she passes out when she is confronted with four anthropomorphic mutant turtles. When she comes to, she finds that they had wiped her phone and advise her not to tell anyone of them before leaving. As they leave, she manages to hear Raphael and Leonardo\'s names. She returns to her apartment and remembers a project her father was working on in 1999; "Project Renaissance" involving four turtles named Leonardo, Donatello, Michaelangelo, Raphael, and a rat she called Splinter. Unable to convince Bernadette of the turtles\' existence, April is dismissed. April has her coworker Vern Fenwick drive her out to Eric Sacks\' estate where she confides in him about what she has discovered. Eric believes her and reveals that he hopes they can unlock the secrets of a mutagen they had been experimenting with to cure disease in the populace thought lost in the fire.</p>
+<p>Punishing them for venturing to the surface, Splinter goads Mikey into revealing they met April, and he demands to have her meet them. When they bring her to their sewer lair, Splinter explains that April had saved them all from the fire and freed them into the sewers. The mutagen being experimented upon them caused the five of them to grow into more humanoid attributes, and Splinter took on the role of their father, using April\'s father as an example. After finding a book on Ninjitsu in a storm drain, he proceeded to teach himself, then the turtles in the fighting style. April reveals that she told Sacks, whom Splinter says betrayed her father and killed him, just then, the Foot attacks. They fight valiantly until Shredder arrives, who defeats Splinter as he is trying to keep his turtles from entering a fight with Shredder, knowing Shredder is a far superior warrior than the four mutants. A series of explosives bury Raph in rubble while the other turtles are captured. April comes out of hiding and she and Raph decide they need to save the others. Finally convincing Vern of the turtles\' existence, he drives them to Sacks\' estate and break in as the others are being drained of their blood in order to create an antidote to a deadly virus that Sacks hopes to flood New York with, in order to become rich from all the people seeking his cure. Raph is beaten down by Shredder while April and Vern free the others by injecting them with adrenaline. They escape the compound in pursuit of Sacks, but are followed by heavy machines and trucks. The group manages to survive the onslaught through teamwork, though Vern\'s van is destroyed.</p>
+<p>In the city, Sacks and Shredder plant a device on a high radio tower to flood the city. April and Vern face Sacks in the lab, while the turtles fight Shredder on the roof. During the fight, the support for the tower collapses and the turtles try to hold it up and keep it from falling and infecting the city. April arrives and confronts Shredder with the mutagen, in the struggle, the tower collapses and the turtles pull April onto it with them as Shredder falls to the streets. Believing they\'re about to be destroyed, the turtles confess their innermost secrets, Raph gives an impassioned speech of his love for his brothers before they land harmlessly on the street. They vanish before the humans find them and return to the sewers, where they give Splinter the mutagen and he begins to recover.</p>
+<p>Sometime later, April meets with Vern who has a new loaner car from the news station, he tries and fails once again to ask April out on a date. The turtles appear in a special modified "Turtle Van" and Mikey accidentally blows up Vern\'s new car with a rocket. As the police respond to the explosion, the turtles leave, but not before Mikey tries to serenade April with "Happy Together".</p>',
+    'description' => 'When a kingpin threatens New York City, a group of mutated turtle warriors must emerge from the shadows to protect their home.',
+    'active' => 1,
+    'featured' => 0,
+    'duration' => 60,
+    'views' => 11,
+    'image' => 'February2015/tmnt.jpg',
+    'embed_code' => '',
+    'mp4_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/tmnt.mp4',
+    'webm_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/tmnt.webm',
+    'ogg_url' => 'https://s3.amazonaws.com/hellovideo/demo-site/videos/tmnt.ogv',
+    'created_at' => '2015-02-26 02:06:05',
+    'updated_at' => '2018-01-16 20:09:55',
+),
+));
+        
+        
+    }
+}
