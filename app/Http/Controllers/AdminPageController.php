@@ -1,6 +1,12 @@
 <?php namespace App\Http\Controllers;
 
 use Redirect;
+use URL;
+use Auth;
+use Page;
+use View;
+use Validator;
+use Request;
 
 class AdminPageController extends BaseController
 {

@@ -8,6 +8,7 @@ use Request;
 use Validator;
 use Illuminate\Support\Facades\URL;
 use PostCategory;
+use Config;
 
 class AdminPostController extends BaseController
 {

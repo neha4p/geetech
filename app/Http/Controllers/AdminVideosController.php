@@ -8,6 +8,7 @@ use View;
 use VideoCategory;
 use Validator;
 use Tag;
+use Config;
 
 class AdminVideosController extends BaseController
 {

@@ -4,7 +4,7 @@
 		<span class="play-button-small"></span>
 		<img src="<?= ImageHandler::getImage($video->image, 'medium')  ?>">
 		<div class="details">
-			<h2><?= $video->views; ?> View<?php if($video->views != 1): ?>s<?php endif; ?></h2>
+			<h2> <!-- <?= $video->views; ?>View<?php if($video->views != 1): ?>s<?php endif; ?> --></h2>
 			<span><?= TimeHelper::convert_seconds_to_HMS($video->duration); ?></span>
 		</div>
 	</a>

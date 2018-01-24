@@ -6,6 +6,7 @@ use Request;
 use View;
 use Illuminate\Support\Facades\URL;
 use Auth;
+use Hash;
 
 class AdminUsersController extends Controller
 {
