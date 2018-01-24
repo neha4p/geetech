@@ -6,7 +6,7 @@ use View;
 use Post;
 use Request;
 use Validator;
-use Url;
+use Illuminate\Support\Facades\URL;
 use PostCategory;
 
 class AdminPostController extends BaseController

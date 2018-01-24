@@ -248,8 +248,8 @@
 				<ul class="user-info pull-left pull-none-xsm">
 					<!-- Profile Info -->
 					<li class="profile"><!-- add class "pull-right" if you want to place this from right -->
-							<img src="{{ config('site.uploads_dir') . 'avatars/'  }}" alt="" class="img-circle" width="26" />
-							<span>Howdy, </span>
+							<img src="{{ config('site.uploads_dir') . 'avatars/' . Auth::user()->avatar  }}" alt="" class="img-circle" width="26" />
+							<span>Hi {{ ucfirst(Auth::user()->username) }}</span>
 					</li>
 				</ul>
 			</div>
@@ -261,17 +261,8 @@
 				<ul class="list-inline links-list pull-right">
 
 					<li>
-						<span class="label label-warning" style="font-size:12px; background:#A8D432">Version 1.1.1</span>
-					</li>
-					<li>
-						<a href="/login" target="_blank">
-							<span class="label label-danger" style="font-size:12px; background:#FC9A24">Updates <i class="entypo-download right"></i></span>
-						</a>
-					</li>
-
-					<li>
 						<a href="{{ URL::to('/') }}">
-							<span class="label label-info" style="font-size:12px">View My Site <i class="entypo-export right"></i></span>
+							<span class="label label-info" style="font-size:12px">View Site <i class="entypo-export right"></i></span>
 						</a>
 					</li>
 

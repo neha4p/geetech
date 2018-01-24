@@ -6,6 +6,7 @@ use Auth;
 use View;
 use ThemeHelper;
 use ThemeSetting;
+use Request;
 
 class AdminThemeSettingsController extends Controller
 {

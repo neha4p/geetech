@@ -1,6 +1,6 @@
 
     <h2 class="form-login-heading">Password Reset</h2>
-    <form method="POST" action="<?= ($settings->enable_https) ? secure_url('password/reset') : URL::to('password/reset'); ?><?= '/' . $token ?>" accept-charset="UTF-8" class="form-signin">  
+    <form method="POST" action="<?= ($settings->enable_https) ? secure_url('password/reset') : URL::to('password/reset'); ?><?= '/' . $token ?>" accept-charset="UTF-8" class="form-signin">
             
         <?php if (Session::has('error')): ?>
             <span class="error"><?= trans(Session::get('reason')) ?></span>

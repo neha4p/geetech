@@ -1,6 +1,11 @@
 <?php namespace App\Http\Controllers;
 
 use Redirect;
+use Request;
+use Auth;
+use Setting;
+use PaymentSetting;
+use View;
 
 class AdminPaymentSettingsController extends Controller
 {

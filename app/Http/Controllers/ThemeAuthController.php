@@ -264,4 +264,20 @@ class ThemeAuthController extends BaseController
                 return redirect()->back()->with(['note' => trans($response), 'note_type' => 'error']);
         }
     }
+
+    public function restricted()
+    {
+        if (!Auth::guest()) {
+            return Redirect::to('/');
+        }
+        $data = [
+            'type' => 'login',
+            'menu' => Menu::orderBy('order', 'ASC')->get(),
+            'video_categories' => VideoCategory::all(),
+            'post_categories' => PostCategory::all(),
+            'theme_settings' => ThemeHelper::getThemeSettings(),
+            'pages' => Page::where('active', '=', 1)->get(),
+        ];
+        return View::make('Theme::auth', $data);
+    }
 }

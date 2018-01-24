@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('css')
-	<link rel="stylesheet" href="{{ '/application/application/assets/js/tagsinput/jquery.tagsinput.css' }}" />
+	<link rel="stylesheet" href="{{ '/application/assets/js/tagsinput/jquery.tagsinput.css' }}" />
 @stop
 
 
@@ -114,9 +114,9 @@
 	@section('javascript')
 
 
-	<script type="text/javascript" src="{{ '/application/application/assets/js/tinymce/tinymce.min.js' }}"></script>
-	<script type="text/javascript" src="{{ '/application/application/assets/js/tagsinput/jquery.tagsinput.min.js' }}"></script>
-	<script type="text/javascript" src="{{ '/application/application/assets/js/jquery.mask.min.js' }}"></script>
+	<script type="text/javascript" src="{{ '/application/assets/js/tinymce/tinymce.min.js' }}"></script>
+	<script type="text/javascript" src="{{ '/application/assets/js/tagsinput/jquery.tagsinput.min.js' }}"></script>
+	<script type="text/javascript" src="{{ '/application/assets/js/jquery.mask.min.js' }}"></script>
 
 	<script type="text/javascript">
 

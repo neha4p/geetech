@@ -5,7 +5,7 @@
 			<div class="row">
 				<div class="col-md-4">
 					<h3><?php echo $settings->website_name; ?></h3>
-					<p><?= ThemeHelper::getThemeSetting(@$theme_settings->footer_description, 'HelloVideo is your Video Subscription Platform. Add unlimited videos, posts, and pages to your subscription site. Earn re-curring revenue and require users to subscribe to access premium content on your website.') ?></p>
+					<p><?= ThemeHelper::getThemeSetting(@$theme_settings->footer_description, 'Site Description Update theme settings to change this value') ?></p>
 					<a href="http://facebook.com/<?php echo $settings->facebook_page_id; ?>" target="_blank" class="facebook social-link"><i class="fa fa-facebook"></i></a>
 					<a href="http://twitter.com/<?php echo $settings->twitter_page_id; ?>" target="_blank" class="twitter social-link"><i class="fa fa-twitter"></i></a>
 					<a href="http://plus.google.com/<?php echo $settings->google_page_id; ?>" target="_blank" class="google social-link"><i class="fa fa-google-plus"></i></a>
@@ -13,7 +13,7 @@
 					<div class="clear"></div>
 				</div>
 				<div class="col-md-3">
-					<h4>Video Categories</h3>
+					<h3>Video Categories</h3>
 					<ul>
 						<?php foreach($video_categories as $category): ?>
 							<li><a href="<?= ($settings->enable_https) ? secure_url('videos/category') : URL::to('videos/category'); ?><?= '/' . $category->slug; ?>"><?= $category->name; ?></a></li>
@@ -21,7 +21,7 @@
 					</ul>
 				</div>
 				<div class="col-md-3">
-					<h4>Post Categories</h3>
+					<h3>Post Categories</h3>
 					<ul>
 						<?php foreach($post_categories as $category): ?>
 							<li><a href="<?= ($settings->enable_https) ? secure_url('posts/category') : URL::to('posts/category'); ?><?= '/' . $category->slug; ?>"><?= $category->name; ?></a></li>
@@ -29,7 +29,7 @@
 					</ul>
 				</div>
 				<div class="col-md-2">
-					<h4>Links</h3>
+					<h3>Links</h3>
 					<ul>
 						<?php foreach($pages as $page): ?>
 							<li><a href="<?= ($settings->enable_https) ? secure_url('/') : URL::to('page') ?><?= '/' . $page->slug ?>"><?= $page->title ?></a></li>

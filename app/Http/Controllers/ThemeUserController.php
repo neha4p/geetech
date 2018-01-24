@@ -2,7 +2,7 @@
 
 use App\User as User;
 use Redirect;
-use Setting;
+use Request;
 use Video;
 use Menu;
 use VideoCategory;
@@ -138,7 +138,7 @@ class ThemeUserController extends BaseController
 
             $data = [
                     'user' => $user,
-                    'post_route' => Url::to('user') . '/' . $user->username . '/update',
+                    'post_route' => URL::to('user') . '/' . $user->username . '/update',
                     'type' => 'billing',
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'video_categories' => VideoCategory::all(),
@@ -247,7 +247,7 @@ class ThemeUserController extends BaseController
         if (Auth::user()->username == $username && $user->subscribed()) {
             $data = [
                 'user' => $user,
-                'post_route' => Url::to('user') . '/' . $user->username . '/update',
+                'post_route' => URL::to('user') . '/' . $user->username . '/update',
                 'type' => 'update_credit_card',
                 'menu' => Menu::orderBy('order', 'ASC')->get(),
                 'payment_settings' => $payment_settings,
@@ -282,7 +282,7 @@ class ThemeUserController extends BaseController
         if (Auth::user()->username == $username) {
             $data = [
                     'user' => $user,
-                    'post_route' => Url::to('user') . '/' . $user->username . '/update',
+                    'post_route' => URL::to('user') . '/' . $user->username . '/update',
                     'type' => 'renew_subscription',
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'payment_settings' => $payment_settings,
@@ -317,7 +317,7 @@ class ThemeUserController extends BaseController
         if (Auth::user()->username == $username) {
             $data = [
                     'user' => $user,
-                    'post_route' => Url::to('user') . '/' . $user->username . '/update',
+                    'post_route' => URL::to('user') . '/' . $user->username . '/update',
                     'type' => 'upgrade_subscription',
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'payment_settings' => $payment_settings,

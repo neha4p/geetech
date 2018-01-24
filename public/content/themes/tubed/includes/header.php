@@ -24,12 +24,16 @@
             </div>
 
 
+
             <div class="col-md-8 search col-sm-12">
-                <form role="search" action="/search" method="GET">
-                    <i class="fa fa-search"></i>
-                    <input type="text" id="value" name="value" placeholder="Search...">
-                </form>
+                <?php  if(Auth::user()){ ?>
+                    <form role="search" action="/search" method="GET">
+                        <i class="fa fa-search"></i>
+                        <input type="text" id="value" name="value" placeholder="Search...">
+                    </form>
+                <?php }?>
             </div>
+
 
             <div class="col-md-2 right-nav">
             <div class="row">
@@ -75,7 +79,7 @@
     <div class="container-fluid">
 
         <div class="row" style="position:relative; height:100%;">
-
+            <?php  if(Auth::user()){ ?>
             <div class="col-md-2" id="left-sidebar">
                 <div class="background"></div>
                         <h4>Guide</h4>
@@ -86,12 +90,8 @@
                         </div>
 
                         <h4>Menu</h4>
-                        <?php include('menu.php'); ?>
-                <ul>
-
-                </ul>
-
+                       <?php include('menu.php'); ?>
             </div>
-
+            <?php } ?>
 
         <div id="main-content">

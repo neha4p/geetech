@@ -11,7 +11,7 @@
 			    <input type="password" class="form-control" placeholder="Password" id="password" name="password" value="<?php if($settings->demo_mode == 1): ?>demo<?php endif; ?>">
 			    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 			    <br />
-			    <input type="hidden" id="redirect" name="redirect" value="<?= Input::get('redirect') ?>" />
+			    <input type="hidden" id="redirect" name="redirect" value="" />
 			    <a href="<?= ($settings->enable_https) ? secure_url('password/reset') : URL::to('password/reset') ?>">Forgot Password?</a>
 			    <?php if($settings->demo_mode == 1): ?>
 					<div class="alert alert-info demo-info" role="alert">

@@ -4,7 +4,7 @@ use Redirect;
 use \App\User as User;
 use Request;
 use View;
-use Url;
+use Illuminate\Support\Facades\URL;
 use Auth;
 
 class AdminUsersController extends Controller

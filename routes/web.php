@@ -1,7 +1,27 @@
 <?php
 
+/*
+ |--------------------------------------------------------------------------
+ | Auth and Password Reset Routes
+ |--------------------------------------------------------------------------
+ */
 
-Route::group(['before' => 'if_logged_in_must_be_subscribed'], function () {
+Route::get('login', 'ThemeAuthController@login_form')->name('login');
+Route::get('signup', 'ThemeAuthController@signup_form')->name('signup');
+Route::get('restricted', 'ThemeAuthController@restricted')->name('restricted');
+Route::post('login', 'ThemeAuthController@login');
+Route::post('signup', 'ThemeAuthController@signup');
+
+Route::get('password/reset', ['before' => 'demo', 'uses' => 'ThemeAuthController@password_reset', 'as' => 'password.remind']);
+Route::post('password/reset', ['before' => 'demo', 'uses' => 'ThemeAuthController@password_request', 'as' => 'password.request']);
+Route::get('password/reset/{token}', ['before' => 'demo', 'uses' => 'ThemeAuthController@password_reset_token', 'as' => 'password.reset']);
+Route::post('password/reset/{token}', ['before' => 'demo', 'uses' => 'ThemeAuthController@password_reset_post', 'as' => 'password.update']);
+
+Route::get('verify/{activation_code}', 'ThemeAuthController@verify');
+
+
+
+Route::group(['middleware'=>'auth'], function () {
 
     /*
 	|--------------------------------------------------------------------------
@@ -9,7 +29,7 @@ Route::group(['before' => 'if_logged_in_must_be_subscribed'], function () {
 	|--------------------------------------------------------------------------
 	*/
 
-        Route::get('/', 'ThemeHomeController@index');
+    Route::get('/', 'ThemeHomeController@index');
 
     /*
 	|--------------------------------------------------------------------------
@@ -17,11 +37,10 @@ Route::group(['before' => 'if_logged_in_must_be_subscribed'], function () {
 	|--------------------------------------------------------------------------
 	*/
 
-        Route::get('videos', ['uses' => 'ThemeVideoController@videos', 'as' => 'videos']);
-        Route::get('videos/category/{category}', 'ThemeVideoController@category');
-        Route::get('videos/tag/{tag}', 'ThemeVideoController@tag');
-        Route::get('video/{id}', 'ThemeVideoController@index');
-        
+    Route::get('videos', ['uses' => 'ThemeVideoController@videos', 'as' => 'videos']);
+    Route::get('videos/category/{category}', 'ThemeVideoController@category');
+    Route::get('videos/tag/{tag}', 'ThemeVideoController@tag');
+    Route::get('video/{id}', 'ThemeVideoController@index');
 
     /*
 	|--------------------------------------------------------------------------
@@ -29,9 +48,8 @@ Route::group(['before' => 'if_logged_in_must_be_subscribed'], function () {
 	|--------------------------------------------------------------------------
 	*/
 
-        Route::post('favorite', 'ThemeFavoriteController@favorite');
-        Route::get('favorites', 'ThemeFavoriteController@show_favorites');
-
+    Route::post('favorite', 'ThemeFavoriteController@favorite');
+    Route::get('favorites', 'ThemeFavoriteController@show_favorites');
 
     /*
 	|--------------------------------------------------------------------------
@@ -39,10 +57,9 @@ Route::group(['before' => 'if_logged_in_must_be_subscribed'], function () {
 	|--------------------------------------------------------------------------
 	*/
         
-        Route::get('posts', ['uses' => 'ThemePostController@posts', 'as' => 'posts']);
-        Route::get('posts/category/{category}', 'ThemePostController@category');
-        Route::get('post/{slug}', 'ThemePostController@index');
-        
+    Route::get('posts', ['uses' => 'ThemePostController@posts', 'as' => 'posts']);
+    Route::get('posts/category/{category}', 'ThemePostController@category');
+    Route::get('post/{slug}', 'ThemePostController@index');
 
     /*
 	|--------------------------------------------------------------------------
@@ -50,8 +67,8 @@ Route::group(['before' => 'if_logged_in_must_be_subscribed'], function () {
 	|--------------------------------------------------------------------------
 	*/
 
-        Route::get('pages', 'ThemePageController@pages');
-        Route::get('page/{slug}', 'ThemePageController@index');
+    Route::get('pages', 'ThemePageController@pages');
+    Route::get('page/{slug}', 'ThemePageController@index');
 
 
     /*
@@ -60,25 +77,7 @@ Route::group(['before' => 'if_logged_in_must_be_subscribed'], function () {
 	|--------------------------------------------------------------------------
 	*/
 
-        Route::get('search', 'ThemeSearchController@index');
-
-    /*
-	|--------------------------------------------------------------------------
-	| Auth and Password Reset Routes
-	|--------------------------------------------------------------------------
-	*/
-
-        Route::get('login', 'ThemeAuthController@login_form');
-        Route::get('signup', 'ThemeAuthController@signup_form');
-        Route::post('login', 'ThemeAuthController@login');
-        Route::post('signup', 'ThemeAuthController@signup');
-
-        Route::get('password/reset', ['before' => 'demo', 'uses' => 'ThemeAuthController@password_reset', 'as' => 'password.remind']);
-        Route::post('password/reset', ['before' => 'demo', 'uses' => 'ThemeAuthController@password_request', 'as' => 'password.request']);
-        Route::get('password/reset/{token}', ['before' => 'demo', 'uses' => 'ThemeAuthController@password_reset_token', 'as' => 'password.reset']);
-        Route::post('password/reset/{token}', ['before' => 'demo', 'uses' => 'ThemeAuthController@password_reset_post', 'as' => 'password.update']);
-
-        Route::get('verify/{activation_code}', 'ThemeAuthController@verify');
+    Route::get('search', 'ThemeSearchController@index');
 
     /*
 	|--------------------------------------------------------------------------
@@ -86,27 +85,28 @@ Route::group(['before' => 'if_logged_in_must_be_subscribed'], function () {
 	|--------------------------------------------------------------------------
 	*/
 
-        Route::get('user/{username}', 'ThemeUserController@index');
-        Route::get('user/{username}/edit', 'ThemeUserController@edit');
-        Route::post('user/{username}/update', ['before' => 'demo', 'uses' => 'ThemeUserController@update']);
-        Route::get('user/{username}/billing', ['before' => 'demo', 'uses' => 'ThemeUserController@billing']);
-        Route::get('user/{username}/cancel', ['before' => 'demo', 'uses' => 'ThemeUserController@cancel_account']);
-        Route::get('user/{username}/resume', ['before' => 'demo', 'uses' => 'ThemeUserController@resume_account']);
-        Route::get('user/{username}/update_cc', 'ThemeUserController@update_cc');
-}); // End if_logged_in_must_be_subscribed route
+    Route::get('user/{username}', 'ThemeUserController@index');
+    Route::get('user/{username}/edit', 'ThemeUserController@edit');
+    Route::post('user/{username}/update', ['before' => 'demo', 'uses' => 'ThemeUserController@update']);
+    Route::get('user/{username}/billing', ['before' => 'demo', 'uses' => 'ThemeUserController@billing']);
+    Route::get('user/{username}/cancel', ['before' => 'demo', 'uses' => 'ThemeUserController@cancel_account']);
+    Route::get('user/{username}/resume', ['before' => 'demo', 'uses' => 'ThemeUserController@resume_account']);
+    Route::get('user/{username}/update_cc', 'ThemeUserController@update_cc');
 
-Route::get('user/{username}/renew_subscription', 'ThemeUserController@renew');
-Route::post('user/{username}/update_cc', ['before' => 'demo', 'uses' => 'ThemeUserController@update_cc_store']);
+    Route::get('user/{username}/renew_subscription', 'ThemeUserController@renew');
+    Route::post('user/{username}/update_cc', ['before' => 'demo', 'uses' => 'ThemeUserController@update_cc_store']);
 
-Route::get('user/{username}/upgrade_subscription', 'ThemeUserController@upgrade');
-Route::post('user/{username}/upgrade_cc', ['before' => 'demo', 'uses' => 'ThemeUserController@upgrade_cc_store']);
+    Route::get('user/{username}/upgrade_subscription', 'ThemeUserController@upgrade');
+    Route::post('user/{username}/upgrade_cc', ['before' => 'demo', 'uses' => 'ThemeUserController@upgrade_cc_store']);
 
-Route::get('logout', 'ThemeAuthController@logout');
+    Route::get('logout', 'ThemeAuthController@logout');
 
-Route::get('upgrade', 'UpgradeController@upgrade');
+    Route::get('upgrade', 'UpgradeController@upgrade');
 
-Route::get('upload_dir', function () {
-    echo Config::get('site.uploads_dir');
+    Route::get('upload_dir', function () {
+        echo Config::get('site.uploads_dir');
+    });
+
 });
 /*
 |--------------------------------------------------------------------------
@@ -114,88 +114,78 @@ Route::get('upload_dir', function () {
 |--------------------------------------------------------------------------
 */
 
-    Route::group(['before' => 'admin'], function () {
-        
-        // Admin Dashboard
-        Route::get('admin', 'AdminController@index');
+Route::group(['middleware'=>'isAdmin'], function () {
 
-        // Admin Video Functionality
-        Route::get('admin/videos', 'AdminVideosController@index');
-        Route::get('admin/videos/edit/{id}', 'AdminVideosController@edit');
-        Route::post('admin/videos/update', ['before' => 'demo', 'uses' => 'AdminVideosController@update']);
-        Route::get('admin/videos/delete/{id}', ['before' => 'demo', 'uses' => 'AdminVideosController@destroy']);
-        Route::get('admin/videos/create', 'AdminVideosController@create');
-        Route::post('admin/videos/store', ['before' => 'demo', 'uses' => 'AdminVideosController@store']);
-        Route::get('admin/videos/categories', 'AdminVideoCategoriesController@index');
-        Route::post('admin/videos/categories/store', ['before' => 'demo', 'uses' => 'AdminVideoCategoriesController@store']);
-        Route::post('admin/videos/categories/order', ['before' => 'demo', 'uses' => 'AdminVideoCategoriesController@order']);
-        Route::get('admin/videos/categories/edit/{id}', 'AdminVideoCategoriesController@edit');
-        Route::post('admin/videos/categories/update', ['before' => 'demo', 'uses' => 'AdminVideoCategoriesController@update']);
-        Route::get('admin/videos/categories/delete/{id}', ['before' => 'demo', 'uses' => 'AdminVideoCategoriesController@destroy']);
+    // Admin Dashboard
+    Route::get('admin', 'AdminController@index');
 
-        Route::get('admin/posts', 'AdminPostController@index');
-        Route::get('admin/posts/create', 'AdminPostController@create');
-        Route::post('admin/posts/store', ['before' => 'demo', 'uses' => 'AdminPostController@store']);
-        Route::get('admin/posts/edit/{id}', 'AdminPostController@edit');
-        Route::post('admin/posts/update', ['before' => 'demo', 'uses' => 'AdminPostController@update']);
-        Route::get('admin/posts/delete/{id}', ['before' => 'demo', 'uses' => 'AdminPostController@destroy']);
-        Route::get('admin/posts/categories', 'AdminPostCategoriesController@index');
-        Route::post('admin/posts/categories/store', ['before' => 'demo', 'uses' => 'AdminPostCategoriesController@store']);
-        Route::post('admin/posts/categories/order', ['before' => 'demo', 'uses' => 'AdminPostCategoriesController@order']);
-        Route::get('admin/posts/categories/edit/{id}', 'AdminPostCategoriesController@edit');
-        Route::get('admin/posts/categories/delete/{id}', ['before' => 'demo', 'uses' => 'AdminPostCategoriesController@destroy']);
-        Route::post('admin/posts/categories/update', ['before' => 'demo', 'uses' => 'AdminPostCategoriesController@update']);
+    // Admin Video Functionality
+    Route::get('admin/videos', 'AdminVideosController@index');
+    Route::get('admin/videos/edit/{id}', 'AdminVideosController@edit');
+    Route::post('admin/videos/update', ['before' => 'demo', 'uses' => 'AdminVideosController@update']);
+    Route::get('admin/videos/delete/{id}', ['before' => 'demo', 'uses' => 'AdminVideosController@destroy']);
+    Route::get('admin/videos/create', 'AdminVideosController@create');
+    Route::post('admin/videos/store', ['before' => 'demo', 'uses' => 'AdminVideosController@store']);
+    Route::get('admin/videos/categories', 'AdminVideoCategoriesController@index');
+    Route::post('admin/videos/categories/store', ['before' => 'demo', 'uses' => 'AdminVideoCategoriesController@store']);
+    Route::post('admin/videos/categories/order', ['before' => 'demo', 'uses' => 'AdminVideoCategoriesController@order']);
+    Route::get('admin/videos/categories/edit/{id}', 'AdminVideoCategoriesController@edit');
+    Route::post('admin/videos/categories/update', ['before' => 'demo', 'uses' => 'AdminVideoCategoriesController@update']);
+    Route::get('admin/videos/categories/delete/{id}', ['before' => 'demo', 'uses' => 'AdminVideoCategoriesController@destroy']);
 
-        Route::get('admin/media', 'AdminMediaController@index');
-        Route::post('admin/media/files', 'AdminMediaController@files');
-        Route::post('admin/media/new_folder', 'AdminMediaController@new_folder');
-        Route::post('admin/media/delete_file_folder', 'AdminMediaController@delete_file_folder');
-        Route::get('admin/media/directories', 'AdminMediaController@get_all_dirs');
-        Route::post('admin/media/move_file', 'AdminMediaController@move_file');
-        Route::post('admin/media/upload', 'AdminMediaController@upload');
-        Route::get('file_upload', function () {
-            echo phpinfo();
-        });
+    Route::get('admin/posts', 'AdminPostController@index');
+    Route::get('admin/posts/create', 'AdminPostController@create');
+    Route::post('admin/posts/store', ['before' => 'demo', 'uses' => 'AdminPostController@store']);
+    Route::get('admin/posts/edit/{id}', 'AdminPostController@edit');
+    Route::post('admin/posts/update', ['before' => 'demo', 'uses' => 'AdminPostController@update']);
+    Route::get('admin/posts/delete/{id}', ['before' => 'demo', 'uses' => 'AdminPostController@destroy']);
+    Route::get('admin/posts/categories', 'AdminPostCategoriesController@index');
+    Route::post('admin/posts/categories/store', ['before' => 'demo', 'uses' => 'AdminPostCategoriesController@store']);
+    Route::post('admin/posts/categories/order', ['before' => 'demo', 'uses' => 'AdminPostCategoriesController@order']);
+    Route::get('admin/posts/categories/edit/{id}', 'AdminPostCategoriesController@edit');
+    Route::get('admin/posts/categories/delete/{id}', ['before' => 'demo', 'uses' => 'AdminPostCategoriesController@destroy']);
+    Route::post('admin/posts/categories/update', ['before' => 'demo', 'uses' => 'AdminPostCategoriesController@update']);
 
-        Route::get('admin/pages', 'AdminPageController@index');
-        Route::get('admin/pages/create', 'AdminPageController@create');
-        Route::post('admin/pages/store', ['before' => 'demo', 'uses' => 'AdminPageController@store']);
-        Route::get('admin/pages/edit/{id}', 'AdminPageController@edit');
-        Route::post('admin/pages/update', ['before' => 'demo', 'uses' => 'AdminPageController@update']);
-        Route::get('admin/pages/delete/{id}', ['before' => 'demo', 'uses' => 'AdminPageController@destroy']);
-        
 
-        Route::get('admin/users', 'AdminUsersController@index');
-        Route::get('admin/user/create', 'AdminUsersController@create');
-        Route::post('admin/user/store', ['before' => 'demo', 'uses' => 'AdminUsersController@store']);
-        Route::get('admin/user/edit/{id}', 'AdminUsersController@edit');
-        Route::post('admin/user/update', ['before' => 'demo', 'uses' => 'AdminUsersController@update']);
-        Route::get('admin/user/delete/{id}', ['before' => 'demo', 'uses' => 'AdminUsersController@destroy']);
+    Route::get('admin/pages', 'AdminPageController@index');
+    Route::get('admin/pages/create', 'AdminPageController@create');
+    Route::post('admin/pages/store', ['before' => 'demo', 'uses' => 'AdminPageController@store']);
+    Route::get('admin/pages/edit/{id}', 'AdminPageController@edit');
+    Route::post('admin/pages/update', ['before' => 'demo', 'uses' => 'AdminPageController@update']);
+    Route::get('admin/pages/delete/{id}', ['before' => 'demo', 'uses' => 'AdminPageController@destroy']);
 
-        Route::get('admin/menu', 'AdminMenuController@index');
-        Route::post('admin/menu/store', ['before' => 'demo', 'uses' => 'AdminMenuController@store']);
-        Route::get('admin/menu/edit/{id}', 'AdminMenuController@edit');
-        Route::post('admin/menu/update', ['before' => 'demo', 'uses' => 'AdminMenuController@update']);
-        Route::post('admin/menu/order', ['before' => 'demo', 'uses' => 'AdminMenuController@order']);
-        Route::get('admin/menu/delete/{id}', ['before' => 'demo', 'uses' => 'AdminMenuController@destroy']);
 
-        Route::get('admin/plugins', 'AdminPluginsController@index');
-        Route::get('admin/plugin/deactivate/{plugin_name}', 'AdminPluginsController@deactivate');
-        Route::get('admin/plugin/activate/{plugin_name}', 'AdminPluginsController@activate');
+    Route::get('admin/users', 'AdminUsersController@index');
+    Route::get('admin/user/create', 'AdminUsersController@create');
+    Route::post('admin/user/store', ['before' => 'demo', 'uses' => 'AdminUsersController@store']);
+    Route::get('admin/user/edit/{id}', 'AdminUsersController@edit');
+    Route::post('admin/user/update', ['before' => 'demo', 'uses' => 'AdminUsersController@update']);
+    Route::get('admin/user/delete/{id}', ['before' => 'demo', 'uses' => 'AdminUsersController@destroy']);
 
-        Route::get('admin/themes', 'AdminThemesController@index');
-        Route::get('admin/theme/activate/{slug}', ['before' => 'demo', 'uses' => 'AdminThemesController@activate']);
+    Route::get('admin/menu', 'AdminMenuController@index');
+    Route::post('admin/menu/store', ['before' => 'demo', 'uses' => 'AdminMenuController@store']);
+    Route::get('admin/menu/edit/{id}', 'AdminMenuController@edit');
+    Route::post('admin/menu/update', ['before' => 'demo', 'uses' => 'AdminMenuController@update']);
+    Route::post('admin/menu/order', ['before' => 'demo', 'uses' => 'AdminMenuController@order']);
+    Route::get('admin/menu/delete/{id}', ['before' => 'demo', 'uses' => 'AdminMenuController@destroy']);
 
-        Route::get('admin/settings', 'AdminSettingsController@index');
-        Route::post('admin/settings', ['before' => 'demo', 'uses' => 'AdminSettingsController@save_settings']);
+    Route::get('admin/plugins', 'AdminPluginsController@index');
+    Route::get('admin/plugin/deactivate/{plugin_name}', 'AdminPluginsController@deactivate');
+    Route::get('admin/plugin/activate/{plugin_name}', 'AdminPluginsController@activate');
 
-        Route::get('admin/payment_settings', 'AdminPaymentSettingsController@index');
-        Route::post('admin/payment_settings', ['before' => 'demo', 'uses' => 'AdminPaymentSettingsController@save_payment_settings']);
+    Route::get('admin/themes', 'AdminThemesController@index');
+    Route::get('admin/theme/activate/{slug}', ['before' => 'demo', 'uses' => 'AdminThemesController@activate']);
 
-        Route::get('admin/theme_settings_form', 'AdminThemeSettingsController@theme_settings_form');
-        Route::get('admin/theme_settings', 'AdminThemeSettingsController@theme_settings');
-        Route::post('admin/theme_settings', ['before' => 'demo', 'uses' => 'AdminThemeSettingsController@update_theme_settings']);
-    });
+    Route::get('admin/settings', 'AdminSettingsController@index');
+    Route::post('admin/settings', ['before' => 'demo', 'uses' => 'AdminSettingsController@save_settings']);
+
+    Route::get('admin/payment_settings', 'AdminPaymentSettingsController@index');
+    Route::post('admin/payment_settings', ['before' => 'demo', 'uses' => 'AdminPaymentSettingsController@save_payment_settings']);
+
+    Route::get('admin/theme_settings_form', 'AdminThemeSettingsController@theme_settings_form');
+    Route::get('admin/theme_settings', 'AdminThemeSettingsController@theme_settings');
+    Route::post('admin/theme_settings', ['before' => 'demo', 'uses' => 'AdminThemeSettingsController@update_theme_settings']);
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -203,7 +193,7 @@ Route::get('upload_dir', function () {
 |--------------------------------------------------------------------------
 */
 
-    Route::post('stripe/webhook', 'Laravel\Cashier\WebhookController@handleWebhook');
+Route::post('stripe/webhook', 'Laravel\Cashier\WebhookController@handleWebhook');
 
 /*
 |--------------------------------------------------------------------------
@@ -211,17 +201,27 @@ Route::get('upload_dir', function () {
 |--------------------------------------------------------------------------
 */
 
+Route::get('admin/media', 'AdminMediaController@index');
+Route::post('admin/media/files', 'AdminMediaController@files');
+Route::get('admin/media/new_folder', 'AdminMediaController@new_folder');
+Route::post('admin/media/delete_file_folder', 'AdminMediaController@delete_file_folder');
+Route::get('admin/media/directories', 'AdminMediaController@get_all_dirs');
+Route::post('admin/media/move_file', 'AdminMediaController@move_file');
+Route::post('admin/media/upload', 'AdminMediaController@upload');
+Route::get('file_upload', function () {
+    echo phpinfo();
+});
 
-    Route::group(['prefix' => 'api/v1'], function () {
-        Route::get('/', 'Api\v1\ApiController@index');
+Route::group(['prefix' => 'api/v1'], function () {
+    Route::get('/', 'Api\v1\ApiController@index');
 
-        Route::get('videos', 'Api\v1\VideoController@index');
-        Route::get('video/{id}', 'Api\v1\VideoController@video');
-        Route::get('video_categories', 'Api\v1\VideoController@video_categories');
-        Route::get('video_category/{id}', 'Api\v1\VideoController@video_category');
+    Route::get('videos', 'Api\v1\VideoController@index');
+    Route::get('video/{id}', 'Api\v1\VideoController@video');
+    Route::get('video_categories', 'Api\v1\VideoController@video_categories');
+    Route::get('video_category/{id}', 'Api\v1\VideoController@video_category');
 
-        Route::get('posts', 'Api\v1\PostController@index');
-        Route::get('post/{id}', 'Api\v1\PostController@post');
-        Route::get('post_categories', 'Api\v1\PostController@post_categories');
-        Route::get('post_category/{id}', 'Api\v1\PostController@post_category');
-    });
+    Route::get('posts', 'Api\v1\PostController@index');
+    Route::get('post/{id}', 'Api\v1\PostController@post');
+    Route::get('post_categories', 'Api\v1\PostController@post_categories');
+    Route::get('post_category/{id}', 'Api\v1\PostController@post_category');
+});
