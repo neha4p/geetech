@@ -31,7 +31,7 @@
 					<header>
 						
 						<a href="{{ URL::to('video/') . '/' . $video->id }}" target="_blank">
-							<img src="{{ Config::get('site.uploads_dir') . 'images/' . $video->image }}" />
+							<img src="{{ ImageHandler::getImage($video->image) }}" />
 						</a>
 						
 						<a href="{{ URL::to('admin/videos/edit') . '/' . $video->id }}" class="album-options">

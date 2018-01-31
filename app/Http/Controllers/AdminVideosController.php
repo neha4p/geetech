@@ -9,6 +9,7 @@ use VideoCategory;
 use Validator;
 use Tag;
 use Config;
+use ImageHandler;
 
 class AdminVideosController extends BaseController
 {
@@ -73,6 +74,7 @@ class AdminVideosController extends BaseController
         $image = (isset($data['image'])) ? $data['image'] : '';
         if (!empty($image)) {
             $data['image'] = ImageHandler::uploadImage($data['image'], 'images');
+            //$path = $request->file('avatar')->store('avatars');
         } else {
             $data['image'] = 'placeholder.jpg';
         }

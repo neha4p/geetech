@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Storage;
+
 class ImageHandler
 {
 
@@ -33,7 +35,7 @@ class ImageHandler
             }
         }
 
-        return $image_url . $img;
+        return $url = Storage::url(substr($image_url, 1) . $img);
     }
 
     public static function uploadImg($image, $filename)
@@ -79,7 +81,7 @@ class ImageHandler
         // Lets get all these Arguments and assign them!
         $image = $args['image'];
         $folder = $args['folder'];
-        $filename = $args['filename'];
+        $filename = $image->getClientOriginalName();
         $type = $args['type'];
 
         // Hey if the folder we want to put them in is images. Let's give them a month and year folder
@@ -137,34 +139,40 @@ class ImageHandler
 
                 file_put_contents($upload_folder.$filename, $file);
             }
-           
-        
-            $settings = Setting::first();
 
             $img = Image::make($upload_folder . $filename);
 
             if ($folder == 'images') {
                 $img->resize(1280, 720);
 
-                Image::make($upload_folder . $filename)->resize(960, null, function ($constraint) {
+                $filesize960 = (string) Image::make($upload_folder.$filename)->resize(960, null, function ($constraint) {
                     $constraint->aspectRatio();
-                })->save($upload_folder . pathinfo($filename, PATHINFO_FILENAME) . '-large.' . pathinfo($filename, PATHINFO_EXTENSION));
-                
-                Image::make($upload_folder . $filename)->resize(640, null, function ($constraint) {
+                })->encode();
+
+                $filesize640 = (string) Image::make($upload_folder.$filename)->resize(640, null, function ($constraint) {
                     $constraint->aspectRatio();
-                })->save($upload_folder . pathinfo($filename, PATHINFO_FILENAME) . '-medium.' . pathinfo($filename, PATHINFO_EXTENSION));
-                
-                Image::make($upload_folder . $filename)->resize(320, null, function ($constraint) {
+                })->encode();
+
+                $filesize320 = (string) Image::make($upload_folder.$filename)->resize(320, null, function ($constraint) {
                     $constraint->aspectRatio();
-                })->save($upload_folder . pathinfo($filename, PATHINFO_FILENAME) . '-small.' . pathinfo($filename, PATHINFO_EXTENSION));
+                })->encode();
+
+                Storage::put($upload_folder.pathinfo($filename, PATHINFO_FILENAME).'-large.'.pathinfo($filename, PATHINFO_EXTENSION), $filesize960, 'public');
+                Storage::put($upload_folder.pathinfo($filename, PATHINFO_FILENAME).'-medium.'.pathinfo($filename, PATHINFO_EXTENSION), $filesize640, 'public');
+                Storage::put($upload_folder.pathinfo($filename, PATHINFO_FILENAME).'-small.'.pathinfo($filename, PATHINFO_EXTENSION), $filesize320, 'public');
+
             } else if ($folder == 'avatars') {
                 $img->resize(300, null, function ($constraint) {
                     $constraint->aspectRatio();
                 });
-            }
 
-            $img->save($upload_folder . $filename);
-            
+
+            }
+            $img->encode();
+            Storage::put($upload_folder . $filename, (string)$img, 'public');
+
+
+
             return $month_year . $filename;
         } else {
             return false;
