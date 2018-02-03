@@ -5,8 +5,8 @@ use Setting;
 use Auth;
 use Request;
 use View;
-
-class AdminSettingsController extends Controller
+use ImageHandler;
+class AdminSettingsController extends BaseController
 {
 
     public function index()

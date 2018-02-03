@@ -34,8 +34,7 @@ class ThemeVideoController extends BaseController
      */
     public function index($id)
     {
-        $video = Video::with('tags')->findOrFail($id);
-
+        $video = Video::with('tags')->orderBy('created_at', 'DESC')->findOrFail($id);
 
         //Make sure video is active
         if ((!Auth::guest() && Auth::user()->role == 'admin') || $video->active) {

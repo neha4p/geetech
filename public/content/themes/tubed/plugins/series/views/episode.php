@@ -147,7 +147,7 @@
 										 <div class="vueLoad2">
 											<div v-repeat="next_episodes" class="content">
 										  		<a href="<?= URL::to($series_url) . '/' . $episode->series->slug . '/episode/' ?>{{ slug }}">
-										  			<img src="/content/uploads/images/{{ image | smallImage }}" />
+										  			<img src="<?= ImageHandler::getImage($image); ?>/content/uploads/images/{{ image | smallImage }}" />
 										  			<p>{{ title }}</p>
 										  			<div style="clear:both"></div>
 										  		</a>

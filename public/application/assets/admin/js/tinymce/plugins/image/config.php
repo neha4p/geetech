@@ -7,7 +7,8 @@ if (!file_exists('../../../../../../../content/uploads/images/'.date('FY').'/'))
 }
 /** Full path to the folder that images will be used as library and upload. Include trailing slash */
 define('FOLDER_PATH', '../../../../../../../content/uploads/images/'.date('FY').'/');
-/** Full URL to the folder that images will be used as library and upload. Include trailing slash and protocol (i.e. http://) */
+/** Full URL to the folder that images will be used as library and upload. Include trailing slash and protocol (i.e. http://)
+ * */
 define('FOLDER_URL', 'http://'.$_SERVER['SERVER_NAME'].'/content/uploads/images/'.date('FY').'/');
 
 /** The extensions for to use in validation */

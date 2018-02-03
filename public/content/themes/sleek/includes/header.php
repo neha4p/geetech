@@ -12,9 +12,7 @@
         
             <div class="navbar-header">
               <a id="nav-toggle" href="#"><span></span></a>
-
-              <?php $logo = (!empty($settings->logo)) ? Config::get('site.uploads_dir') . 'settings/' . $settings->logo : THEME_URL . '/assets/img/logo.png'; ?>
-              <a href="/" class="navbar-brand"><img src="<?= $logo ?>" /></a>
+                <a href="/" class="navbar-brand"><img src="<?= ImageHandler::getImage($settings->logo); ?>" /></a>
             </div>
 
 

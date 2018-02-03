@@ -90,7 +90,7 @@
 						<div class="panel-title">Post Image</div> <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div></div> 
 						<div class="panel-body" style="display: block;"> 
 							@if(!empty($post->image))
-								<img src="{{ Config::get('site.uploads_dir') . 'images/' . $post->image }}" class="post-img" width="200"/>
+								<img src="{{ ImageHandler::getImage( $post->image,'','images/') }}" class="post-img" width="200"/>
 							@endif
 							<p>Select the post image (1280x720 for best results):</p> 
 							<input type="file" multiple="true" class="form-control" name="image" id="image" />

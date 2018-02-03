@@ -13,10 +13,8 @@
         <div class="row">
 
             <div class="navbar-header col-md-2 col-sm-12">
-              <?php $logo = (!empty($settings->logo)) ? Config::get('site.uploads_dir') . 'settings/' . $settings->logo : THEME_URL . '/assets/img/logo.png'; ?>
               <a href="/" class="navbar-brand">
-                    <img src="<?= $logo ?>" />
-                    
+                    <img src="<?= ImageHandler::getImage($settings->logo,'','settings/'); ?>" />
                 </a>
                 <div class="menu-toggle">
                         <i class="fa fa-caret-left"></i><i class="fa fa-bars"></i><i class="fa fa-caret-right"></i>

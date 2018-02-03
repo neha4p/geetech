@@ -1,6 +1,8 @@
-<?php
+<?php namespace App\Libraries;
 
 use Illuminate\Support\Facades\Storage;
+use Config;
+use Image;
 
 class ImageHandler
 {
@@ -10,11 +12,11 @@ class ImageHandler
         return call_user_func(Config::get('site.media_upload_function'), ['image' => $image, 'folder' => $folder, 'filename' => $filename, 'type' => $type]);
     }
 
-    public static function getImage($image, $size = '')
+    public static function getImage($image, $size = '',$folder='images/')
     {
         $img = ''; // placeholder image
     
-        $image_url = Config::get('site.uploads_dir') . 'images/';
+        $image_url = Config::get('site.uploads_dir') . $folder;
 
         if ($size == '') {
             $img = $image;
@@ -121,6 +123,9 @@ class ImageHandler
 
                 if (strpos($image, '.gif') > 0) {
                     $extension = '-animation.gif';
+                }
+                elseif (strpos($image, '.png') > 0) {
+                    $extension = '.png';
                 } else {
                     $extension = '.jpg';
                 }
