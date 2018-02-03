@@ -10,6 +10,7 @@ Route::get('login', 'ThemeAuthController@login_form')->name('login');
 Route::get('signup', 'ThemeAuthController@signup_form')->name('signup');
 Route::get('restricted', 'ThemeAuthController@restricted')->name('restricted');
 Route::post('login', 'ThemeAuthController@login');
+Route::post('signup', 'ThemeAuthController@signup');
 
 Route::get('password/reset', ['before' => 'demo', 'uses' => 'ThemeAuthController@password_reset', 'as' => 'password.remind']);
 Route::post('password/reset', ['before' => 'demo', 'uses' => 'ThemeAuthController@password_request', 'as' => 'password.request']);
