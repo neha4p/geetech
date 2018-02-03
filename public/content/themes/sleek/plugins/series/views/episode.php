@@ -32,7 +32,7 @@
 	
 	<?php $bg_image = (isset($episode->snippet->thumbnails->maxres->url)) ? $episode->snippet->thumbnails->maxres->url : Config::get('site.uploads_url') . '/images/' . $episode->image  ?>
 
-	<div id="video_bg" style="background-image:url(<?= $bg_image ?>)">
+	<div id="video_bg" style="background-image:url(<?php echo ImageHandler::getImage( $bg_image,'','images/'); ?>)">
 		<div id="video_bg_overlay"></div>
 	
 

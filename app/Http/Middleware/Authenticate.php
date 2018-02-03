@@ -36,6 +36,6 @@ class Authenticate
             return $next($request);
         }
 
-        return redirect('/login');
+        return redirect('/signup');
     }
 }

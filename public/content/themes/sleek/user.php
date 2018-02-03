@@ -6,7 +6,7 @@
 
 		<div id="user-badge">
             <?php if(isset($user->avatar)){ $avatar = $user->avatar; } else{ $avatar = 'default.jpg'; } ?>
-            <img src="<?= Config::get('site.uploads_url') . 'avatars/' . $avatar ?>" />
+            <img src="<?= ImageHandler::getImage( $avatar,'','avatars/'); ?>" />
 			<h2 class="form-signin-heading"><?= $user->username ?></h2>
 			<div class="label label-info"><?= ucfirst($user->role) ?> User</div>
 			<p class="member-since">Member since: <?= $user->created_at ?></p>
@@ -34,7 +34,7 @@
 
 			<div id="user-badge">
                 <?php if(isset($user->avatar)){ $avatar = $user->avatar; } else{ $avatar = 'default.jpg'; } ?>
-                <img src="<?= Config::get('site.uploads_url') . 'avatars/' . $avatar ?>" />
+                <img src="<?= ImageHandler::getImage( $avatar,'','avatars/'); ?>" />
 				<label for="avatar">Avatar</label>
 				<input type="file" multiple="true" class="form-control" name="avatar" id="avatar" />
 			</div>

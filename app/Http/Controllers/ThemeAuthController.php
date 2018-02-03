@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Auth;
-use User;
+use App\User;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Redirect;
 use Request;
@@ -15,6 +15,8 @@ use View;
 use Session;
 use PaymentSetting;
 use Input;
+use Hash;
+use Validator;
 
 class ThemeAuthController extends BaseController
 {
@@ -156,7 +158,20 @@ class ThemeAuthController extends BaseController
                 return Redirect::to('/login')->with(['note' => 'Success! One last step, be sure to verify your account by clicking on the activation link sent to your email.', 'note_type' => 'success']);
             } else {
                 if (!$settings->free_registration) {
-                    $user->subscription('monthly')->create($token, ['email' => $user->email]);
+                    //$user->subscription('monthly')->create($token, ['email' => $user->email]);
+                    //$user->newSubscription('main', 'premium')->create($token);
+
+                    try {
+                        if(!empty(Config::get('site.subscription_id'))){
+                            $user->newSubscription(Config::get('site.subscription_name'), Config::get('site.subscription_plan'))->create($token);
+                        }else {
+                            $user->invoiceFor('Membership Activiation', Config::get('site.signup_price'), [
+                                // 'custom-option' => $value,
+                            ]);
+                        }
+                    } catch (Exception $e) {
+                        //
+                    }
                 }
                 Auth::loginUsingId($user->id);
                 return Redirect::to('/')->with(['note' => 'Welcome! Your Account has been Successfully Created!', 'note_type' => 'success']);

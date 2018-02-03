@@ -5,7 +5,7 @@
 <p><i class="fa fa-credit-card"></i> Past Invoices</p>
 	<ul class="invoices">
 	<?php foreach($invoices as $invoice): ?>
-		<li><span class="date"><?= $invoice->dateString() ?></span><span class="amount"><?= $invoice->dollars() ?></span>
+		<li><span class="date"><?= $invoice->date()->toFormattedDateString().' - ('.$invoice->charge ?>)</span><span class="amount"><?= $invoice->total() ?></span>
 		<div class="clear"></div>
 		</li>
 	<?php endforeach; ?>

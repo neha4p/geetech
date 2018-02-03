@@ -28,7 +28,7 @@
 
 			<div id="user-badge">
 				@if(isset($user->avatar))<?php $avatar = $user->avatar; ?>@else<?php $avatar = 'default.jpg'; ?>@endif
-				<img src="<?= Config::get('site.uploads_url') . 'avatars/' . $avatar ?>" />
+				<img src="<?= ImageHandler::getImage( $avatar,'','avatars/'); ?>" />
 				<label for="avatar">@if(isset($user->username))<?= ucfirst($user->username). '\'s'; ?>@endif Profile Image</label>
 				<input type="file" multiple="true" class="form-control" name="avatar" id="avatar" />
 			</div>

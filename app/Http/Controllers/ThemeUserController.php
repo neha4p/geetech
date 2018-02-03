@@ -14,6 +14,10 @@ use Auth;
 use Session;
 use Favorite;
 use PaymentSetting;
+use App\Libraries\ImageHandler;
+use Url;
+use Config;
+use Carbon\Carbon;
 
 class ThemeUserController extends BaseController
 {
@@ -61,14 +65,14 @@ class ThemeUserController extends BaseController
         if (!Auth::guest() && Auth::user()->username == $username) {
             $user = User::where('username', '=', $username)->first();
             $data = [
-                                'user' => $user,
-                                'post_route' => '/user/' . $user->username . '/update',
-                                'type' => 'edit',
-                                'menu' => Menu::orderBy('order', 'ASC')->get(),
-                                'video_categories' => VideoCategory::all(),
-                                'post_categories' => PostCategory::all(),
-                                'theme_settings' => ThemeHelper::getThemeSettings(),
-                                'pages' => Page::where('active', '=', 1)->get(),
+                    'user' => $user,
+                    'post_route' => url("/user/{$user->username}/update"),
+                    'type' => 'edit',
+                    'menu' => Menu::orderBy('order', 'ASC')->get(),
+                    'video_categories' => VideoCategory::all(),
+                    'post_categories' => PostCategory::all(),
+                    'theme_settings' => ThemeHelper::getThemeSettings(),
+                    'pages' => Page::where('active', '=', 1)->get(),
                 ];
             return View::make('Theme::user', $data);
         } else {
@@ -138,7 +142,7 @@ class ThemeUserController extends BaseController
 
             $data = [
                     'user' => $user,
-                    'post_route' => URL::to('user') . '/' . $user->username . '/update',
+                    'post_route' => url("/user/{$user->username}/update"),
                     'type' => 'billing',
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'video_categories' => VideoCategory::all(),
@@ -247,7 +251,7 @@ class ThemeUserController extends BaseController
         if (Auth::user()->username == $username && $user->subscribed()) {
             $data = [
                 'user' => $user,
-                'post_route' => URL::to('user') . '/' . $user->username . '/update',
+                'post_route' => url("/user/{$user->username}/update"),
                 'type' => 'update_credit_card',
                 'menu' => Menu::orderBy('order', 'ASC')->get(),
                 'payment_settings' => $payment_settings,
@@ -282,7 +286,7 @@ class ThemeUserController extends BaseController
         if (Auth::user()->username == $username) {
             $data = [
                     'user' => $user,
-                    'post_route' => URL::to('user') . '/' . $user->username . '/update',
+                    'post_route' => url("/user/{$user->username}/update"),
                     'type' => 'renew_subscription',
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'payment_settings' => $payment_settings,
@@ -317,7 +321,7 @@ class ThemeUserController extends BaseController
         if (Auth::user()->username == $username) {
             $data = [
                     'user' => $user,
-                    'post_route' => URL::to('user') . '/' . $user->username . '/update',
+                    'post_route' => url("/user/{$user->username}/update"),
                     'type' => 'upgrade_subscription',
                     'menu' => Menu::orderBy('order', 'ASC')->get(),
                     'payment_settings' => $payment_settings,
@@ -353,7 +357,10 @@ class ThemeUserController extends BaseController
             $token = Request::get('stripeToken');
 
             try {
-                $user->subscription('monthly')->create($token, ['email' => $user->email]);
+                $customer = $user->createAsStripeCustomer($token);
+                $user->invoiceFor('Membership Activation', Config::get('site.signup_price'), [
+                    // 'custom-option' => $value,
+                ]);
                 $user->role = 'subscriber';
                 $user->save();
                 return Redirect::to('user/' . $username . '/billing')->with(['note' => 'You have been successfully signed up for a subscriber membership!', 'note_type' => 'success']);

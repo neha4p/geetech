@@ -7,6 +7,7 @@ use View;
 use Illuminate\Support\Facades\URL;
 use Auth;
 use Hash;
+use App\Libraries\ImageHandler;
 
 class AdminUsersController extends Controller
 {

@@ -45,7 +45,7 @@
                     <?php else: ?>
                         
                         <li class="dropdown">
-                            <a href="#_" class="user-link-desktop dropdown-toggle" data-toggle="dropdown"><img src="<?= Config::get('site.uploads_dir') . 'avatars/' . Auth::user()->avatar ?>" class="img-circle" /> <span><?= ucwords(Auth::user()->username) ?></span> <i class="fa fa-chevron-down"></i></a>
+                            <a href="#_" class="user-link-desktop dropdown-toggle" data-toggle="dropdown"><img src="<?= ImageHandler::getImage( Auth::user()->avatar,'','avatars/'); ?>" class="img-circle" /> <span><?= ucwords(Auth::user()->username) ?></span> <i class="fa fa-chevron-down"></i></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="<?= ($settings->enable_https) ? secure_url('user') : URL::to('user'); ?><?= '/' . Auth::user()->username; ?>">My Profile</a></li>
                                 <li><a href="<?= ($settings->enable_https) ? secure_url('favorites') : URL::to('favorites') ?>">My Favorites</a></li>

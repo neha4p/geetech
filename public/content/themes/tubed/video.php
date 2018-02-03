@@ -8,11 +8,20 @@
 			<span class="label">You're watching:</span> <h1><?= $video->title ?></h1>
 		</div>
 	</div>
-	<div id="video_bg" style="background-image:url(<?= Config::get('site.uploads_url') . '/images/' . str_replace(' ', '%20', $video->image) ?>)">
+	<div id="video_bg" style="background-image:url(<?php echo ImageHandler::getImage( $video->image,'','images/'); ?>)">
 		<div id="video_bg_dim" <?php if($video->access == 'guest' || ($video->access == 'subscriber' && !Auth::guest()) ): ?><?php else: ?>class="darker"<?php endif; ?>></div>
 		<div class="container-fluid">
 			
-			<?php if($video->access == 'guest' || ( ($video->access == 'subscriber' || $video->access == 'registered') && !Auth::guest() && Auth::user()->subscribed()) || (!Auth::guest() && (Auth::user()->role == 'demo' || Auth::user()->role == 'admin')) || (!Auth::guest() && $video->access == 'registered' && $settings->free_registration && Auth::user()->role == 'registered') ): ?>
+			<?php if($video->access == 'guest' ||
+                    ( ($video->access == 'subscriber' || $video->access == 'registered')
+                        && !Auth::guest() && Auth::user()->role == 'subscriber'
+                    ) ||
+                    (!Auth::guest() && (
+                            Auth::user()->role == 'demo' || Auth::user()->role == 'admin
+                            ')
+                    ) ||
+                    (!Auth::guest() && $video->access == 'registered' && $settings->free_registration && Auth::user()->role == 'registered')
+            ): ?>
 
 				
 					<?php if($video->type == 'embed'): ?>

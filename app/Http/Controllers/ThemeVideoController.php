@@ -67,6 +67,8 @@ class ThemeVideoController extends BaseController
      */
     public function videos()
     {
+
+
         $page = Request::get('page');
         if (!empty($page)) {
             $page = Request::get('page');
@@ -148,12 +150,12 @@ class ThemeVideoController extends BaseController
         if (!empty($parent_cat->id)) {
             $parent_cat2 = VideoCategory::where('parent_id', '=', $parent_cat->id)->first();
             if (!empty($parent_cat2->id)) {
-                $videos = Video::where('active', '=', '1')->where('video_category_id', '=', $cat->id)->orWhere('video_category_id', '=', $parent_cat->id)->orWhere('video_category_id', '=', $parent_cat2->id)->orderBy('created_at', 'DESC')->simplePaginate(9);
+                $videos = Video::where('active', '=', '1')->where('video_category_id', '=', $cat->id)->orWhere('video_category_id', '=', $parent_cat->id)->orWhere('video_category_id', '=', $parent_cat2->id)->orderBy('created_at', 'ASC')->simplePaginate(9);
             } else {
-                $videos = Video::where('active', '=', '1')->where('video_category_id', '=', $cat->id)->orWhere('video_category_id', '=', $parent_cat->id)->orderBy('created_at', 'DESC')->simplePaginate(9);
+                $videos = Video::where('active', '=', '1')->where('video_category_id', '=', $cat->id)->orWhere('video_category_id', '=', $parent_cat->id)->orderBy('created_at', 'ASC')->simplePaginate(9);
             }
         } else {
-            $videos = Video::where('active', '=', '1')->where('video_category_id', '=', $cat->id)->orderBy('created_at', 'DESC')->simplePaginate(9);
+            $videos = Video::where('active', '=', '1')->where('video_category_id', '=', $cat->id)->orderBy('created_at', 'ASC')->simplePaginate(9);
         }
 
 

@@ -51,7 +51,7 @@
 			<div class="panel-title">Logo</div> <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div></div> 
 			<div class="panel-body" style="display: block; background:#f1f1f1;"> 
 				@if(!empty($settings->logo))
-					<img src="{{ Config::get('site.uploads_dir') . 'settings/' . $settings->logo }}" style="max-height:100px" />
+					<img src="{{ ImageHandler::getImage( $settings->logo,'','settings/') }}" style="max-height:100px" />
 				@endif
 				<p>Upload Your Site Logo:</p> 
 				<input type="file" multiple="true" class="form-control" name="logo" id="logo" />
@@ -63,7 +63,7 @@
 			<div class="panel-title">Favicon</div> <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div></div> 
 			<div class="panel-body" style="display: block;"> 
 				@if(!empty($settings->favicon))
-					<img src="{{ Config::get('site.uploads_dir') . 'settings/' . $settings->favicon }}" style="max-height:20px" />
+					<img src="{{ ImageHandler::getImage( $settings->favicon,'','settings/') }}" style="max-height:20px" />
 				@endif
 				<p>Upload Your Site Favicon:</p> 
 				<input type="file" multiple="true" class="form-control" name="favicon" id="favicon" />
