@@ -5,7 +5,7 @@
  | Auth and Password Reset Routes
  |--------------------------------------------------------------------------
  */
-Route::get('/', 'ThemeAuthController@signup');
+
 Route::get('login', 'ThemeAuthController@login_form')->name('login');
 Route::get('signup', 'ThemeAuthController@signup_form')->name('signup');
 Route::get('restricted', 'ThemeAuthController@restricted')->name('restricted');
@@ -28,7 +28,7 @@ Route::group(['middleware'=>'auth'], function () {
 	| Home Page Routes
 	|--------------------------------------------------------------------------
 	*/
-
+    Route::get('/', 'ThemeHomeController@index');
 
     /*
 	|--------------------------------------------------------------------------

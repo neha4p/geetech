@@ -34,6 +34,7 @@ class ThemeAuthController extends BaseController
 
     public function login_form()
     {
+
         if (!Auth::guest()) {
             return Redirect::to('/');
         }

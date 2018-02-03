@@ -10,6 +10,7 @@
     "require": {
         "php": ">=7.0.0",
         "amostajo/laravel-image-handler": "^1.0",
+        "devdojo/chatter": "^0.2.10",
         "fideloper/proxy": "~3.3",
         "intervention/image": "*",
         "laravel/cashier": "*",
