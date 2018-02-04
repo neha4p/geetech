@@ -17,26 +17,21 @@
         <div id="home-content">
 
             <div class="row">
-
                 <?php $featured_videos = Video::where('active', '=', 1)->where('featured', '=', 1)->orderBy('created_at', 'DESC')->get(); ?>
-
                 <div class="col-md-10 col-md-offset-2 right-content-10" id="featured">
-
                     <ul>
-
                         <?php foreach ($featured_videos as $index => $video): ?>
                             <li <?php if ($index == 0): ?>class="active"<?php endif; ?>>
-                                <div class="bg"
-                                     style="background-image:url(<?=Config::get('site.uploads_url').'/images/'.$video->image?>)">
+                                <div class="bg" style="background-image:url(<?=Config::get('site.uploads_url').'/images/'.$video->image?>)">
                                     <div class="bg-dimmer"></div>
                                 </div>
                                 <div class="bg-dim-right"></div>
                                 <div class="featured-content">
                                     <div class="row">
                                         <div class="col-md-6 left-featured">
-                                            <a href="<?=($settings->enable_https) ? secure_url('video') : URL::to('video');?><?='/'.$video->id;?>"><img
-                                                        src="<?=ImageHandler::getImage($video->image, 'medium')?>"
-                                                        width="100%" class="featured-img"/></a>
+                                            <a href="<?=($settings->enable_https) ? secure_url('video') : URL::to('video');?><?='/'.$video->id;?>">
+                                                <img src="<?=ImageHandler::getImage($video->image, 'medium')?>" width="100%" class="featured-img"/>
+                                            </a>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="feature-info">
@@ -48,23 +43,18 @@
                                                 <a href="<?=($settings->enable_https) ? secure_url('video') : URL::to('video');?><?='/'.$video->id;?>"
                                                    class="btn btn-primary">Watch Now</a>
                                             </div>
-
                                         </div>
-
                                     </div>
                                     <div style="clear:both"></div>
                             </li>
                         <?php endforeach; ?>
-
                     </ul>
                     <div id="featured_loader"></div>
                 </div>
             </div>
 
             <div class="row">
-
                 <div class="col-md-8 col-md-offset-2 right-content-8" id="home-main">
-
                     <div class="col-md-12">
                         <?php $free_videos = Video::where('active', '=', 1)->where('access', '=', 'guest')->orderByRaw("RAND()")->take(12)->get(); ?>
                         <div class="mini-slider" data-index="1">

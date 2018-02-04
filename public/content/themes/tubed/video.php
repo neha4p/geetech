@@ -45,8 +45,8 @@
 				<div id="subscribers_only">
 					<h2>Sorry, this video is only available to <?php if($video->access == 'subscriber'): ?>Subscribers<?php elseif($video->access == 'registered'): ?>Registered Users<?php endif; ?></h2>
 					<div class="clear"></div>
-					<form method="get" action="/signup">
-						<button id="button">Signup Now<?php if($video->access == 'subscriber'): ?>to Become a Subscriber<?php elseif($video->access == 'registered'): ?>for Free!<?php endif; ?></button>
+					<form method="get" action="/user/<?= Auth::user()->username ?>/upgrade_subscription">
+                        <button id="button">Signup Now<?php if($video->access == 'subscriber'): ?> to Become a Subscriber<?php elseif($video->access == 'registered'): ?>for Free!<?php endif; ?></button>
 					</form>
 				</div>
 			
