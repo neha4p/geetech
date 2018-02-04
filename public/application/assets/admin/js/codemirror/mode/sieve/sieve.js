@@ -161,8 +161,8 @@ CodeMirror.defineMode("sieve", function(config) {
     token: function(stream, state) {
       if (stream.eatSpace())
         return null;
-
-      return (state.tokenize || tokenBase)(stream, state);;
+  
+      return (state.tokenize || tokenBase)(stream, state);
     },
 
     indent: function(state, _textAfter) {

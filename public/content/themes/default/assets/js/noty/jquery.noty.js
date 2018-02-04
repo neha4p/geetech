@@ -163,7 +163,7 @@ if (typeof Object.create !== 'function') {
                 function () {
                   self.close.apply(self);
                 }
-              )
+              );
               return;
             }
 
@@ -557,4 +557,4 @@ window.noty = function noty(options) {
     // End of the BC
 
     return jQuery.notyRenderer.init(options);
-}
+};

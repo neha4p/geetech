@@ -259,9 +259,8 @@ $.event.setupHelper( [
 		if ( Math.abs( start.coords[0] - stop.coords[0] ) > 10 ) {
 			event.preventDefault();
 		}
-	};
-
-	// Attach to the touch move events
+    }
+    // Attach to the touch move events
 	$(document.documentElement).bind(touchMoveEvent, moveHandler)
 		.one(touchStopEvent, function(event){
 			$(this).unbind( touchMoveEvent, moveHandler);
@@ -298,4 +297,4 @@ $.event.setupHelper( [
 		})
 });
 
-})(jQuery)
+})(jQuery);

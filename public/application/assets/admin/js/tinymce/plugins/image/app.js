@@ -3,10 +3,10 @@ $(document).ready(function(){
 	var originalWidth, originalHeight, loaded = false;
 	
 	function MySerach(needle, haystack){
-		var results = new Array();
+		var results = [];
 		var counter = 0;
 		var rgxp = new RegExp(needle, "g");
-		var temp = new Array();
+		var temp = [];
 		for(i=0;i<haystack.length;i++){
 			temp = haystack[i][1].match(rgxp);
 			if(temp && temp.length > 0){
@@ -31,7 +31,7 @@ $(document).ready(function(){
 		return array;
 	}
 	
-	var search_haystack = new Array();
+	var search_haystack = [];
 	
 	$("#search").focus(function () {
 		$("#lib-back").attr('disabled','disabled');
@@ -248,7 +248,7 @@ $(document).ready(function(){
 			// Allow: home, end, left, right
 			(event.keyCode >= 35 && event.keyCode <= 39)) {
 			// let it happen, don't do anything
-			return;
+			
 		}else {
             // Ensure that it is a number and stop the keypress
 			if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {

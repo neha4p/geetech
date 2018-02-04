@@ -248,9 +248,9 @@
 
 				Vue.filter('smallImage', function (value) {
 				  // here `input` === `this.userInput`
-				  var ext = value.substr(value.lastIndexOf('.')+1)
+				  var ext = value.substr(value.lastIndexOf('.')+1);
 				  return value.replace('.' + ext, '-small.' + ext);
-				})
+				});
 
 				getEpisodes();
 
