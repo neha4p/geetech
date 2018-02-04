@@ -180,12 +180,13 @@
 						</li>
 					</ul>
 				</li>
-				<li class="">
+				<!--<li class="">
 					<a href="{{ URL::to('admin/themes') }}">
 						<i class="entypo-monitor"></i>
 						<span class="title">Themes</span>
 					</a>
 				</li>
+				-->
 				<li class="">
 					<a href="{{ URL::to('admin/plugins') }}">
 						<i class="fa fa-plug"></i>

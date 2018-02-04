@@ -2,6 +2,9 @@
 
 use Redirect;
 use Request;
+use Response;
+use Config;
+use Illuminate\Support\Facades\Storage;
 
 class AdminMediaController extends Controller
 {
@@ -22,7 +25,9 @@ class AdminMediaController extends Controller
         if ($folder == '/') {
             $folder = '';
         }
-        $dir = "./content/uploads" . $folder;
+        $dir = Config::get('site.uploads_dir') . $folder;
+
+        //$response = Storage::allFiles($dir );
 
         $response = $this->getFiles($dir);
 
@@ -32,7 +37,7 @@ class AdminMediaController extends Controller
             "path" => $dir,
             "folder" => $folder,
             "items" => $response,
-            "last_modified" => date('F jS, Y \a\t h:i:s A', filemtime($dir))
+           // "last_modified" => date('F jS, Y \a\t h:i:s A', filemtime($dir))
         ]);
     }
 
