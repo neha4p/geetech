@@ -130,7 +130,7 @@ return [
     'user' => [
         'namespace'                     => 'App\User',
         'database_field_with_user_name' => 'name',
-        'relative_url_to_profile'       => '',
+        'relative_url_to_profile'       => '/user/',
         'relative_url_to_image_assets'  => 'https://tantricactivation.s3.amazonaws.com/content/uploads/avatars/',
         'avatar_image_database_field'   => 'avatar',
     ],

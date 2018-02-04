@@ -6,7 +6,6 @@
 /config/packages/anahkiasen/rocketeer/
 /public/logo
 /public/packages
-/public/vendor
 /resources/assets/bower
 /storage
 /bootstrap/compiled.php
