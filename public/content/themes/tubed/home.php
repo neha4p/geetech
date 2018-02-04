@@ -13,16 +13,14 @@
     </style>
 
     <div class="container-fluid">
-
         <div id="home-content">
-
             <div class="row">
                 <?php $featured_videos = Video::where('active', '=', 1)->where('featured', '=', 1)->orderBy('created_at', 'DESC')->get(); ?>
                 <div class="col-md-10 col-md-offset-2 right-content-10" id="featured">
                     <ul>
                         <?php foreach ($featured_videos as $index => $video): ?>
                             <li <?php if ($index == 0): ?>class="active"<?php endif; ?>>
-                                <div class="bg" style="background-image:url(<?=Config::get('site.uploads_url').'/images/'.$video->image?>)">
+                                <div class="bg" style="background-image:url(<?=ImageHandler::getImage($video->image)?>)">
                                     <div class="bg-dimmer"></div>
                                 </div>
                                 <div class="bg-dim-right"></div>
