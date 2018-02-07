@@ -3,6 +3,7 @@
 use Redirect;
 use Auth;
 use View;
+use Video;
 use Post;
 use Request;
 use Validator;
