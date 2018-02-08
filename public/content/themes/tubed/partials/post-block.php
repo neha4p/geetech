@@ -8,7 +8,7 @@
 		</div>
 	</a>
 	<div class="block-contents">
-		<p class="date"><?= date("F jS, Y", strtotime($post->created_at)); ?></p>
+		<p class="date"><?= $post->title; ?></p>
 		<p class="desc"><?php if(strlen($post_description) > 90){ echo substr($post_description, 0, 90) . '...'; } else { echo $post->description; } ?></p>
 	</div>
 </article>
