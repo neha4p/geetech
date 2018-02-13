@@ -1,6 +1,8 @@
-<?php namespace Api\v1;
+<?php
 
-use \Controller as Controller;
+namespace App\Http\Controllers\Api\v1;
+
+use App\Http\Controllers\Controller;
 use \Response as Response;
 use \Input as Input;
 use \Post as Post;

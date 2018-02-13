@@ -5,6 +5,21 @@
  | Auth and Password Reset Routes
  |--------------------------------------------------------------------------
  */
+Route::get('/', function () {
+    if (\Auth::check()) {
+        return redirect('/home');
+    }
+    else {
+        return view('letters.coming-soon');
+    }
+});
+
+Route::get('/v1', function () {
+    return view('letters.main');
+});
+Route::get('/terms/{page}', function ($page = null) {
+    return view('terms.'.$page);
+});
 
 Route::get('login', 'ThemeAuthController@login_form')->name('login');
 Route::get('signup', 'ThemeAuthController@signup_form')->name('signup');
@@ -28,7 +43,7 @@ Route::group(['middleware'=>'auth'], function () {
 	| Home Page Routes
 	|--------------------------------------------------------------------------
 	*/
-    Route::get('/', 'ThemeHomeController@index');
+    Route::get('/home', 'ThemeHomeController@index');
 
     /*
 	|--------------------------------------------------------------------------
@@ -192,7 +207,7 @@ Route::group(['middleware'=>['auth','isAdmin']], function () {
 |--------------------------------------------------------------------------
 */
 
-Route::post('stripe/webhook', 'Laravel\Cashier\WebhookController@handleWebhook');
+//Route::post('stripe/webhook', 'Laravel\Cashier\WebhookController@handleWebhook');
 
 /*
 |--------------------------------------------------------------------------
