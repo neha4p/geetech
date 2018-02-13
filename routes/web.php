@@ -20,6 +20,9 @@ Route::get('/v1', function () {
 Route::get('/terms/{page}', function ($page = null) {
     return view('terms.'.$page);
 });
+Route::get('/p/{page}', function ($page = null) {
+    return view('pages.'.$page);
+});
 
 Route::get('login', 'ThemeAuthController@login_form')->name('login');
 Route::get('signup', 'ThemeAuthController@signup_form')->name('signup');
