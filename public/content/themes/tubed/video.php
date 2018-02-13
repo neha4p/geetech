@@ -11,8 +11,21 @@
 	<div id="video_bg" style="background-image:url(<?php echo ImageHandler::getImage( $video->image,'','images/'); ?>)">
 		<div id="video_bg_dim" <?php if($video->access == 'guest' || ($video->access == 'subscriber' && !Auth::guest()) ): ?><?php else: ?>class="darker"<?php endif; ?>></div>
 		<div class="container-fluid">
+
+            <?php
+                dd($drip_time);
+                $drip_time = date('Y-m-d H:i:s', strtotime('-'.$video->drip_time.' '.$video->interval, time()));
+                if($drip_time > Auth::user()->created_at ):
+            ?>
+            <div id="subscribers_only">
+                <h2>Sorry, this video is only available to <?php if($video->access == 'subscriber'): ?>Subscribers<?php elseif($video->access == 'registered'): ?>Registered Users<?php endif; ?></h2>
+                <div class="clear"></div>
+                <form method="get" action="/user/<?= Auth::user()->username ?>/upgrade_subscription">
+                    <button id="button">Signup Now<?php if($video->access == 'subscriber'): ?> to Become a Subscriber<?php elseif($video->access == 'registered'): ?>for Free!<?php endif; ?></button>
+                </form>
+            </div>
 			
-			<?php if($video->access == 'guest' ||
+			<?php elseif($video->access == 'guest' ||
                     ( ($video->access == 'subscriber' || $video->access == 'registered')
                         && !Auth::guest() && Auth::user()->role == 'subscriber'
                     ) ||
