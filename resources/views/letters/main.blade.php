@@ -46,7 +46,7 @@
                                 <li><a href="#">ABOUT SARRAH ROSE</a></li>
                                 <li><a href="#">Path of Pleasure</a></li>
                                 <li><a href="" data-toggle="modal" data-target="#signup">Join The Community</a></li>
-                                  <li><a href="/login">Memers Login</a></li>
+                                  <li><a href="/login">Members Login</a></li>
 
                               </ul>
                               <button type="button" class="btn navbar-btn pull-right" data-toggle="modal" data-target="#signup"><i class="fas fa-user"></i> Join Private Community</button>
