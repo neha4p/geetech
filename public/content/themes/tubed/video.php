@@ -13,16 +13,23 @@
 		<div class="container-fluid">
 
             <?php
-                dd($drip_time);
-                $drip_time = date('Y-m-d H:i:s', strtotime('-'.$video->drip_time.' '.$video->interval, time()));
-                if($drip_time > Auth::user()->created_at ):
+                $drip_time = date('Y-m-d H:i:s', strtotime('-'.$video->drip_time.' '.$video->drip_interval));
+                $user_time = (string)Auth::user()->created_at;
+                //Convert to date
+                $release=strtotime($drip_time);
+                $user_release=strtotime($user_time);
+                //Calculate difference
+                $diff=$user_release-$release;//time returns current time in seconds
+                $years = floor($diff / (365*60*60*24));
+                $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                $total_days = floor($diff/(60*60*24));//seconds/minute*minutes/hour*hours/day)
+                $release_date=date('F d Y', strtotime("+".$total_days." days"));
+                if(!empty($video->drip_time) && $drip_time < $user_time ):
             ?>
             <div id="subscribers_only">
-                <h2>Sorry, this video is only available to <?php if($video->access == 'subscriber'): ?>Subscribers<?php elseif($video->access == 'registered'): ?>Registered Users<?php endif; ?></h2>
+                <h2>Sorry, this video is Currently NOT Released <br/> Please check back on <br><?= $release_date; ?></h2>
                 <div class="clear"></div>
-                <form method="get" action="/user/<?= Auth::user()->username ?>/upgrade_subscription">
-                    <button id="button">Signup Now<?php if($video->access == 'subscriber'): ?> to Become a Subscriber<?php elseif($video->access == 'registered'): ?>for Free!<?php endif; ?></button>
-                </form>
             </div>
 			
 			<?php elseif($video->access == 'guest' ||

@@ -12,6 +12,7 @@
         "amostajo/laravel-image-handler": "^1.0",
         "devdojo/chatter": "^0.2.10",
         "fideloper/proxy": "~3.3",
+        "graham-campbell/markdown": "^9.0",
         "intervention/image": "*",
         "laravel/cashier": "*",
         "laravel/framework": "5.5.*",

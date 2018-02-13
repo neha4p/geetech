@@ -113,14 +113,14 @@
 				<div class="panel-title">Drip</div> <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div></div>
 				<div class="panel-body" style="display: block;"> 
 					<p>How long should a user be registered before seeing this video</p>
-					Time: <input class="form-control" name="drip_time" id="drip_time" value="@if(!empty($video->drip_time)){{ $video->drip_time }}@endif">
+					Time: <input class="form-control" name="drip_time" id="drip_time" value="@if(!empty($video->drip_time)){{ $video->drip_time }}@endif" style="width: 50px;">
 
 					<select id="drip_interval" name="drip_interval">
-						<option value="0"></option>
-							<option value="day" @if(!empty($video->drip_interval) && $video->drip_interval == 'day')selected="selected"@endif>Days</option>
-							<option value="week" @if(!empty($video->drip_interval) && $video->drip_interval == 'week')selected="selected"@endif>Weeks</option>
-							<option value="month" @if(!empty($video->drip_interval) && $video->drip_interval == 'month')selected="selected"@endif>Months</option>
-							<option value="year" @if(!empty($video->drip_interval) && $video->drip_interval == 'year')selected="selected"@endif>Years</option>
+						<option value=""></option>
+							<option value="day" @if(!empty($video->drip_interval) && $video->drip_interval == 'day')selected="selected"@endif>Day(s)</option>
+							<option value="week" @if(!empty($video->drip_interval) && $video->drip_interval == 'week')selected="selected"@endif>Week(s)</option>
+							<option value="month" @if(!empty($video->drip_interval) && $video->drip_interval == 'month')selected="selected"@endif>Month(s)</option>
+							<option value="year" @if(!empty($video->drip_interval) && $video->drip_interval == 'year')selected="selected"@endif>Year(s)</option>
 					</select>
 				</div> 
 			</div>
