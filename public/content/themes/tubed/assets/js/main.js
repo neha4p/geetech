@@ -93,7 +93,7 @@ function add_sidebar(){
 
 function resize_home_content(){
 	$('#home-right-sidebar').css('height', $('#home-main').height());
-	$('#featured').css('height', $('#featured ul li.active .featured-content').height() );
+    $('#featured').css('height', $('#featured ul li.active .featured-content').height() );
 	
 }
 

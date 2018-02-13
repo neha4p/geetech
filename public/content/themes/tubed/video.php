@@ -113,9 +113,9 @@
 
 </div>
 
-<div class="col-md-2" id="right_sidebar">
+<div class="col-md-2" id="right_sidebar" style="height: 100%">
 <h6>Recent Videos</h6>
-	<?php $videos = Video::where('active', '=', 1)->orderBy('created_at', 'DESC')->take(4)->get(); ?>
+	<?php $videos = Video::where('active', '=', 1)->orderBy('created_at', 'DESC')->take(3)->get(); ?>
 	<?php foreach($videos as $video): ?>
 		<?php include('partials/video-block.php'); ?>
 	<?php endforeach; ?>
@@ -140,7 +140,7 @@
 	<script type="text/javascript">
 
 		$(document).ready(function(){
-			$('#video_container').fitVids();
+            $('#video_container').fitVids();
 			$('.favorite').click(function(){
 				if($(this).data('authenticated')){
 					$.post('/favorite', { video_id : $(this).data('videoid'), _token: '<?= csrf_token(); ?>' }, function(data){});
