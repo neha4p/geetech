@@ -16,9 +16,6 @@
                   
               <h1 class="panel-title col-lg-7 col-md-8 col-sm-6" style="line-height:40px;">Go ahead and re-activate your account below:</h1>
 
-              <div class="cc-icons col-lg-5 col-md-4">
-                  <img src="<?= THEME_URL ?>/assets/img/credit-cards.png" alt="All Credit Cards Supported" />
-              </div>
 
           </div>
 
@@ -66,7 +63,10 @@
           <div class="pull-right sign-up-buttons">
           	<a href="<?= ($settings->enable_https) ? secure_url('logout') : URL::to('logout') ?>" class="btn">Logout</a>
             <button class="btn btn-primary" type="submit" name="create-account">Renew My Subscription</button>
-            
+              <div class="cc-icons col-lg-5 col-md-4">
+                  <img src="<?= THEME_URL ?>/assets/img/credit-cards.png" alt="All Credit Cards Supported" />
+              </div>
+
           </div>
 
           <div class="payment-errors col-md-8 text-danger" style="display:none"></div>

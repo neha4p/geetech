@@ -16,9 +16,7 @@
                   
               <h1 class="panel-title col-lg-7 col-md-8 col-sm-6" style="line-height:40px;">Update Your Info Below</h1>
 
-              <div class="cc-icons col-lg-5 col-md-4">
-                  <img src="<?= THEME_URL ?>/assets/img/credit-cards.png" alt="All Credit Cards Supported" />
-              </div>
+
 
           </div>
 
@@ -66,7 +64,9 @@
           <div class="pull-right sign-up-buttons">
           	<a href="<?= ($settings->enable_https) ? secure_url('user') : URL::to('user'); ?><?= '/' . $user->username; ?>/billing" class="btn" style="color: #98cb00;">Cancel</a>
             <button class="btn btn-primary" type="submit" name="create-account">Update Credit Card</button>
-            
+              <div class="cc-icons col-lg-5 col-md-4">
+                  <img src="<?= THEME_URL ?>/assets/img/credit-cards.png" alt="All Credit Cards Supported" />
+              </div>
           </div>
 
           <div class="payment-errors col-md-8 text-danger" style="display:none"></div>

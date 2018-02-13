@@ -30,7 +30,7 @@ a {
   font-size: 12px;
 }
 .theme_color_background {
-  background: #E52D27;
+  background: #8b0000;
 }
 h1 {
   color: #434a54;
@@ -56,7 +56,7 @@ h3 span {
 }
 .vjs-default-skin .vjs-play-progress,
 .vjs-default-skin .vjs-volume-level {
-  background: #E52D27;
+  background: #8b0000;
 }
 .video-details h3 {
   text-align: left;
@@ -599,7 +599,7 @@ select:-webkit-autofill {
 }
 .second-nav.navbar-default .navbar-nav li.dropdown.open a.dropdown-toggle {
   color: #fff;
-  background: #E52D27;
+  background: #8b0000;
   text-decoration: none;
 }
 .second-nav.navbar-default .navbar-nav li.dropdown.open a {
@@ -667,7 +667,7 @@ select:-webkit-autofill {
   width: 100%;
   bottom: 0px;
   left: 0px;
-  background: #E52D27;
+  background: #8b0000;
 }
 .navbar-default .navbar-nav > li.login-desktop a {
   border-right: 1px solid #ddd;
@@ -934,7 +934,7 @@ ul.invoices li span.amount {
   margin-left: 8px;
 }
 .video-details h3 span i {
-  color: #E52D27;
+  color: #8b0000;
 }
 #video_player {
   z-index: 999;
@@ -967,7 +967,7 @@ h2#tags {
   font-size: 20px;
   border-radius: 50px;
   border: 0px;
-  background: #E52D27;
+  background: #8b0000;
   color: #fff;
   outline: none;
 }
@@ -1101,7 +1101,7 @@ h4.modal-title {
   padding-top: 0px;
 }
 .block.list .block-contents h2 a {
-  color: #E52D27;
+  color: #8b0000;
 }
 .block.list .block-contents p.date {
   padding-top: 0px;
@@ -1143,7 +1143,7 @@ h4.modal-title {
   background: #C0C0C0;
 }
 .block .label-success {
-  background: #E52D27;
+  background: #8b0000;
 }
 .block .block-contents p.date {
   -webkit-font-smoothing: antialiased;
@@ -1369,7 +1369,7 @@ footer ul li a,
 .home footer ul li a {
   padding: 4px 0px;
   display: block;
-  color: #E52D27;
+  color: #8b0000;
 }
 footer ul li a:hover,
 .home footer ul li a:hover {
@@ -1434,7 +1434,7 @@ footer a.social-link:hover,
   bottom: 0px;
   padding: 20px 20px;
   left: 20px;
-  background: #E52D27;
+  background: #8b0000;
   color: #fff;
   border-bottom: 0px;
   margin-bottom: 0px;
@@ -1495,7 +1495,7 @@ footer a.social-link:hover,
   text-align: center;
 }
 .page a {
-  color: #E52D27;
+  color: #8b0000;
 }
 .page p {
   margin: 20px 0px;
@@ -1516,7 +1516,7 @@ ul.pages li {
   list-style: none;
 }
 ul.pages li a {
-  color: #E52D27;
+  color: #8b0000;
   font-size: 20px;
 }
 ul.pages li a:hover,
@@ -1597,7 +1597,7 @@ form.search .form-search .fa {
   top: 5px;
 }
 .form-control:focus {
-  border-color: #E52D27;
+  border-color: #8b0000;
   box-shadow: 0px 0px 0px;
 }
 /********** BILLING FORM **********/
@@ -1616,7 +1616,7 @@ form.search .form-search .fa {
   margin: 15px auto;
 }
 #signup-form .panel-heading {
-  background: #E52D27;
+  background: #8b0000;
   color: #fff;
   padding: 50px;
 }
@@ -1663,8 +1663,8 @@ form.search .form-search .fa {
   color: #fff;
 }
 .btn-primary {
-  background: #E52D27;
-  border-color: #E52D27;
+  background: #8b0000;
+  border-color: #8b0000;
 }
 /********** END BILLING FORM **********/
 #signup-form .demo-info p {

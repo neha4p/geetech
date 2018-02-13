@@ -17,7 +17,7 @@
               <h1 class="panel-title col-lg-8 col-md-9 col-sm-6"><?= ThemeHelper::getThemeSetting(@$theme_settings->signup_message, 'Signup to Gain access to all content on the site for $7 a month.') ?></h1>
 
               <div class="cc-icons col-lg-4 col-md-3">
-                  <img src="<?= THEME_URL ?>/assets/img/credit-cards.png" alt="All Credit Cards Supported" />
+                  <img src="<?= THEME_URL ?>/assets/img/white-meditation-guru-512.png" alt="All Credit Cards Supported" height="100px" />
               </div>
 
           </div>
@@ -58,14 +58,16 @@
 
 
         </fieldset>
+            <div class="cc-icons col-lg-4 col-md-3" style="float: right">
+                <img src="<?= THEME_URL ?>/assets/img/credit-cards.png" alt="All Credit Cards Supported" />
+            </div>
       </div><!-- .panel-body -->
 
       <div class="panel-footer clearfix">
         <div class="pull-left col-md-7 terms" style="padding-left: 0;"></div>
-
           <div class="pull-right sign-up-buttons">
             <a href="<?= ($settings->enable_https) ? secure_url('user') : URL::to('user') ?>/<?= $user->username ?>" class="btn">Cancel</a>
-            <button class="btn btn-primary" type="submit" name="create-account">Upgrade to Subscriber</button>
+            <button class="btn btn-primary" type="submit" name="create-account">Upgrade to Path of Pleasure Today</button>
 
           </div>
 

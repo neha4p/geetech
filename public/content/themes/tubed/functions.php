@@ -195,7 +195,7 @@ if(!function_exists ( 'dynamic_styles' )):
 	function dynamic_styles($theme_settings){
 		$hex_color = ThemeHelper::getThemeSetting(@$theme_settings->color, '');
 		if(empty($hex_color)){
-			$hex_color = '#E52D27';
+			$hex_color = '#8b0000';
 		}
 
 		$color = $hex_color;
