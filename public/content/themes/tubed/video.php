@@ -37,8 +37,7 @@
                         && !Auth::guest() && Auth::user()->role == 'subscriber'
                     ) ||
                     (!Auth::guest() && (
-                            Auth::user()->role == 'demo' || Auth::user()->role == 'admin
-                            ')
+                            Auth::user()->role == 'demo' || Auth::user()->role == 'admin')
                     ) ||
                     (!Auth::guest() && $video->access == 'registered' && $settings->free_registration && Auth::user()->role == 'registered')
             ): ?>

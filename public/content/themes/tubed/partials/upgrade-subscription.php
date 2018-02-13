@@ -1,7 +1,9 @@
 <h2 class="form-signin-heading"><i class="fa fa-credit-card"></i> Become a Subscriber</h2>
 
 <div id="signup-form" style="margin-top:0px;">
-
+    <center>
+    <iframe width="620" height="342" src="https://www.youtube.com/embed/3RPPfQIbIlY?rel=0&modestbranding=1&autoplay=1" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen></iframe>
+    </center>
 <p>Enter your credit card info to upgrade your account to a subscriber membership</p>
 
 <form method="POST" action="<?= ($settings->enable_https) ? secure_url('user') : URL::to('user') ?>/<?= $user->username ?>/upgrade_cc" class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" id="payment-form">
