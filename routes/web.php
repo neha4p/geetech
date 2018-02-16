@@ -10,7 +10,7 @@ Route::get('/', function () {
         return redirect('/home');
     }
     else {
-        return view('letters.coming-soon');
+        return view('letters.main');
     }
 });
 
