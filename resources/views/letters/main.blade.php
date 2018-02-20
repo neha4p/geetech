@@ -97,13 +97,13 @@
         <div class="row">
             <div class="col-sm-6 col-xs-12">
                 <div class="img-box">
-                    <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/about.jpg" alt="" class="img-responsive"/>
+                    <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/IMG_4676.jpg" alt="" class="img-responsive"/>
                 </div>
             </div>
             <div class="col-sm-6 col-xs-12">
                 <div class="comtent-text">
                     <h2>Welcome to Tantric Activation’s Private Community</h2>
-                    <p>Welcome to Tantric Activation! Tantric Activation is a community designed to help you live a tantric lifestyle. Tantra Teaches us that everything has consciousness, Everything. The trees, the grass, our pain, our pleasure. It’s a system that helps us become alive in our bodies so that we can feel. Humans tend to disassociate from pain and numb out. This cause numbness in all parts of our lives. Especially in the areas of love and pleasure. The Tantric Activation community is designed to help you feel alive again. Sign up for your free membership and enjoy being a part of a community of like minded individuals.</p>
+                    <p>Tantric Activation is a community designed to help you live a tantric lifestyle. Tantra Teaches us that everything has consciousness, Everything. The trees, the grass, our pain, our pleasure. It’s a system that helps us become alive in our bodies so that we can feel. Humans tend to disassociate from pain and numb out. This cause numbness in all parts of our lives. Especially in the areas of love and pleasure. The community is designed to help you feel alive again. Sign up for your free membership and enjoy being a part of a community of like minded individuals.</p>
                 </div>
             </div>
         </div>
@@ -293,7 +293,7 @@
             <div class="col-sm-6 col-xs-12">
                 <ul class="footer-menu">
                     <li><a href="/terms/terms">Terms And Conditions</a></li>
-                    <li><a href="/terms/privacy">Private Policy </a></li>
+                    <li><a href="/terms/privacy">Privacy Policy </a></li>
                     <li><a href="/" data-toggle="modal" data-target="#signup">Join Our Community</a></li>
                 </ul>
             </div>

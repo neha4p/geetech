@@ -153,7 +153,7 @@
                 <div class="col-sm-6 col-xs-12">
                     <ul class="footer-menu">
                         <li><a href="/terms/terms">Terms And Conditions</a></li>
-                        <li><a href="/terms/privacy">Private Policy </a></li>
+                        <li><a href="/terms/privacy">Privacy Policy </a></li>
                         <li><a href="/" data-toggle="modal" data-target="#signup">Join Our Community</a></li>
                     </ul>
                 </div>

@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +42,7 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Home</a></li>
+                                <li class="active"><a href="/">Home</a></li>
                                 <li><a href="/p/about">ABOUT SARRAH ROSE</a></li>
                                 <li><a href="/p/path-to-pleasure">Path of Pleasure</a></li>
                                 <li><a href="" data-toggle="modal" data-target="#signup">Join The Community</a></li>
@@ -70,7 +67,7 @@
                 <div class="col-sm-12 col-xs-12">
                     <div class="img-box">
                         <center>
-                            <iframe width="620" height="342" src="https://www.youtube.com/embed/3RPPfQIbIlY?rel=0&modestbranding=1&autoplay=1" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen></iframe>
+                            <iframe width="620" height="342" src="https://www.youtube.com/embed/bCd6PJIAXGc?rel=0&modestbranding=1&autoplay=1" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen></iframe>
                         </center>
                     </div>
                 </div>
@@ -130,7 +127,7 @@
                 <div class="col-sm-6 col-xs-12">
                     <ul class="footer-menu">
                         <li><a href="/terms/terms">Terms And Conditions</a></li>
-                        <li><a href="/terms/privacy">Private Policy </a></li>
+                        <li><a href="/terms/privacy">Privacy Policy </a></li>
                         <li><a href="/" data-toggle="modal" data-target="#signup">Join Our Community</a></li>
                     </ul>
                 </div>
