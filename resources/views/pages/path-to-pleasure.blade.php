@@ -69,6 +69,11 @@
                         <center>
                             <iframe width="620" height="342" src="https://www.youtube.com/embed/bCd6PJIAXGc?rel=0&modestbranding=1&autoplay=1" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen></iframe>
                         </center>
+                        <a href="/video/95">
+                        <button type="button" class="btn navbar-btn">
+                            Check out Love and Pleasure Activation
+                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
