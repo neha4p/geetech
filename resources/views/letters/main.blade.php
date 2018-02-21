@@ -97,13 +97,18 @@
         <div class="row">
             <div class="col-sm-6 col-xs-12">
                 <div class="img-box">
-                    <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/IMG_4676.jpg" alt="" class="img-responsive"/>
+                    <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/img_231.jpg" alt="" class="img-responsive"/>
                 </div>
             </div>
             <div class="col-sm-6 col-xs-12">
                 <div class="comtent-text">
                     <h2>Welcome to Tantric Activation’s Private Community</h2>
-                    <p>Tantric Activation is a community designed to help you live a tantric lifestyle. Tantra Teaches us that everything has consciousness, Everything. The trees, the grass, our pain, our pleasure. It’s a system that helps us become alive in our bodies so that we can feel. Humans tend to disassociate from pain and numb out. This cause numbness in all parts of our lives. Especially in the areas of love and pleasure. The community is designed to help you feel alive again. Sign up for your free membership and enjoy being a part of a community of like minded individuals.</p>
+                    <p>Tantric Activation is a community designed to support you in living a tantric lifestyle. Tantra teaches us that everything has
+                        consciousness. The trees, the grass, our pain, our pleasure all have consciousness. Tantric Activation is a system that embraces
+                        this and using this awareness, brings sensations of aliveness back into our bodies, waking us up to the pleasures of life. Humans
+                        can tend to disassociate from pain and when we do this, we can become numb to all sensations. We are here to support you as you
+                        begin to feel all parts of yourself again. Sign up for your free membership and enjoy being a part of a community of individuals
+                        that are also excited about living a tantric lifestyle.</p>
                 </div>
             </div>
         </div>
@@ -215,7 +220,7 @@
         <div class="row">
             <div class="col-xs-12 text-center">
                 <h5>Follow that restless urge to find yourself</h5>
-                <h3>Allow yourself to be challenged outside your comforts</h3>
+                <h3>Allow yourself to expand your consciousness</h3>
             </div>
         </div>
     </div>

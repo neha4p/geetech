@@ -70,14 +70,13 @@
             <div class="row">
                 <div class="col-sm-6 col-xs-12">
                     <div class="img-box">
-                        <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/about.jpg" alt="" class="img-responsive"/>
+                        <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/img_231.jpg" alt="" class="img-responsive"/>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <div class="comtent-text">
                         <h2>I’m Sarrah Rose.</h2>
-                        <p>I’m Sarrah Rose.<br>
-                            Tantric Activation has been years in the making.<br>
+                        <p>Tantric Activation has been years in the making.<br>
                             From my first experience with Tantra many years ago, I knew that it was my purpose to share this information with the world.<br>
                             I went to India, the birthplace of Tantra, and received intensive training.<br>
                             While there, I met my guru and he further illuminated my path.<br>
