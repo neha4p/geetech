@@ -97,7 +97,7 @@
         <div class="row">
             <div class="col-sm-6 col-xs-12">
                 <div class="img-box">
-                    <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/img_231.jpg" alt="" class="img-responsive"/>
+                    <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/IMG_4676.jpg" alt="" class="img-responsive"/>
                 </div>
             </div>
             <div class="col-sm-6 col-xs-12">
