@@ -120,7 +120,7 @@
       </div><!-- .panel-body -->
 
       <div class="panel-footer clearfix">
-        <div class="pull-left col-md-7 terms" style="padding-left: 0;"></div>
+          <div class="pull-left col-md-7 terms" style="padding-left: 0;">By Signing up you agree to the following <a href="/terms/terms" target="_blank">Terms of Service</a></div>
       
           <div class="pull-right sign-up-buttons">
             <button class="btn btn-primary" type="submit" name="create-account">Sign Up Today</button>

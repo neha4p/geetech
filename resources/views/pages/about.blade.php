@@ -70,7 +70,10 @@
             <div class="row">
                 <div class="col-sm-6 col-xs-12">
                     <div class="img-box">
-                        <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/img_231.jpg" alt="" class="img-responsive"/>
+                        <center>
+                            <iframe width="760" height="430" src="https://www.youtube.com/embed/2-J7khS0WU4?rel=0&modestbranding=1&autoplay=1" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen></iframe>
+                        </center>
+                        <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/SARAH-ROSE-441.jpg" alt="" class="img-responsive"/>
                     </div>
                 </div>
                 <div class="col-sm-6 col-xs-12">

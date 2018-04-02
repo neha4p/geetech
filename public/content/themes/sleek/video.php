@@ -69,19 +69,18 @@
 	    	<p>Share This Video:</p>
 			<?php //include('partials/social-share.php'); ?>
 		</div>
-
+    -->
 		<div class="clear"></div>
 
 		<div id="comments">
 			<div id="disqus_thread"></div>
 		</div>
-    -->
 	</div>
 	
 		
 	<script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = '<?= ThemeHelper::getThemeSetting(@$theme_settings->disqus_shortname, 'hellovideo') ?>';
+        var disqus_shortname = '<?= ThemeHelper::getThemeSetting(@$theme_settings->disqus_shortname, 'tantric') ?>';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
