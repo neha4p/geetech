@@ -19,6 +19,8 @@
         "laravel/socialite": "*",
         "laravel/tinker": "~1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
+        "predis/predis": "^1.1",
+        "shipping-docker/vessel": "^3.0",
         "spatie/laravel-backup": "^5.1"
     },
     "require-dev": {
@@ -50,6 +52,11 @@
         "post-create-project-cmd": [
             "php -r \"copy('.env.example', '.env');\"",
             "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "php -r \"copy('.env.example', '.env');\"",
+            "php artisan clear-compiled",
+            "bash vessel init"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
