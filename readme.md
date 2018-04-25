@@ -34,7 +34,7 @@ Head to http://localhost:8888 in your browser and checkout the site!
     Note 2: If you receive an error including EADDRINUSE, you likely already have something listening on port 80 or 3306. This may be a Vagrant virtual machine, or Laravel Valet, but could be anything! See Multiple Environments for a solution.
 
     Note that the EADDRINUSE error is often last in the error output reported from Docker.
-# Default admin
+# Default Admin
 	USER: admin@admin.com
 	PASS: password
 	

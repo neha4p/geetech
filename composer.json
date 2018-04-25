@@ -53,8 +53,10 @@
             "php -r \"copy('.env.example', '.env');\"",
             "php artisan key:generate"
         ],
+        "pre-install-cmd": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
         "post-install-cmd": [
-            "php -r \"copy('.env.example', '.env');\"",
             "php artisan clear-compiled",
             "bash vessel init"
         ],
