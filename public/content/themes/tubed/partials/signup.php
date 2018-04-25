@@ -14,14 +14,9 @@
               
               <?php if(!$settings->free_registration): ?>    
                 <h1 class="panel-title col-lg-7 col-md-8 col-sm-6"><?= ThemeHelper::getThemeSetting(@$theme_settings->signup_message, 'Signup to Gain access to all content on the site for $7 a month.') ?></h1>
-
-                <div class="cc-icons col-lg-5 col-md-4">
-                    <img src="<?= THEME_URL ?>/assets/img/credit-cards.png" alt="All Credit Cards Supported" />
-                </div>
               <?php else: ?>
-                <h1 class="panel-title col-lg-12 col-md-12">Enter your info below to signup for an account.</h1>
+                <h1 class="panel-title col-lg-12 col-md-12">Join the Path of Pleasure unlock the deepest parts of you</h1>
               <?php endif; ?>
-
           </div>
 
         </div><!-- .panel-heading -->
@@ -125,7 +120,7 @@
       </div><!-- .panel-body -->
 
       <div class="panel-footer clearfix">
-        <div class="pull-left col-md-7 terms" style="padding-left: 0;"></div>
+          <div class="pull-left col-md-7 terms" style="padding-left: 0;">By Signing up you agree to the following <a href="/terms/terms" target="_blank">Terms of Service</a></div>
       
           <div class="pull-right sign-up-buttons">
             <button class="btn btn-primary" type="submit" name="create-account">Sign Up Today</button>

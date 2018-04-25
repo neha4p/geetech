@@ -1,15 +1,16 @@
 <?php
 
-$url = getenv('JAWSDB_URL');
+$url = getenv(getenv('DATABASE_URL_NAME'));
 if (isset($url)) {
     $dbparts = parse_url($url);
     if (isset($dbparts['host'])) {
-        putenv("DB_HOST=".$dbparts['host']);
-        putenv("DB_DATABASE=".ltrim($dbparts['path'], '/'));
-        putenv("DB_USERNAME=".$dbparts['user']);
-        putenv("DB_PASSWORD=".$dbparts['pass']);
+        putenv('DB_HOST='.$dbparts['host']);
+        putenv('DB_DATABASE='.ltrim($dbparts['path'], '/'));
+        putenv('DB_USERNAME='.$dbparts['user']);
+        putenv('DB_PASSWORD='.$dbparts['pass']);
     }
 }
+
 
 return [
 

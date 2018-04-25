@@ -20,7 +20,7 @@ class SettingsTableSeeder extends Seeder
             
             array (
                 'id' => 1,
-                'website_name' => 'Tantric Activiation',
+                'website_name' => 'Tantric Activation',
                 'website_description' => '',
                 'logo' => '',
                 'favicon' => '',

@@ -1,7 +1,11 @@
 <h2 class="form-signin-heading"><i class="fa fa-credit-card"></i> Become a Subscriber</h2>
 
 <div id="signup-form" style="margin-top:0px;">
-
+    <center>
+    <iframe width="620" height="342" src="https://www.youtube.com/embed/bCd6PJIAXGc?rel=0&modestbranding=1&autoplay=1" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen></iframe>
+    </center>
+    <h2>Welcome to the Path of Pleasure. The initial membership has filled. We will be adding new members soon. I’ll let you know when more space is available in the course. I’m excited to see you inside! Welcome to the free online community!</h2>
+    <!--
 <p>Enter your credit card info to upgrade your account to a subscriber membership</p>
 
 <form method="POST" action="<?= ($settings->enable_https) ? secure_url('user') : URL::to('user') ?>/<?= $user->username ?>/upgrade_cc" class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" id="payment-form">
@@ -17,7 +21,7 @@
               <h1 class="panel-title col-lg-8 col-md-9 col-sm-6"><?= ThemeHelper::getThemeSetting(@$theme_settings->signup_message, 'Signup to Gain access to all content on the site for $7 a month.') ?></h1>
 
               <div class="cc-icons col-lg-4 col-md-3">
-                  <img src="<?= THEME_URL ?>/assets/img/credit-cards.png" alt="All Credit Cards Supported" />
+                  <img src="<?= THEME_URL ?>/assets/img/white-meditation-guru-512.png" alt="All Credit Cards Supported" height="100px" />
               </div>
 
           </div>
@@ -58,14 +62,16 @@
 
 
         </fieldset>
+            <div class="cc-icons col-lg-4 col-md-3" style="float: right">
+                <img src="<?= THEME_URL ?>/assets/img/credit-cards.png" alt="All Credit Cards Supported" />
+            </div>
       </div><!-- .panel-body -->
 
       <div class="panel-footer clearfix">
         <div class="pull-left col-md-7 terms" style="padding-left: 0;"></div>
-
           <div class="pull-right sign-up-buttons">
             <a href="<?= ($settings->enable_https) ? secure_url('user') : URL::to('user') ?>/<?= $user->username ?>" class="btn">Cancel</a>
-            <button class="btn btn-primary" type="submit" name="create-account">Upgrade to Subscriber</button>
+            <button class="btn btn-primary" type="submit" name="create-account">Upgrade to Path of Pleasure Today</button>
 
           </div>
 
@@ -76,6 +82,7 @@
     </div><!-- .panel -->
 
   </form>
+-->
 </div>
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>

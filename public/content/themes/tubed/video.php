@@ -11,14 +11,33 @@
 	<div id="video_bg" style="background-image:url(<?php echo ImageHandler::getImage( $video->image,'','images/'); ?>)">
 		<div id="video_bg_dim" <?php if($video->access == 'guest' || ($video->access == 'subscriber' && !Auth::guest()) ): ?><?php else: ?>class="darker"<?php endif; ?>></div>
 		<div class="container-fluid">
+
+            <?php
+                $drip_time = date('Y-m-d H:i:s', strtotime('-'.$video->drip_time.' '.$video->drip_interval));
+                $user_time = (string)Auth::user()->created_at;
+                //Convert to date
+                $release=strtotime($drip_time);
+                $user_release=strtotime($user_time);
+                //Calculate difference
+                $diff=$user_release-$release;//time returns current time in seconds
+                $years = floor($diff / (365*60*60*24));
+                $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                $total_days = floor($diff/(60*60*24));//seconds/minute*minutes/hour*hours/day)
+                $release_date=date('F d Y', strtotime("+".$total_days." days"));
+                if(!empty($video->drip_time) && $drip_time < $user_time ):
+            ?>
+            <div id="subscribers_only">
+                <h2>Sorry, this video is Currently NOT Released <br/> Please check back on <br><?= $release_date; ?></h2>
+                <div class="clear"></div>
+            </div>
 			
-			<?php if($video->access == 'guest' ||
+			<?php elseif($video->access == 'guest' ||
                     ( ($video->access == 'subscriber' || $video->access == 'registered')
                         && !Auth::guest() && Auth::user()->role == 'subscriber'
                     ) ||
                     (!Auth::guest() && (
-                            Auth::user()->role == 'demo' || Auth::user()->role == 'admin
-                            ')
+                            Auth::user()->role == 'demo' || Auth::user()->role == 'admin')
                     ) ||
                     (!Auth::guest() && $video->access == 'registered' && $settings->free_registration && Auth::user()->role == 'registered')
             ): ?>
@@ -69,7 +88,7 @@
 		<div class="video-details-container"><?= $video->details ?></div>
 
 		<div class="clear"></div>
-		<!--<h2 id="tags">Tags:
+		<h2 id="tags">Tags:
 		<?php foreach($video->tags as $key => $tag): ?>
 
 			<span><a href="/videos/tag/<?= $tag->name ?>"><?= $tag->name ?></a></span><?php if($key+1 != count($video->tags)): ?>,<?php endif; ?>
@@ -80,7 +99,7 @@
 		<div class="clear"></div>
 		<div id="social_share">
 	    	<p>Share This Video:</p>
-			<?php //include('partials/social-share.php'); ?>
+			<?php include('partials/social-share.php'); ?>
 		</div>
 
 		<div class="clear"></div>
@@ -88,14 +107,14 @@
 		<div id="comments">
 			<div id="disqus_thread"></div>
 		</div>
-    -->
+
 	</div>
 
 </div>
 
-<div class="col-md-2" id="right_sidebar">
+<div class="col-md-2" id="right_sidebar" style="height: 100%">
 <h6>Recent Videos</h6>
-	<?php $videos = Video::where('active', '=', 1)->orderBy('created_at', 'DESC')->take(4)->get(); ?>
+	<?php $videos = Video::where('active', '=', 1)->orderBy('created_at', 'DESC')->take(3)->get(); ?>
 	<?php foreach($videos as $video): ?>
 		<?php include('partials/video-block.php'); ?>
 	<?php endforeach; ?>
@@ -120,7 +139,7 @@
 	<script type="text/javascript">
 
 		$(document).ready(function(){
-			$('#video_container').fitVids();
+            $('#video_container').fitVids();
 			$('.favorite').click(function(){
 				if($(this).data('authenticated')){
 					$.post('/favorite', { video_id : $(this).data('videoid'), _token: '<?= csrf_token(); ?>' }, function(data){});

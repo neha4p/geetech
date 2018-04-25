@@ -31,6 +31,8 @@ class CreateVideosTable extends Migration {
 			$table->string('mp4_url')->nullable();
 			$table->string('webm_url')->nullable();
 			$table->string('ogg_url')->nullable();
+			$table->string('drip_time')->nullable();
+			$table->string('drip_interval')->nullable();
 			$table->timestamps();
 		});
 	}
