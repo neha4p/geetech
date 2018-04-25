@@ -1,7 +1,7 @@
 Tantric Activation
 ===================
 
-#Requirements
+# Requirements
 
     PHP 7.0.0+ or newer
     Composer: curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
@@ -10,7 +10,8 @@ Tantric Activation
     A supported database: MySQL, PostgreSQL or SQLite
 
 
-#Installation
+# Installation
+
 Getting started is easy
 
 Go to the application folder in terminal and initialize composer
@@ -34,15 +35,15 @@ Head to http://localhost:8888 in your browser and checkout the site!
 
     Note that the EADDRINUSE error is often last in the error output reported from Docker.
 
-#Useful links for docker issues
+# Useful links for docker issues
 
 	https://vessel.shippingdocker.com/docs/everyday-usage/
 	https://vessel.shippingdocker.com/docs/common-issues/
 	
-#Blade Page Structure
+# Blade Page Structure
 https://laravel.com/docs/5.5/blade
 
-#File Locations
+# File Locations
 We are currently using the TUBED theme
 
 	All the CORE site templates are located in /public/content/themes/tubed/
