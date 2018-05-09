@@ -1,281 +1,153 @@
-
-
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
+    <base id="base" href="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <style type="text/css">
+        .gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}
+    </style>
+    <style type="text/css">
+        @media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}
+    </style>
+    <style type="text/css">
+        .gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+    </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <link rel="icon" href="//tantricactivation.s3.amazonaws.com/assets/v1/favicon.png" />
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Tantric Activation</title>
-
-    <!-- Bootstrap -->
-    <link href="//tantricactivation.s3.amazonaws.com/assets/v1/css/bootstrap.css" rel="stylesheet">
-    <link href="//tantricactivation.s3.amazonaws.com/assets/v1/css/slick.css" rel="stylesheet">
-    <link href="//tantricactivation.s3.amazonaws.com/assets/v1/css/style.css" rel="stylesheet">
-    <!-- fontawesome -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        About Sarrah Rose
+    </title>
+    <!-- Custom Fonts -->
+    <link class="include" href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link class="include" href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/map.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/marker.js"></script>
+    <style type="text/css">
+        .gm-style {        font: 400 11px Roboto, Arial, sans-serif;        text-decoration: none;      }      .gm-style img { max-width: none; }
+    </style>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/onion.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/controls.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/stats.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/stats.js"></script>
+    <link rel="stylesheet" href="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/css/framework.css?=F8Ci4VJf" id="framework-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" id="font-awesome">
+    <link rel="stylesheet" href="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/css/theme.css?=LGzHhudM" id="theme-css">
+    <link rel="stylesheet" href="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/css/custom_elements.css?=rEEdO0Ch" id="custom-elements-css">
+    <link rel="stylesheet" href="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/css/template.css?=e2o52KVx" id="template-css">
+    <link rel="stylesheet" href="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/css/styles.css?=GMbJH3Qe" id="custom-css">
+    <link rel="stylesheet" href="http://page.tantricactivation.com/client/assets/css/iframe.css" id="preview-css">
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/util.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/31/1/stats.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/AuthenticationService.Authenticate?1shttp%3A%2F%2Fpage.tantricactivation.com%2Fstorage%2Fprojects%2F4%2FV0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS%2F&amp;callback=_xdc_._8v791t&amp;token=51054"></script>
 </head>
-<body>
-<div class="wrap" style="background-image: url(//tantricactivation.s3.amazonaws.com/assets/v1/images/video-poster.png);">
-    <!-- [S] Header -->
-    <header id="top-box">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="" data-html2canvas-node1="1" data-html2canvas-node2="2">
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"></button><a class="navbar-brand page-scroll" href="#page-top">                    Tantric Activation</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden active">
+                    <a href="#page-top"></a><br>
+                </li>
+                <li>
+                    <a class="page-scroll" href="//tantricactivation.com/">Home</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="//tantricactivation.com/p/about">ABOUT SARRAH ROSE</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="//tantricactivation.com/p/path-to-pleasure">Path of Pleasure</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="//tantricactivation.com/signup">Join The Community</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="//tantricactivation.com/login">Members Login</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body" style="background-image: url('http://tantricactivation.s3.amazonaws.com/assets/v1/images/SARAH-ROSE-441.jpg');">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <nav class="navbar">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="/"><img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/logo.png" alt="" width="62px"/></a>
-                        </div>
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="/p/about">ABOUT SARRAH ROSE</a></li>
-                                <li><a href="/p/path-to-pleasure">Path of Pleasure</a></li>
-                                <li><a href="" data-toggle="modal" data-target="#signup">Join The Community</a></li>
-                                <li><a href="/login">Members Login</a></li>
-
-                            </ul>
-                            <button type="button" class="btn navbar-btn pull-right" data-toggle="modal" data-target="#signup"><i class="fas fa-user"></i> Join Private Community</button>
-                        </div><!-- /.navbar-collapse -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- [E] Header -->
-
-
-
-
-    <!-- [S] Marketing -->
-    <section id="marketing" class="marketing overlay-dark" style="background-image: url(//tantricactivation.s3.amazonaws.com/assets/v1/images/bg-2.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                    <div class="img-box">
-                        <center>
-                            <iframe width="760" height="430" src="https://www.youtube.com/embed/2-J7khS0WU4?rel=0&modestbranding=1&autoplay=1" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen></iframe>
-                        </center>
-                        <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/SARAH-ROSE-441.jpg" alt="" class="img-responsive"/>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                    <div class="comtent-text">
-                        <h2>I’m Sarrah Rose.</h2>
-                        <p>Tantric Activation has been years in the making.<br>
-                            From my first experience with Tantra many years ago, I knew that it was my purpose to share this information with the world.<br>
-                            I went to India, the birthplace of Tantra, and received intensive training.<br>
-                            While there, I met my guru and he further illuminated my path.<br>
-                            I had my first Tantric lover. Together we experienced what Tantric sex can be.<br>
-                            I devoured every book and video on Tantra that I could find.<br>
-                            I received Tantric initiation.<br>
-                            I took every course.<br>
-                            But mostly, I found it in myself.<br>
-                            There were others that shed light on the path for me.<br>
-                            But the path was inside of me always.<br>
-                            The path that led me through my pain and into my pleasure.<br>
-                            A path that allowed me to experience my humanness as sacred.<br>
-                            A path that brought me healing like none other.<br>
-                            I’ve gone through it all. My story is the human story.<br>
-                            I’ve come through hardships and created a life of pleasure.<br>
-                            Tantric Activation was created to share this with the world.<br>
-                            It’s time for Pleasure to rule our Planet..</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row production-wrap flex-row">
-                <div class="col-sm-4 col-xs-12">
-                    <div class="production-box">
-                        <h3><span><img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/activation.png" alt="" class="img-responsive"/></span> Activation Series</h3>
-                        <div class="content-text text-center">
-                            <p>Every month, Sarrah Rose will present a new Activation Series designed to stimulate and awaken the tantric energy that you have within.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="production-box">
-                        <h3><span><i class="fas fa-video fa-2x"></i></span>Private Interviews</h3>
-                        <div class="content-text text-center">
-                            <p>Access private interviews with Sarrah Rose and special guests regarding thought provoking Tantra, sex, love and relationship related topics.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="production-box">
-                        <h3><span><img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/private-community.png" alt="" class="img-responsive"/></span>Private Community</h3>
-                        <div class="content-text text-center">
-                            <p>Connect with other individuals that love to explore the depth of possibilities. No matter what your sexual orientation is, you are welcome here.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- [E] Marketing -->
-
-
-    <!-- [S] Contact -->
-    <section class="contact overlay-dark" style="background-image: url(//tantricactivation.s3.amazonaws.com/assets/v1/images/bg-5.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                    <img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/logo.png" alt="" class="img-responsive center-block"/>
-                    <h2>Join The Tantric Activation Private Community</h2>
-                    <a href="" class="btn" data-toggle="modal" data-target="#signup">I Want Access</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- [E] Contact -->
-
-    <!-- [S] Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                    <p>© 2018 - Scaled By Design Marketing All Rights Reserve</p>
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                    <ul class="footer-menu">
-                        <li><a href="/terms/terms">Terms And Conditions</a></li>
-                        <li><a href="/terms/privacy">Privacy Policy </a></li>
-                        <li><a href="/" data-toggle="modal" data-target="#signup">Join Our Community</a></li>
-                    </ul>
-                </div>
-                <a class="top-box" href="#top-box"><img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/top-aroow.png" alt="" /></a>
-            </div>
-        </div>
-    </footer>
-    <!-- [E] Footer -->
-
-    <!-- Start Signup Modal -->
-    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form method="POST" action="/signup">
-                        <div class="avatar">
-                            <i class="fas fa-user-circle fa-7x"></i>
-                        </div>
-                        <h4 class="modal-title">Join Private Community</h4>
-                        <div class="form-group">
-                            <input type="text" class="form-control" value="" placeholder="Username*" name="username" id="username" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" value="" placeholder="Email" name="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" value="" placeholder="Password*" name="password" id="password" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" value="" placeholder="Confirm Password*" name="password_confirmation" id="password_confirmation" required>
-                        </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox" name="check-18">  I am over 18 years old</label>
-                        </div>
-                        <button type="submit" class="btn btn-block">Sign Up</button>
-                        <input name="_token" type="hidden" value="<?php echo csrf_token(); ?>">
-                    </form>
+                <div class="col-md-12">
+                    <h1 class="brand-heading">
+                        I'm sarrah Rose<br>
+                    </h1>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Signup Modal -->
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="//tantricactivation.s3.amazonaws.com/assets/v1/js/bootstrap.min.js"></script>
-    <script src="//tantricactivation.s3.amazonaws.com/assets/v1/js/slick.js"></script>
-    <script type="text/javascript">
-
-        // Play/Pause hero video
-        $('.video').parent().click(function () {
-            if($(this).children(".video").get(0).paused){
-                $(this).children(".video").get(0).play();
-                $(this).children(".video-play").fadeOut();
-                $(this).children(".video-pause").fadeOut();
-            }else{
-                $(this).children(".video").get(0).pause();
-                $(this).children(".video-pause").fadeIn();
-            }
-        });
-
-        // Team Slider
-        $('.team-slider').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            arrows: true,
-            centerMode: true,
-            dots: false,
-            centerPadding: '0',
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
-
-        /* Onclick Scroll DIV */
-        $(document).on('click', '.scoll-down,.top-box', function(event){
-            event.preventDefault();
-
-            $('html, body').animate({
-                scrollTop: $( $.attr(this, 'href') ).offset().top
-            }, 1000);
-        });
-
-        /* Sticky Header */
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 90){
-                $('header').addClass("sticky");
-            }
-            else{
-                $('header').removeClass("sticky");
-            }
-        });
-
-    </script>
-
+</header>
+<!-- About Section -->
+<section id="about" class="container content-section text-center">
+    <div class="embed-responsive embed-responsive-16by9" style="">
+        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/2-J7khS0WU4"></iframe>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>
+                I'm Sarrah Rose
+            </h2>
+            <p>
+                Tantric Activation has been years in the making.From my first experience with Tantra many years ago, I knew that it was my purpose to share this information with the world.I went to India, the birthplace of Tantra, and received intensive training.While there, I met my guru and he further illuminated my path.I had my first Tantric lover. Together we experienced what Tantric sex can be.I devoured every book and video on Tantra that I could find.I received Tantric initiation.I took every course.But mostly, I found it in myself.There were others that shed light on the path for me.But the path was inside of me always.The path that led me through my pain and into my pleasure.A path that allowed me to experience my humanness as sacred.A path that brought me healing like none other.I’ve gone through it all. My story is the human story.I’ve come through hardships and created a life of pleasure.Tantric Activation was created to share this with the world.It’s time for Pleasure to rule our Planet..
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Download Section -->
+<section id="download" class="content-section text-center">
+    <div class="download-section" style="background-image: url('http://tantricactivation.s3.amazonaws.com/assets/v1/images/bg-5.jpg');">
+        <div class="container">
+            <div class="col-lg-12">
+                <h2></h2>
+                <h2>
+                    Join The Tantric Activation Private Community
+                </h2>
+                <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Join The Tantric Activation Private Community</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>
+                What is Tantric Activation?
+            </h2>
+            <p>
+                Tantric Activation is a community designed to support you in living a tantric lifestyle. Tantra teaches us that everything has consciousness. The trees, the grass, our pain, our pleasure all have consciousness. Tantric Activation is a system that embraces this and using this awareness, brings sensations of aliveness back into our bodies, waking us up to the pleasures of life. Humans can tend to disassociate from pain and when we do this, we can become numb to all sensations. We are here to support you as you begin to feel all parts of yourself again. Sign up for your free membership and enjoy being a part of a community of individuals that are also excited about living a tantric lifestyle.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <p>
+            Copyright © Tantric Activation 2018
+        </p>
+        <ul class="footer-menu">
+            <li>
+                <a href="//tantricactivation.com/terms/terms">Terms And Conditions</a>
+            </li>
+            <li>
+                <a href="//tantricactivation.com/terms/privacy">Privacy Policy </a>
+            </li>
+            <li>
+                <a href="//tantricactivation.com/signup" data-toggle="modal" data-target="#signup">Join Our Community</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script>
+<iframe class="html2canvas-container" style="visibility: hidden; position: fixed; left: -10000px; top: 0px; border: 0px none;" scrolling="no" width="1300" height="911"></iframe>
+<iframe class="html2canvas-container" style="visibility: hidden; position: fixed; left: -10000px; top: 0px; border: 0px none;" scrolling="no" width="1300" height="911"></iframe>
+<script id="jquery" src="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/js/jquery.min.js?=46Shi8no"></script><script id="framework-js" src="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/js/framework.js?=N9Z7KH9v"></script><script id="library-google-maps" src="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/js/google-maps.js?=vjplSsKU"></script><script id="library-jquery-easing" src="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/js/jquery-easing.js?=YaerXbP8"></script><script id="template-js" src="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/js/template.js?=bHHKVmxQ"></script><script id="custom-js" src="http://page.tantricactivation.com/storage/projects/4/V0USDDB8vt5kl7yfQSxcYle54KVShkl12pTS/js/scripts.js?=5D5yTGPM"></script>
 </body>
 </html>

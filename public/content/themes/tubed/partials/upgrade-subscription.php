@@ -4,9 +4,9 @@
     <center>
     <iframe width="620" height="342" src="https://www.youtube.com/embed/bCd6PJIAXGc?rel=0&modestbranding=1&autoplay=1" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen></iframe>
     </center>
-    <h2>Welcome to the Path of Pleasure. The initial membership has filled. We will be adding new members soon. I’ll let you know when more space is available in the course. I’m excited to see you inside! Welcome to the free online community!</h2>
-    <!--
-<p>Enter your credit card info to upgrade your account to a subscriber membership</p>
+    <h2>Welcome to the Path of Pleasure. I’m excited to see you inside!</h2>
+
+    <p>Enter your credit card info to upgrade your account to a subscriber membership</p>
 
 <form method="POST" action="<?= ($settings->enable_https) ? secure_url('user') : URL::to('user') ?>/<?= $user->username ?>/upgrade_cc" class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" id="payment-form">
 
@@ -82,7 +82,6 @@
     </div><!-- .panel -->
 
   </form>
--->
 </div>
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
