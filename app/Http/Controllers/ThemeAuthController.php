@@ -161,11 +161,13 @@ class ThemeAuthController extends BaseController
                 if (!$settings->free_registration) {
                     //$user->subscription('monthly')->create($token, ['email' => $user->email]);
                     //$user->newSubscription('main', 'premium')->create($token);
+                    $token = Request::get('stripeToken');
 
                     try {
                         if(!empty(config('site.subscription_id'))){
                             $user->newSubscription(config('site.subscription_name'), config('site.subscription_plan'))->create($token);
                         }else {
+                            $customer = $user->createAsStripeCustomer($token);
                             $user->invoiceFor('Membership Activation', config('site.signup_price'), [
                                 // 'custom-option' => $value,
                             ]);
