@@ -26,7 +26,7 @@ ul.video_list{
 
 					<?php foreach($featured_videos as $index => $video): ?>
 						<li <?php if($index == 0): ?>class="active"<?php endif; ?>>
-							<div class="bg" style="background-image:url(<?= Config::get('site.uploads_url') . '/images/' . $video->image ?>)"><div class="bg-dimmer"></div></div>
+							<div class="bg" style="background-image:url(<?= config('site.uploads_url') . '/images/' . $video->image ?>)"><div class="bg-dimmer"></div></div>
 							<div class="bg-dim-right"></div>
 							<div class="featured-content">
 								<div class="row">

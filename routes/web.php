@@ -121,7 +121,7 @@ Route::group(['middleware'=>'auth'], function () {
     Route::get('upgrade', 'UpgradeController@upgrade');
 
     Route::get('upload_dir', function () {
-        echo Config::get('site.uploads_dir');
+        echo config('site.uploads_dir');
     });
 
 });

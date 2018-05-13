@@ -358,7 +358,7 @@ class ThemeUserController extends BaseController
 
             try {
                 $customer = $user->createAsStripeCustomer($token);
-                $user->invoiceFor('Membership Activation', Config::get('site.signup_price'), [
+                $user->invoiceFor('Membership Activation', config('site.signup_price'), [
                     // 'custom-option' => $value,
                 ]);
                 $user->role = 'subscriber';

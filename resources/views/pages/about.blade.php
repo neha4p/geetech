@@ -49,19 +49,19 @@
                     <a href="#page-top"></a><br>
                 </li>
                 <li>
-                    <a class="page-scroll" href="//tantricactivation.com/">Home</a>
+                    <a class="page-scroll" href="http://tantricactivation.com/">Home</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="//tantricactivation.com/p/about">ABOUT SARRAH ROSE</a>
+                    <a class="page-scroll" href="http://tantricactivation.com/p/about">ABOUT SARRAH ROSE</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="//tantricactivation.com/p/path-to-pleasure">Path of Pleasure</a>
+                    <a class="page-scroll" href="http://tantricactivation.com/p/path-to-pleasure">Path of Pleasure</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="//tantricactivation.com/signup">Join The Community</a>
+                    <a class="page-scroll" href="http://tantricactivation.com/signup">Join The Community</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="//tantricactivation.com/login">Members Login</a>
+                    <a class="page-scroll" href="http://tantricactivation.com/login">Members Login</a>
                 </li>
             </ul>
         </div>
@@ -94,8 +94,21 @@
                 I'm Sarrah Rose
             </h2>
             <p>
-                Tantric Activation has been years in the making.From my first experience with Tantra many years ago, I knew that it was my purpose to share this information with the world.I went to India, the birthplace of Tantra, and received intensive training.While there, I met my guru and he further illuminated my path.I had my first Tantric lover. Together we experienced what Tantric sex can be.I devoured every book and video on Tantra that I could find.I received Tantric initiation.I took every course.But mostly, I found it in myself.There were others that shed light on the path for me.But the path was inside of me always.The path that led me through my pain and into my pleasure.A path that allowed me to experience my humanness as sacred.A path that brought me healing like none other.I’ve gone through it all. My story is the human story.I’ve come through hardships and created a life of pleasure.Tantric Activation was created to share this with the world.It’s time for Pleasure to rule our Planet..
-            </p>
+                Hi, I’m Sarrah Rose…</p><p>
+                Some people call me Sarrah Fucking Rose.</p><p>
+                I can have toe orgasms and when I slip my feet into designer shoes, I have full body orgasms. It’s a thing.</p><p>
+                My sexuality is my compass. What turns me on is my true north.</p><p>
+                Welcome to this land of pleasure that I’ve created, called Tantric Activation. This is where empowered sexuality comes to life!</p><p>
+                The ancient wisdom of Tantric sexuality meets science and sacredness here. When we’re awakened sexually, we can have the love and relationships that we truly desire.</p><p>
+                I’ve designed the Tantric Activation system to lead us through sexual healing, sexual awakening, and sexual empowerment.</p><p>
+                There are hundreds of different lineages and traditions of Tantra and they get changed as the teachings get passed down. Tantra is an energy that never changes though regardless of the teachings.</p><p>
+                I teach Tantra as an integrative approach to classical wisdom and modern therapies. The ancients had wisdom that science is now validating. This wisdom can help us heal from trauma, release triggers and clear conditioning that is holding us back from our true nature.</p><p>
+                Tantric Sex is a combination a breath practices, communication practices and visualization practices. The key to Tantric Sex is presence. Pure, total presence is more important than the techniques.</p><p>
+                We live in a time where the one size fits all approach to relationships isn't the standard. We have many options and once we truly know ourselves, we can choose the right relationship for us. Or none at all if that’s better for us.</p><p>
+                All love stems from self-love. The way that we love ourselves affects the way we love others and receive love from them. Through Tantric Activation practices, our self-love can become deeply rooted and blossom.</p><p>
+                I combine my almost two decades of practice, training, and certifications to bring you this unique approach to sexuality. While I love the ancient teachings, I also include cutting-edge therapies to create the deepest impact.</p><p>
+                My clients describe me as primal, sexy, fun, real and full of surprises. My Tantric lovers would agree. Those are the best compliments that I can receive.</p><p>
+                Somehow I ended up as the loudmouth about sex in Texas. When I’m not traveling the world, stirring up sexual bliss, you can find me in Austin doing the same.            </p>
         </div>
     </div>
 </section>
@@ -134,13 +147,13 @@
         </p>
         <ul class="footer-menu">
             <li>
-                <a href="//tantricactivation.com/terms/terms">Terms And Conditions</a>
+                <a href="http://tantricactivation.com/terms/terms">Terms And Conditions</a>
             </li>
             <li>
-                <a href="//tantricactivation.com/terms/privacy">Privacy Policy </a>
+                <a href="http://tantricactivation.com/terms/privacy">Privacy Policy </a>
             </li>
             <li>
-                <a href="//tantricactivation.com/signup" data-toggle="modal" data-target="#signup">Join Our Community</a>
+                <a href="http://tantricactivation.com/signup" data-toggle="modal" data-target="#signup">Join Our Community</a>
             </li>
         </ul>
     </div>

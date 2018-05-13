@@ -9,11 +9,11 @@ endif;
 
 // DEFINE SPECIFIC UPLOAD URL AND DIRECTORIES
 
-if( substr(Config::get('site.uploads_dir'), 0, 1) == '/' ){
+if( substr(config('site.uploads_dir'), 0, 1) == '/' ){
 	Config::set('site.uploads_dir', URL::to('/') . '/content/uploads/' );
 }
 
-if( substr(Config::get('site.uploads_url'), 0, 1) == '/' ){
+if( substr(config('site.uploads_url'), 0, 1) == '/' ){
 	Config::set('site.uploads_url', URL::to('/') . '/content/uploads/' );
 }
 

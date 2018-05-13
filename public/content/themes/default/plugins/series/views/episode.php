@@ -30,7 +30,7 @@
 		</div>
 	</div>
 	
-	<?php $bg_image = (isset($episode->snippet->thumbnails->maxres->url)) ? $episode->snippet->thumbnails->maxres->url : Config::get('site.uploads_url') . '/images/' . $episode->image  ?>
+	<?php $bg_image = (isset($episode->snippet->thumbnails->maxres->url)) ? $episode->snippet->thumbnails->maxres->url : config('site.uploads_url') . '/images/' . $episode->image  ?>
 
 	<div id="video_bg" style="background-image:url(<?= $bg_image ?>)">
 		<div id="video_bg_overlay"></div>
@@ -57,7 +57,7 @@
 									</div>
 								<?php else: ?>
 									<div id="video_container">
-									<video id="video_player" class="video-js vjs-default-skin" controls preload="auto" poster="<?= Config::get('site.uploads_url') . '/images/' . $episode->image ?>" data-setup="{}" width="100%" style="width:100%;">
+									<video id="video_player" class="video-js vjs-default-skin" controls preload="auto" poster="<?= config('site.uploads_url') . '/images/' . $episode->image ?>" data-setup="{}" width="100%" style="width:100%;">
 										<source src="<?= $episode->mp4_url; ?>" type='video/mp4'>
 										<source src="<?= $episode->webm_url; ?>" type='video/webm'>
 										<source src="<?= $episode->ogg_url; ?>" type='video/ogg'>
@@ -69,7 +69,7 @@
 
 						<?php else: ?>
 
-							<div id="subscribers_only"  style="background-image:url(<?= Config::get('site.uploads_url') . '/images/' . $episode->image ?>); background-size:cover">
+							<div id="subscribers_only"  style="background-image:url(<?= config('site.uploads_url') . '/images/' . $episode->image ?>); background-size:cover">
 								<div style="background:rgba(0, 0, 0, 0.5); width:100%; height:100%; position:absolute; left:0px; top:0px; z-index:-1"></div>
 								<h2 style="font-size:22px;">Sorry, this episode is only available to <?php if($episode->access == 'subscriber'): ?>Subscribers<?php elseif($episode->access == 'registered'): ?>Registered Users<?php endif; ?></h2>
 								<div class="clear"></div>

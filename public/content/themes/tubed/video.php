@@ -49,7 +49,7 @@
 						</div>
 					<?php else: ?>
 						<div id="video_container">
-						<video id="video_player" class="video-js vjs-default-skin" controls preload="auto" poster="<?= Config::get('site.uploads_url') . '/images/' . $video->image ?>" data-setup="{}" width="100%" style="width:100%;">
+						<video id="video_player" class="video-js vjs-default-skin" controls preload="auto" poster="<?= config('site.uploads_url') . '/images/' . $video->image ?>" data-setup="{}" width="100%" style="width:100%;">
 							<source src="<?= $video->mp4_url; ?>" type='video/mp4'>
 							<source src="<?= $video->webm_url; ?>" type='video/webm'>
 							<source src="<?= $video->ogg_url; ?>" type='video/ogg'>

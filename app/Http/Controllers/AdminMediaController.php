@@ -25,7 +25,7 @@ class AdminMediaController extends Controller
         if ($folder == '/') {
             $folder = '';
         }
-        $dir = Config::get('site.uploads_dir') . $folder;
+        $dir = config('site.uploads_dir') . $folder;
 
         //$response = Storage::allFiles($dir );
 

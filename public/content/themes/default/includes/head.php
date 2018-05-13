@@ -99,6 +99,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>if (!window.jQuery) { document.write('<script src="<?= THEME_URL . '/assets/js/jquery.min.js'; ?>"><\/script>'); }</script>
 
-<?php $favicon = (!empty($settings->favicon)) ? Config::get('site.uploads_dir') . 'settings/' . $settings->favicon : THEME_URL . '/assets/img/favicon.png'; ?>
+<?php $favicon = (!empty($settings->favicon)) ? config('site.uploads_dir') . 'settings/' . $settings->favicon : THEME_URL . '/assets/img/favicon.png'; ?>
 <link rel="icon" href="<?= $favicon ?>" type="image/x-icon">
 <link rel="shortcut icon" href="<?= $favicon ?>" type="image9sx-icon">

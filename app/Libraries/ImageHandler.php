@@ -9,14 +9,14 @@ class ImageHandler
 
     public static function uploadImage($image, $folder, $filename = '', $type = 'upload')
     {
-        return call_user_func(Config::get('site.media_upload_function'), ['image' => $image, 'folder' => $folder, 'filename' => $filename, 'type' => $type]);
+        return call_user_func(config('site.media_upload_function'), ['image' => $image, 'folder' => $folder, 'filename' => $filename, 'type' => $type]);
     }
 
     public static function getImage($image, $size = '',$folder='images/')
     {
         $img = ''; // placeholder image
     
-        $image_url = Config::get('site.uploads_dir') . $folder;
+        $image_url = config('site.uploads_dir') . $folder;
 
         if ($size == '') {
             $img = $image;

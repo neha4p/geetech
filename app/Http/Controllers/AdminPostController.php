@@ -163,20 +163,20 @@ class AdminPostController extends BaseController
     {
         $ext = pathinfo($post->image, PATHINFO_EXTENSION);
 
-        if (file_exists(Config::get('site.uploads_dir') . 'images/' . $post->image) && $post->image != 'placeholder.jpg') {
-            @unlink(Config::get('site.uploads_dir') . 'images/' . $post->image);
+        if (file_exists(config('site.uploads_dir') . 'images/' . $post->image) && $post->image != 'placeholder.jpg') {
+            @unlink(config('site.uploads_dir') . 'images/' . $post->image);
         }
 
-        if (file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $post->image)) && $post->image != 'placeholder.jpg') {
-            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $post->image));
+        if (file_exists(config('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $post->image)) && $post->image != 'placeholder.jpg') {
+            @unlink(config('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-large.' . $ext, $post->image));
         }
 
-        if (file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $post->image)) && $post->image != 'placeholder.jpg') {
-            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $post->image));
+        if (file_exists(config('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $post->image)) && $post->image != 'placeholder.jpg') {
+            @unlink(config('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-medium.' . $ext, $post->image));
         }
 
-        if (file_exists(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $post->image)) && $post->image != 'placeholder.jpg') {
-            @unlink(Config::get('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $post->image));
+        if (file_exists(config('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $post->image)) && $post->image != 'placeholder.jpg') {
+            @unlink(config('site.uploads_dir') . 'images/' . str_replace('.' . $ext, '-small.' . $ext, $post->image));
         }
     }
 }

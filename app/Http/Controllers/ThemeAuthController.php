@@ -163,10 +163,10 @@ class ThemeAuthController extends BaseController
                     //$user->newSubscription('main', 'premium')->create($token);
 
                     try {
-                        if(!empty(Config::get('site.subscription_id'))){
-                            $user->newSubscription(Config::get('site.subscription_name'), Config::get('site.subscription_plan'))->create($token);
+                        if(!empty(config('site.subscription_id'))){
+                            $user->newSubscription(config('site.subscription_name'), config('site.subscription_plan'))->create($token);
                         }else {
-                            $user->invoiceFor('Membership Activation', Config::get('site.signup_price'), [
+                            $user->invoiceFor('Membership Activation', config('site.signup_price'), [
                                 // 'custom-option' => $value,
                             ]);
                         }

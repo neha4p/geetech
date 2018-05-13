@@ -25,8 +25,8 @@
 	<link rel="stylesheet" href="{{ '/application/assets/admin/css/custom.css' }}">
 
 	<?php $favicon = (isset($settings->favicon) && trim($settings->favicon) != "") ? $settings->favicon : '/favicon.png'; ?>
-	<link rel="icon" href="<?= Config::get('site.uploads_dir') . '/settings/' . $favicon ?>" type="image/x-icon">
-    <link rel="shortcut icon" href="<?= Config::get('site.uploads_dir') . '/settings/' . $favicon ?>" type="image/x-icon">
+	<link rel="icon" href="<?= config('site.uploads_dir') . '/settings/' . $favicon ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= config('site.uploads_dir') . '/settings/' . $favicon ?>" type="image/x-icon">
 
 	@yield('css')
 

@@ -3,11 +3,11 @@
 <?php if(isset($video->id)): ?>
 
 <title><?= $video->title; ?></title>
-@if( Request::is( Config::get('chatter.routes.home')) )
+@if( Request::is( config('chatter.routes.home')) )
 	<title>Title for your forum homepage -  Website Name</title>
-@elseif( Request::is( Config::get('chatter.routes.home') . '/' . Config::get('chatter.routes.category') . '/*' ) && isset( $discussion ) )
+@elseif( Request::is( config('chatter.routes.home') . '/' . config('chatter.routes.category') . '/*' ) && isset( $discussion ) )
 	<title>{{ $discussion->category->name }} - Website Name</title>
-@elseif( Request::is( Config::get('chatter.routes.home') . '/*' ) && isset($discussion->title))
+@elseif( Request::is( config('chatter.routes.home') . '/*' ) && isset($discussion->title))
 	<title>{{ $discussion->title }} - Website Name</title>
 @endif
 <meta name="description" content="<?= $video->description ?>">
