@@ -121,7 +121,7 @@ class ThemeAuthController extends BaseController
         $user_card = ['cc-number' => Request::get('cc-number'),'cc-expiration-month' => Request::get('cc-expiration-month'),'cc-expiration-year' => Request::get('cc-expiration-year'),'cvv' => Request::get('cvv')];
 
         $settings = \Setting::first();
-        if (!$settings->free_registration) {
+        if (!$settings->free_registration & !empty($user_card['cc-number'])) {
             $payment_settings = PaymentSetting::first();
 
             if ($payment_settings->live_mode) {
