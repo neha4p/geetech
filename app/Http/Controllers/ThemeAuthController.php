@@ -118,6 +118,7 @@ class ThemeAuthController extends BaseController
 
         $input = Request::all();
         $user_data = ['username' => Request::get('username'), 'email' => Request::get('email'), 'password' => Hash::make(Request::get('password')) ];
+        $user_card = ['cc-number' => Request::get('cc-number'),'cc-expiration-month' => Request::get('cc-expiration-month'),'cc-expiration-year' => Request::get('cc-expiration-year'),'cvv' => Request::get('cvv')];
 
         $settings = \Setting::first();
         if (!$settings->free_registration) {
@@ -158,7 +159,7 @@ class ThemeAuthController extends BaseController
 
                 return Redirect::to('/login')->with(['note' => 'Success! One last step, be sure to verify your account by clicking on the activation link sent to your email.', 'note_type' => 'success']);
             } else {
-                if (!$settings->free_registration) {
+                if (!$settings->free_registration & isset($user_card['cc-number'])) {
                     //$user->subscription('monthly')->create($token, ['email' => $user->email]);
                     //$user->newSubscription('main', 'premium')->create($token);
                     $token = Request::get('stripeToken');
