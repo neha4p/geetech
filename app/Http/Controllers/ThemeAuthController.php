@@ -159,7 +159,7 @@ class ThemeAuthController extends BaseController
 
                 return Redirect::to('/login')->with(['note' => 'Success! One last step, be sure to verify your account by clicking on the activation link sent to your email.', 'note_type' => 'success']);
             } else {
-                if (!$settings->free_registration & isset($user_card['cc-number'])) {
+                if (!$settings->free_registration & !empty($user_card['cc-number'])) {
                     //$user->subscription('monthly')->create($token, ['email' => $user->email]);
                     //$user->newSubscription('main', 'premium')->create($token);
                     $token = Request::get('stripeToken');
