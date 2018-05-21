@@ -13,7 +13,7 @@ return [
     'uploads_dir' => '/content/uploads/',
     'media_upload_function' => 'ImageHandler::upload',
     'num_results_per_page' => 15,
-    'signup_price'  => '24700',//'26700',
+    'signup_price'  => '29700',//'26700',
     'subscription_name'=> '',
     'subscription_plan'=> '',
 ];
