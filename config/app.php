@@ -166,6 +166,7 @@ return [
         Laravel\Cashier\CashierServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Amostajo\LaravelImageHandler\Providers\ImageHandlerProvider::class,
+        Scaled\ActiveCampaign\ActiveCampaignServiceProvider::class,
 
     ],
 
@@ -217,6 +218,7 @@ return [
         'Image'     => Intervention\Image\Facades\Image::class,
         'Socialize' => Laravel\Socialite\Facades\Socialite::class,
         'ImageHandler'  => App\Libraries\ImageHandler::class,
+        'AC' => Scaled\ActiveCampaign\Facades\ActiveCampaign::class,
     ],
 
 ];

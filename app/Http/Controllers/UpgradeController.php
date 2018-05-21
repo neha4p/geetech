@@ -4,6 +4,7 @@ use Redirect;
 use View;
 use Auth;
 use Session;
+use AC;
 
 class UpgradeController extends Controller
 {

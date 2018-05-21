@@ -20,6 +20,7 @@
         "laravel/tinker": "~1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "predis/predis": "^1.1",
+        "scaled/activecampaign": "dev-master",
         "shipping-docker/vessel": "^3.0",
         "spatie/laravel-backup": "^5.1"
     },
@@ -77,5 +78,9 @@
         "laravel": {
             "dont-discover": []
         }
-    }
+    },
+    "repositories": [
+        {"type": "composer", "url": "https://repo.packagist.com/scaled/"},
+        {"packagist.org": false}
+        ]
 }

@@ -18,6 +18,7 @@ use App\Libraries\ImageHandler;
 use Url;
 use Config;
 use Carbon\Carbon;
+use AC;
 
 class ThemeUserController extends BaseController
 {
@@ -363,6 +364,18 @@ class ThemeUserController extends BaseController
                 ]);
                 $user->role = 'subscriber';
                 $user->save();
+
+                /*Add to AutoResponder Active Campaign - Active & unsub from Prospects*/
+                // List info
+                $active_list_id = config('activecampaign.active_list_id');
+
+                $data = [
+                    'p' =>[$active_list_id => $active_list_id ],
+                    'status'=>[$active_list_id => 1],
+                ];
+                $ac = AC::createContact(Auth::user()->email ,$data);
+
+
                 return Redirect::to('user/' . $username . '/billing')->with(['note' => 'You have been successfully signed up for a subscriber membership!', 'note_type' => 'success']);
             } catch (Exception $e) {
                 return Redirect::to('/user/' . $username . '/upgrade_subscription')->with(['note' => 'Sorry, there was an error with your card: ' . $e->getMessage(), 'note_type' => 'error']);

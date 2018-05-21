@@ -52,7 +52,7 @@
 <?php else: ?>
 	
 		<div class="well">
-			<p>It looks like your account has been cancelled.</p>
+			<p>It looks like your account does not have an active recurring subscription.</p>
 		</div>
 
 

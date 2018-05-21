@@ -17,6 +17,7 @@ use PaymentSetting;
 use Input;
 use Hash;
 use Validator;
+use AC;
 
 class ThemeAuthController extends BaseController
 {
@@ -151,6 +152,19 @@ class ThemeAuthController extends BaseController
         $user = new User($user_data);
         $user->save();
 
+        /*Add to AutoResponder Active Campaign - Prospect*/
+        // List info
+        $prospect_list_id = config('activecampaign.prospect_list_id');
+
+        $data = [
+            'p' =>[$prospect_list_id=>$prospect_list_id],
+            'status'=>[$prospect_list_id=> 1],
+        ];
+
+        $ac = AC::createContact($user_data['email'] ,$data);
+
+
+
         try {
             if ($settings->free_registration && $settings->activation_email) {
                 Mail::send('Theme::emails.verify', ['activation_code' => $user->activation_code, 'website_name' => $settings->website_name], function ($message) {
@@ -172,6 +186,16 @@ class ThemeAuthController extends BaseController
                             $user->invoiceFor('Membership Activation', config('site.signup_price'), [
                                 // 'custom-option' => $value,
                             ]);
+                            /*Add to AutoResponder Active Campaign - Active & unsub from Prospects*/
+                            // List info
+                            $active_list_id = config('activecampaign.active_list_id');
+
+                            $data = [
+                                'p' =>[$active_list_id => $active_list_id ],
+                                'status'=>[$active_list_id => 1],
+                            ];
+
+                            $ac = AC::createContact($user_data['email'] ,$data);
                         }
                     } catch (Exception $e) {
                         //
