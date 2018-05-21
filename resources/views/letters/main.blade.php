@@ -43,7 +43,7 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="#">Home</a></li>
-                                <li><a href="/p/about">ABOUT SARRAH ROSE</a></li>
+                                <li><a href="http://page.tantricactivation.com/sites/about/">ABOUT SARRAH ROSE</a></li>
                                 <li><a href="/p/path-to-pleasure">Path of Pleasure</a></li>
                                 <li><a href="" data-toggle="modal" data-target="#signup">Join The Community</a></li>
                                 <li><a href="/login">Members Login</a></li>

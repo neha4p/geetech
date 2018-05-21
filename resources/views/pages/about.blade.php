@@ -52,7 +52,7 @@
                     <a class="page-scroll" href="http://tantricactivation.com/">Home</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="http://tantricactivation.com/p/about">ABOUT SARRAH ROSE</a>
+                    <a class="page-scroll" href="http://tantricactivation.comhttp://page.tantricactivation.com/sites/about/">ABOUT SARRAH ROSE</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="http://tantricactivation.com/p/path-to-pleasure">Path of Pleasure</a>
