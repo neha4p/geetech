@@ -47,7 +47,7 @@
                                 <li><a href="/p/path-to-pleasure">Path of Pleasure</a></li>
                                 <li><a href="" data-toggle="modal" data-target="#signup">Join The Community</a></li>
                                 <li><a href="/login">Members Login</a></li>
-
+                                <li><a href="#contactus">Contact Us</a></li>
                             </ul>
                             <button type="button" class="btn navbar-btn pull-right" data-toggle="modal" data-target="#signup"><i class="fas fa-user"></i> Join Private Community</button>
                         </div><!-- /.navbar-collapse -->
@@ -300,6 +300,9 @@
                     <li><a href="/terms/terms">Terms And Conditions</a></li>
                     <li><a href="/terms/privacy">Privacy Policy </a></li>
                     <li><a href="/" data-toggle="modal" data-target="#signup">Join Our Community</a></li>
+                    <li id="contactus">
+                        <a href="mailto:support@tantricactivation.com">support@tantricactivation.com</a>
+                    </li>
                 </ul>
             </div>
             <a class="top-box" href="#top-box"><img src="//tantricactivation.s3.amazonaws.com/assets/v1/images/top-aroow.png" alt="" /></a>
