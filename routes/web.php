@@ -15,7 +15,7 @@ Route::get('/', function () {
 });
 
 Route::get('/joinnow', function () {
-    return view('letters.salesletter');
+    return view('pages.path-to-pleasure');
 });
 
 Route::get('/v1', function () {
