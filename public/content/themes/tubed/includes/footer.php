@@ -5,8 +5,8 @@
 					<h3><?php echo $settings->website_name; ?></h3>
 					<p><?= ThemeHelper::getThemeSetting(@$theme_settings->footer_description, 'Site Description Update theme settings to change this value') ?></p>
 					<a href="http://facebook.com/<?php echo $settings->facebook_page_id; ?>" target="_blank" class="facebook social-link"><i class="fa fa-facebook"></i></a>
-					<a href="http://twitter.com/<?php echo $settings->twitter_page_id; ?>" target="_blank" class="twitter social-link"><i class="fa fa-twitter"></i></a>
-					<a href="http://plus.google.com/<?php echo $settings->google_page_id; ?>" target="_blank" class="google social-link"><i class="fa fa-google-plus"></i></a>
+                    <a href="<?php echo $settings->google_page_id; ?>" target="_blank" class="facebook social-link"><i class="fa fa-google-plus"></i></a>
+                    <a href="http://twitter.com/<?php echo $settings->twitter_page_id; ?>" target="_blank" class="twitter social-link"><i class="fa fa-twitter"></i></a>
 					<a href="http://youtube.com/<?php echo $settings->youtube_page_id; ?>" target="_blank" class="youtube social-link"><i class="fa fa-youtube"></i></a>
 					<div class="clear"></div>
 				</div>

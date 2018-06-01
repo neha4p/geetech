@@ -14,6 +14,10 @@ Route::get('/', function () {
     }
 });
 
+Route::get('/joinnow', function () {
+    return view('letters.salesletter');
+});
+
 Route::get('/v1', function () {
     return view('letters.main');
 });
