@@ -1,12 +1,12 @@
 @extends(Config::get('chatter.master_file_extend'))
 
 @section(Config::get('chatter.yields.head'))
-    <link href="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/spectrum/spectrum.css') }}" rel="stylesheet">
-    <link href="{{ secureurl('/vendor/devdojo/chatter/assets/css/chatter.css') }}" rel="stylesheet">
+    <link href="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/spectrum/spectrum.css') }}" rel="stylesheet">
+    <link href="{{ secure_url('/vendor/devdojo/chatter/assets/css/chatter.css') }}" rel="stylesheet">
     @if($chatter_editor == 'simplemde')
-        <link href="{{ secureurl('/vendor/devdojo/chatter/assets/css/simplemde.min.css') }}" rel="stylesheet">
+        <link href="{{ secure_url('/vendor/devdojo/chatter/assets/css/simplemde.min.css') }}" rel="stylesheet">
     @elseif($chatter_editor == 'trumbowyg')
-        <link href="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/trumbowyg/ui/trumbowyg.css') }}" rel="stylesheet">
+        <link href="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/trumbowyg/ui/trumbowyg.css') }}" rel="stylesheet">
         <style>
             .trumbowyg-box, .trumbowyg-editor {
                 margin: 0px auto;
@@ -84,7 +84,7 @@
                                                 @if( (substr($discussion->user->{$db_field}, 0, 7) == 'http://') || (substr($discussion->user->{$db_field}, 0, 8) == 'https://') )
                                                     <img src="{{ $discussion->user->{$db_field}  }}">
                                                 @else
-                                                    <img src="{{ Config::get('chatter.user.relative_secureurl_to_image_assets') . $discussion->user->{$db_field}  }}">
+                                                    <img src="{{ Config::get('chatter.user.relative_secure_url_to_image_assets') . $discussion->user->{$db_field}  }}">
                                                 @endif
 
                                             @else
@@ -200,8 +200,8 @@
 
 
     @if( $chatter_editor == 'tinymce' || empty($chatter_editor) )
-        <script src="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/tinymce/tinymce.min.js') }}"></script>
-        <script src="{{ secureurl('/vendor/devdojo/chatter/assets/js/tinymce.js') }}"></script>
+        <script src="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/tinymce/tinymce.min.js') }}"></script>
+        <script src="{{ secure_url('/vendor/devdojo/chatter/assets/js/tinymce.js') }}"></script>
         <script>
             var my_tinymce = tinyMCE;
             $('document').ready(function(){
@@ -211,16 +211,16 @@
             });
         </script>
     @elseif($chatter_editor == 'simplemde')
-        <script src="{{ secureurl('/vendor/devdojo/chatter/assets/js/simplemde.min.js') }}"></script>
-        <script src="{{ secureurl('/vendor/devdojo/chatter/assets/js/chatter_simplemde.js') }}"></script>
+        <script src="{{ secure_url('/vendor/devdojo/chatter/assets/js/simplemde.min.js') }}"></script>
+        <script src="{{ secure_url('/vendor/devdojo/chatter/assets/js/chatter_simplemde.js') }}"></script>
     @elseif($chatter_editor == 'trumbowyg')
-        <script src="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/trumbowyg/trumbowyg.min.js') }}"></script>
-        <script src="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/trumbowyg/plugins/preformatted/trumbowyg.preformatted.min.js') }}"></script>
-        <script src="{{ secureurl('/vendor/devdojo/chatter/assets/js/trumbowyg.js') }}"></script>
+        <script src="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/trumbowyg/trumbowyg.min.js') }}"></script>
+        <script src="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/trumbowyg/plugins/preformatted/trumbowyg.preformatted.min.js') }}"></script>
+        <script src="{{ secure_url('/vendor/devdojo/chatter/assets/js/trumbowyg.js') }}"></script>
     @endif
 
-    <script src="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/spectrum/spectrum.js') }}"></script>
-    <script src="{{ secureurl('/vendor/devdojo/chatter/assets/js/chatter.js') }}"></script>
+    <script src="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/spectrum/spectrum.js') }}"></script>
+    <script src="{{ secure_url('/vendor/devdojo/chatter/assets/js/chatter.js') }}"></script>
     <script>
         $('document').ready(function(){
 

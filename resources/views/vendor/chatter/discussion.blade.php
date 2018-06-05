@@ -2,13 +2,13 @@
 
 @section(Config::get('chatter.yields.head'))
     @if(Config::get('chatter.sidebar_in_discussion_view'))
-        <link href="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/spectrum/spectrum.css') }}" rel="stylesheet">
+        <link href="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/spectrum/spectrum.css') }}" rel="stylesheet">
     @endif
-    <link href="{{ secureurl('/vendor/devdojo/chatter/assets/css/chatter.css') }}" rel="stylesheet">
+    <link href="{{ secure_url('/vendor/devdojo/chatter/assets/css/chatter.css') }}" rel="stylesheet">
     @if($chatter_editor == 'simplemde')
-        <link href="{{ secureurl('/vendor/devdojo/chatter/assets/css/simplemde.min.css') }}" rel="stylesheet">
+        <link href="{{ secure_url('/vendor/devdojo/chatter/assets/css/simplemde.min.css') }}" rel="stylesheet">
     @elseif($chatter_editor == 'trumbowyg')
-        <link href="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/trumbowyg/ui/trumbowyg.css') }}" rel="stylesheet">
+        <link href="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/trumbowyg/ui/trumbowyg.css') }}" rel="stylesheet">
         <style>
             .trumbowyg-box, .trumbowyg-editor {
                 margin: 0px auto;
@@ -108,7 +108,7 @@
                                                 @if( (substr($post->user->{$db_field}, 0, 7) == 'http://') || (substr($post->user->{$db_field}, 0, 8) == 'https://') )
                                                     <img src="{{ $post->user->{$db_field}  }}">
                                                 @else
-                                                    <img src="{{ Config::get('chatter.user.relative_secureurl_to_image_assets') . $post->user->{$db_field}  }}">
+                                                    <img src="{{ Config::get('chatter.user.relative_secure_url_to_image_assets') . $post->user->{$db_field}  }}">
                                                 @endif
 
                                             @else
@@ -157,7 +157,7 @@
                                                 @if( (substr(Auth::user()->{$db_field}, 0, 7) == 'http://') || (substr(Auth::user()->{$db_field}, 0, 8) == 'https://') )
                                                     <img src="{{ Auth::user()->{$db_field}  }}">
                                                 @else
-                                                    <img src="{{ Config::get('chatter.user.relative_secureurl_to_image_assets') . Auth::user()->{$db_field}  }}">
+                                                    <img src="{{ Config::get('chatter.user.relative_secure_url_to_image_assets') . Auth::user()->{$db_field}  }}">
                                                 @endif
 
                                             @else
@@ -197,7 +197,7 @@
                                             <button id="submit_response" class="btn btn-success pull-right"><i class="chatter-new"></i> @lang('chatter::messages.response.submit')</button>
                                             @if(Config::get('chatter.email.enabled'))
                                                 <div id="notify_email">
-                                                    <img src="{{ secureurl('/vendor/devdojo/chatter/assets/images/email.gif') }}" class="chatter_email_loader">
+                                                    <img src="{{ secure_url('/vendor/devdojo/chatter/assets/images/email.gif') }}" class="chatter_email_loader">
                                                     <!-- Rounded toggle switch -->
                                                     <span>@lang('chatter::messages.email.notify')</span>
                                                     <label class="switch">
@@ -299,8 +299,8 @@
 
             @if( $chatter_editor == 'tinymce' || empty($chatter_editor) )
                 <script>var chatter_editor = 'tinymce';</script>
-                <script src="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/tinymce/tinymce.min.js') }}"></script>
-                <script src="{{ secureurl('/vendor/devdojo/chatter/assets/js/tinymce.js') }}"></script>
+                <script src="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/tinymce/tinymce.min.js') }}"></script>
+                <script src="{{ secure_url('/vendor/devdojo/chatter/assets/js/tinymce.js') }}"></script>
                 <script>
                     var my_tinymce = tinyMCE;
                     $('document').ready(function(){
@@ -313,13 +313,13 @@
                 </script>
             @elseif($chatter_editor == 'simplemde')
                 <script>var chatter_editor = 'simplemde';</script>
-                <script src="{{ secureurl('/vendor/devdojo/chatter/assets/js/simplemde.min.js') }}"></script>
-                <script src="{{ secureurl('/vendor/devdojo/chatter/assets/js/chatter_simplemde.js') }}"></script>
+                <script src="{{ secure_url('/vendor/devdojo/chatter/assets/js/simplemde.min.js') }}"></script>
+                <script src="{{ secure_url('/vendor/devdojo/chatter/assets/js/chatter_simplemde.js') }}"></script>
             @elseif($chatter_editor == 'trumbowyg')
                 <script>var chatter_editor = 'trumbowyg';</script>
-                <script src="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/trumbowyg/trumbowyg.min.js') }}"></script>
-                <script src="{{ secureurl('/vendor/devdojo/chatter/assets/vendor/trumbowyg/plugins/preformatted/trumbowyg.preformatted.min.js') }}"></script>
-                <script src="{{ secureurl('/vendor/devdojo/chatter/assets/js/trumbowyg.js') }}"></script>
+                <script src="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/trumbowyg/trumbowyg.min.js') }}"></script>
+                <script src="{{ secure_url('/vendor/devdojo/chatter/assets/vendor/trumbowyg/plugins/preformatted/trumbowyg.preformatted.min.js') }}"></script>
+                <script src="{{ secure_url('/vendor/devdojo/chatter/assets/js/trumbowyg.js') }}"></script>
             @endif
 
             @if(Config::get('chatter.sidebar_in_discussion_view'))
@@ -465,6 +465,6 @@
                 });
             </script>
 
-            <script src="{{ secureurl('/vendor/devdojo/chatter/assets/js/chatter.js') }}"></script>
+            <script src="{{ secure_url('/vendor/devdojo/chatter/assets/js/chatter.js') }}"></script>
 
 @stop
