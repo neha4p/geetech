@@ -586,10 +586,9 @@
                                 <path fill="currentColor" opacity="0" d="M232.5,134.5l7,168c0.3,6.4,5.6,11.5,12,11.5h9c6.4,0,11.7-5.1,12-11.5l7-168c0.3-6.8-5.2-12.5-12-12.5h-23 C237.7,122,232.2,127.7,232.5,134.5z">
                                     <animate attributeType="XML" repeatCount="indefinite" dur="2s" attributeName="opacity" values="0;0;1;1;0;0;"></animate>
                                 </path>
-                            </g>    
+                            </g>
                         </svg>
-                        <!--
-                     <i class="fa fa-instagram" aria-hidden="true"></i> --></a>
+                       </a>
                 </div>
             </div>
             <div class="col-sm-6 col-xs-12">
@@ -618,7 +617,7 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <form method="POST" action="/signup">
+                <form method="POST" action="https://tantricactivation.com/signup">
                     <div class="avatar">
                         <svg class="svg-inline--fa fa-user-circle fa-w-16 fa-7x" aria-hidden="true" data-prefix="fas" data-icon="user-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
                             <path fill="currentColor" d="M8 256C8 119.033 119.033 8 256 8s248 111.033 248 248-111.033 248-248 248S8 392.967 8 256zm72.455 125.868C119.657 436.446 183.673 472 256 472s136.343-35.554 175.545-90.132c-3.141-26.99-22.667-49.648-49.538-56.366l-32.374-8.093C323.565 339.79 290.722 352 256 352s-67.565-12.21-93.634-34.591l-32.374 8.093c-26.87 6.718-46.396 29.376-49.537 56.366zM144 208c0 61.856 50.144 112 112 112s112-50.144 112-112S317.856 96 256 96s-112 50.144-112 112z"></path>
@@ -654,9 +653,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="//tantricactivation.s3.amazonaws.com/assets/v1/js/bootstrap.min.js"></script><script src="//tantricactivation.s3.amazonaws.com/assets/v1/js/slick.js"></script><script type="text/javascript">    // Play/Pause hero video    $('.video').parent().click(function () {        if($(this).children(".video").get(0).paused){            $(this).children(".video").get(0).play();            $(this).children(".video-play").fadeOut();            $(this).children(".video-pause").fadeOut();        }else{            $(this).children(".video").get(0).pause();            $(this).children(".video-pause").fadeIn();        }    });    // Team Slider    $('.team-slider').slick({        slidesToShow: 3,        slidesToScroll: 1,        autoplay: true,        autoplaySpeed: 2000,        arrows: true,        centerMode: true,        dots: false,        centerPadding: '0',        responsive: [            {                breakpoint: 1024,                settings: {                    slidesToShow: 3,                    slidesToScroll: 1,                    infinite: true,                    dots: false                }            },            {                breakpoint: 600,                settings: {                    slidesToShow: 2,                    slidesToScroll: 1                }            },            {                breakpoint: 480,                settings: {                    slidesToShow: 1,                    slidesToScroll: 1                }            }        ]    });    /* Onclick Scroll DIV */    $(document).on('click', '.scoll-down,.top-box', function(event){        event.preventDefault();        $('html, body').animate({            scrollTop: $( $.attr(this, 'href') ).offset().top        }, 1000);    });    /* Sticky Header */    $(window).scroll(function() {        if ($(this).scrollTop() > 90){            $('header').addClass("sticky");        }        else{            $('header').removeClass("sticky");        }    });</script>
-<iframe class="html2canvas-container" style="visibility: hidden; position: fixed; left: -10000px; top: 0px; border: 0px none;" scrolling="no" width="1300" height="622"></iframe>
-<iframe class="html2canvas-container" scrolling="no" style="visibility: hidden; position: fixed; left: -10000px; top: 0px; border: 0px;" width="3060" height="1321"></iframe>
+<script src="//tantricactivation.s3.amazonaws.com/assets/v1/js/bootstrap.min.js"></script>
 <script id="jquery" src="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/js/jquery.min.js?=5WHBBN2w"></script><script id="framework-js" src="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/js/framework.js?=SDNrwBJH"></script><script id="custom-js" src="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/js/scripts.js?=dJytMsQN"></script>
 </body>
 </html>
