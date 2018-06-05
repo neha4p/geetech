@@ -92,12 +92,12 @@ class ThemeAuthController extends BaseController
                 $user->save();
             }
 
-            if (Auth::user()->subscribed() || (Auth::user()->role == 'admin' || Auth::user()->role == 'demo') || ($settings->free_registration && Auth::user()->role == 'registered')) :
+            if (Auth::user()->subscribed() || (Auth::user()->role == 'admin' || Auth::user()->role == 'demo') || (Auth::user()->role == 'registered')) :
                 $redirect = (Request::get('redirect', 'false')) ? Request::get('redirect') : '/';
                 if (Auth::user()->role == 'demo' && Setting::first()->demo_mode != 1) {
                     Auth::logout();
                     return Redirect::to($redirect)->with(['note' => 'Sorry, demo mode has been disabled', 'note_type' => 'error']);
-                } elseif ($settings->free_registration && $settings->activation_email && Auth::user()->active == 0) {
+                } elseif ($settings->activation_email && Auth::user()->active == 0) {
                     Auth::logout();
                     return Redirect::to($redirect)->with(['note' => 'Please make sure to activate your account in your email before logging in.', 'note_type' => 'error']);
                 } else {
