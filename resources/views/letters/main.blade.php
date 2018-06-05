@@ -1,6 +1,6 @@
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
 <head>
-    <base id="base" href="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/">
+    <base id="base" href="//page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
@@ -27,12 +27,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script type="text/javascript" async="" src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
-    <link rel="stylesheet" href="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/css/framework.css?=1RhnCIp7" id="framework-css">
+    <link rel="stylesheet" href="//page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/css/framework.css?=1RhnCIp7" id="framework-css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" id="font-awesome">
-    <link rel="stylesheet" href="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/css/theme.css?=uSO1ektn" id="theme-css">
-    <link rel="stylesheet" href="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/css/custom_elements.css?=PMyDOgCi" id="custom-elements-css">
-    <link rel="stylesheet" href="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/css/styles.css?=g1q59VBe" id="custom-css">
-    <link rel="stylesheet" href="http://page.tantricactivation.com/client/assets/css/iframe.css" id="preview-css"></head>
+    <link rel="stylesheet" href="//page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/css/theme.css?=uSO1ektn" id="theme-css">
+    <link rel="stylesheet" href="//page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/css/custom_elements.css?=PMyDOgCi" id="custom-elements-css">
+    <link rel="stylesheet" href="//page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/css/styles.css?=g1q59VBe" id="custom-css">
+    <link rel="stylesheet" href="//page.tantricactivation.com/client/assets/css/iframe.css" id="preview-css"></head>
 <body class="" data-html2canvas-node2="2">
 <div class="wrap" style="background-image: url(//tantricactivation.s3.amazonaws.com/assets/v1/images/video-poster.png);">
     <!-- [S] Header -->
@@ -51,7 +51,7 @@
                                     <a href="#">Home</a>
                                 </li>
                                 <li>
-                                    <a href="http://page.tantricactivation.com/sites/about/">ABOUT SARRAH ROSE</a>
+                                    <a href="//page.tantricactivation.com/sites/about/">ABOUT SARRAH ROSE</a>
                                 </li>
                                 <li>
                                     <a href="/p/path-to-pleasure">Path of Pleasure</a>
@@ -674,6 +674,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="//tantricactivation.s3.amazonaws.com/assets/v1/js/bootstrap.min.js"></script>
-<script id="jquery" src="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/js/jquery.min.js?=hZUTGQTk"></script><script id="framework-js" src="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/js/framework.js?=ZNVt7TRu"></script><script id="custom-js" src="http://page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/js/scripts.js?=Pisi40Mw"></script>
+<script id="jquery" src="//page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/js/jquery.min.js?=hZUTGQTk"></script><script id="framework-js" src="//page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/js/framework.js?=ZNVt7TRu"></script><script id="custom-js" src="//page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/js/scripts.js?=Pisi40Mw"></script>
 </body>
 </html>
