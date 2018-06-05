@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
 <head>
     <base id="base" href="//page.tantricactivation.com/storage/projects/4/rEp5EALzvXGAQsb33RkTqagT32e43jKndeR4/">
