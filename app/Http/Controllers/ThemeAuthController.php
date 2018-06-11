@@ -91,9 +91,8 @@ class ThemeAuthController extends BaseController
                 $user->role = 'registered';
                 $user->save();
             }
-
+            $redirect = (Request::get('redirect', 'false')) ? Request::get('redirect') : '/';
             if (Auth::user()->subscribed() || (Auth::user()->role == 'admin' || Auth::user()->role == 'demo') || (Auth::user()->role == 'registered')) :
-                $redirect = (Request::get('redirect', 'false')) ? Request::get('redirect') : '/';
                 if (Auth::user()->role == 'demo' && Setting::first()->demo_mode != 1) {
                     Auth::logout();
                     return Redirect::to($redirect)->with(['note' => 'Sorry, demo mode has been disabled', 'note_type' => 'error']);
@@ -104,8 +103,10 @@ class ThemeAuthController extends BaseController
                     return Redirect::to($redirect)->with(['note' => 'You have been successfully logged in.', 'note_type' => 'success']);
                 }
             else :
-                $username = Auth::user()->username;
-                return Redirect::to('user/' . $username . '/renew_subscription')->with(['note' => 'Uh oh, looks like you don\'t have an active subscription, please renew to gain access to all content', 'note_type' => 'error']);
+
+                return Redirect::to($redirect)->with(['note' => 'You have been successfully logged in.', 'note_type' => 'success']);
+                //$username = Auth::user()->username;
+                //return Redirect::to('user/' . $username . '/renew_subscription')->with(['note' => 'Uh oh, looks like you don\'t have an active subscription, please renew to gain access to all content', 'note_type' => 'error']);
             endif;
         } else {
             $redirect = (Request::get('redirect', false)) ? '?redirect=' . Request::get('redirect') : '';
