@@ -17,6 +17,7 @@ class VerifyCsrfToken extends BaseVerifier
         'webhook/stripe',
         'webhook/shipwire',
         'webhook/recurly',
+        'signup'
 
     ];
 }
