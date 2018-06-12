@@ -665,7 +665,7 @@
                     <div class="checkbox">
                         <label><input name="check-18" type="checkbox">  I am over 18 years old</label>
                     </div>
-                    <button type="submit" class="btn btn-block">Sign Up</button><input name="_token" value="bEG0rj1RYaaXUyS2KobxYa3t2yV00JCTv06GK4nj" type="hidden">
+                    <button type="submit" class="btn btn-block">Sign Up</button>
                 </form>
             </div>
         </div>
