@@ -64,7 +64,7 @@
                                     <a href="https://tantricactivation.com/login">Members Login</a>
                                 </li>
                                 <li>
-                                    <a href="#contactus">Contact Us</a>
+                                    <a href="//tantricactivation.com/#contactus">Contact Us</a>
                                 </li>
                             </ul>
                             <button type="button" class="btn navbar-btn pull-right" data-toggle="modal" data-target="#signup">
