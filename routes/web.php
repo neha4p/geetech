@@ -10,22 +10,14 @@ Route::get('/', function () {
         return redirect('/home');
     }
     else {
-        return view('letters.main');
+        //return view('letters.main');
+        Route::get('/', 'ThemeHomeController@index');
+
     }
 });
 
 Route::get('/joinnow', function () {
     return view('pages.path-to-pleasure');
-});
-
-Route::get('/v1', function () {
-    return view('letters.main');
-});
-Route::get('/terms/{page}', function ($page = null) {
-    return view('terms.'.$page);
-});
-Route::get('/p/{page}', function ($page = null) {
-    return view('pages.'.$page);
 });
 
 Route::get('login', 'ThemeAuthController@login_form')->name('login');

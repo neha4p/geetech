@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         // $this->call('UserTableSeeder');
+        $this->call(VideosTableSeeder::class);
         $this->call(FavoritesTableSeeder::class);
         $this->call(MenuTableSeeder::class);
         $this->call(PagesTableSeeder::class);
@@ -27,12 +28,12 @@ class DatabaseSeeder extends Seeder
         $this->call(PostsTableSeeder::class);
         $this->call(SettingsTableSeeder::class);
         $this->call(SubscriptionsTableSeeder::class);
-        $this->call(TagVideoTableSeeder::class);
         $this->call(TagsTableSeeder::class);
+        $this->call(TagVideoTableSeeder::class);
         $this->call(ThemeSettingsTableSeeder::class);
         $this->call(ThemesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(VideoCategoriesTableSeeder::class);
-        $this->call(VideosTableSeeder::class);
+
     }
 }

@@ -1,4 +1,4 @@
-Tantric Activation
+Membership
 ===================
 
 # Requirements

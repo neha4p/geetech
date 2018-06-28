@@ -20,11 +20,11 @@ class SettingsTableSeeder extends Seeder
             
             array (
                 'id' => 1,
-                'website_name' => 'Tantric Activation',
+                'website_name' => 'Community Portal',
                 'website_description' => '',
                 'logo' => '',
                 'favicon' => '',
-                'system_email' => 'support@tantricactivation.com',
+                'system_email' => 'support@yoursite.com',
                 'demo_mode' => 1,
                 'enable_https' => 0,
                 'theme' => 'tubed',
