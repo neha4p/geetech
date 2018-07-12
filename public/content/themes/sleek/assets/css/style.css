@@ -1397,7 +1397,7 @@ form.search .form-search .fa {
   left: -5px;
 }
 #sidebar .block a.block-thumbnail span.play-button {
-  background: url(/content/themes/sleek/assets/img/play-button-small.png);
+  background: url('/content/themes/sleek/assets/img/play-button-small.png');
   width: 40px;
   height: 40px;
   margin-left: -20px;
