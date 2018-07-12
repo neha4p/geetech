@@ -7,7 +7,7 @@
  */
 Route::get('/', function () {
     if (\Auth::check()) {
-        return redirect('/home');
+        return redirect('/page/welcome');
     }
     else {
         //return view('letters.main');
