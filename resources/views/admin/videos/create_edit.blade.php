@@ -124,6 +124,18 @@
 					</select>
 				</div> 
 			</div>
+
+			<div class="panel panel-primary" data-collapsed="0"> <div class="panel-heading">
+					<div class="panel-title">PDF URL</div>
+					<div class="panel-options"> <a href="#" data-rel="collapse">
+							<i class="entypo-down-open"></i></a> </div></div>
+				<div class="panel-body" style="display: block;">
+					<p>The PDF download url:</p>
+					<input class="form-control" name="tags" id="tags" value="@if(!empty($video) && $video->pdf_url)">
+
+				</div>
+			</div>
+
 			<div class="panel panel-primary" data-collapsed="0"> <div class="panel-heading">
 				<div class="panel-title">Category</div> <div class="panel-options"> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a> </div></div>
 				<div class="panel-body" style="display: block;">
