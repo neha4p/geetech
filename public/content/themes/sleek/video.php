@@ -51,7 +51,7 @@
 			<div class="favorite btn btn-default <?php if(isset($favorited->id)): ?>active<?php endif; ?>" data-authenticated="<?= !Auth::guest() ?>" data-videoid="<?= $video->id ?>"><i class="fa fa-heart"></i> Favorite</div>
 
             <?php if(isset($video->pdf_url)) { ?>
-                <div class="pdf-download">
+                <div class="pdf-download" style=" height:30px">
                     <a href="<?= $video->pdf_url; ?>">
                     <img src="/content/themes/sleek/assets/img/pdf-download.png" height="150px"/>
                     </a>
