@@ -131,7 +131,7 @@
 							<i class="entypo-down-open"></i></a> </div></div>
 				<div class="panel-body" style="display: block;">
 					<p>The PDF download url:</p>
-					<input class="form-control" name="tags" id="tags" value="@if(!empty($video) && $video->pdf_url) {{$video->pdf_url}}">
+					<input class="form-control" name="pdf_url" id="pdf_url" value="@if(!empty($video->pdf_url)){{ $video->pdf_url }}@endif">
 
 				</div>
 			</div>
