@@ -10,6 +10,25 @@ if (isset($url)) {
         putenv('DB_PASSWORD='.$dbparts['pass']);
     }
 }
+if (getenv('REDIS_URL')) {
+    $url = parse_url(getenv('REDIS_URL'));
+    putenv('REDIS_HOST='.$url['host']);
+    putenv('REDIS_PORT='.$url['port']);
+    putenv('REDIS_PASSWORD='.$url['pass']);
+}
+
+if (getenv('BUCKETEER_AWS_ACCESS_KEY_ID')) {
+    putenv('AWS_KEY='.getenv('BUCKETEER_AWS_ACCESS_KEY_ID'));
+}
+if (getenv('BUCKETEER_AWS_SECRET_ACCESS_KEY')) {
+    putenv('AWS_SECRET='.getenv('BUCKETEER_AWS_SECRET_ACCESS_KEY'));
+}
+if (getenv('BUCKETEER_AWS_REGION')) {
+    putenv('AWS_REGION='.getenv('BUCKETEER_AWS_REGION'));
+}
+if (getenv('BBUCKETEER_BUCKET_NAME')) {
+    putenv('AWS_BUCKET='.getenv('BUCKETEER_BUCKET_NAME'));
+}
 
 
 return [

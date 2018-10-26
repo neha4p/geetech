@@ -5,8 +5,7 @@
 	<?php if(isset($type) && $type == 'profile'): ?>
 
 		<div id="user-badge">
-            <?php if(isset($user->avatar)){ $avatar = $user->avatar; } else{ $avatar = 'default.jpg'; } ?>
-            <img src="<?= ImageHandler::getImage( $avatar,'','avatars/'); ?>" />
+			<img src="<?= Config::get('site.uploads_url') . 'avatars/' . $user->avatar ?>" />
 			<h2 class="form-signin-heading"><?= $user->username ?></h2>
 			<div class="label label-info"><?= ucfirst($user->role) ?> User</div>
 			<p class="member-since">Member since: <?= $user->created_at ?></p>
@@ -33,8 +32,7 @@
 		<form method="POST" action="<?= $post_route ?>" id="update_profile_form" accept-charset="UTF-8" file="1" enctype="multipart/form-data">
 
 			<div id="user-badge">
-                <?php if(isset($user->avatar)){ $avatar = $user->avatar; } else{ $avatar = 'default.jpg'; } ?>
-                <img src="<?= ImageHandler::getImage( $avatar,'','avatars/'); ?>" />
+				<img src="<?= Config::get('site.uploads_url') . 'avatars/' . $user->avatar ?>" />
 				<label for="avatar">Avatar</label>
 				<input type="file" multiple="true" class="form-control" name="avatar" id="avatar" />
 			</div>

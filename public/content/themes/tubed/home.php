@@ -26,7 +26,7 @@ ul.video_list{
 
 					<?php foreach($featured_videos as $index => $video): ?>
 						<li <?php if($index == 0): ?>class="active"<?php endif; ?>>
-							<div class="bg" style="background-image:url(<?= config('site.uploads_url') . '/images/' . $video->image ?>)"><div class="bg-dimmer"></div></div>
+							<div class="bg" style="background-image:url(<?= Config::get('site.uploads_url') . '/images/' . $video->image ?>)"><div class="bg-dimmer"></div></div>
 							<div class="bg-dim-right"></div>
 							<div class="featured-content">
 								<div class="row">
@@ -71,7 +71,7 @@ ul.video_list{
 								<?php foreach($popular_videos as $index => $video): ?>
 									<?php if( ($index%4==0 && $index != 0) ): ?></div></li><?php endif; ?>
 									<?php if($index%4==0): ?><li><div class="row"><?php endif; ?>
-										<div class="col-md-6 col-sm-6 col-xs-6" style="height: 230px">
+										<div class="col-md-6 col-sm-6 col-xs-6">
 											<?php include('partials/video-block.php');  ?>
 										</div>
 									
@@ -96,10 +96,10 @@ ul.video_list{
 							<?php foreach($videos as $index => $video): ?>
 								<?php if( ($index%4==0 && $index != 0) ): ?></div></li><?php endif; ?>
 								<?php if($index%4==0): ?><li><div class="row"><?php endif; ?>
-									<div class="col-md-6 col-sm-6 col-xs-6" style="height: 230px">
+									<div class="col-md-6 col-sm-6 col-xs-6">
 										<?php include('partials/video-block.php');  ?>
 									</div>
-
+								
 							<?php endforeach; ?>
 								</div></li>
 

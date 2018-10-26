@@ -1052,9 +1052,15 @@ form {
   background-image: url(/content/themes/sleek/assets/img/icon-previous.png);
   background-size: 44px 88px;
 }
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:100px;   /* Height of the footer */
+  background:#6cf;
+}
 footer,
 .home footer {
-  position: relative;
   height: auto;
   width: 100%;
   background: #222;
@@ -1390,7 +1396,7 @@ form.search .form-search .fa {
   left: -5px;
 }
 #sidebar .block a.block-thumbnail span.play-button {
-  background: url(/content/themes/sleek/assets/img/play-button-small.png);
+  background: url('/content/themes/sleek/assets/img/play-button-small.png');
   width: 40px;
   height: 40px;
   margin-left: -20px;
@@ -1796,5 +1802,6 @@ Navbar Toggle
   }
   #signup-form .panel-heading .panel-title {
     margin-bottom: 25px;
+    color: black;
   }
 }

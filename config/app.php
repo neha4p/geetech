@@ -219,6 +219,7 @@ return [
         'Socialize' => Laravel\Socialite\Facades\Socialite::class,
         'ImageHandler'  => App\Libraries\ImageHandler::class,
         'AC' => Scaled\ActiveCampaign\Facades\ActiveCampaign::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
     ],
 
 ];

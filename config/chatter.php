@@ -38,9 +38,9 @@ return [
     |
     */
 
-    'headline'      => 'Tantric Activation',
-    'description'   => 'Unleash the pleasure inside of you .',
-    'headline_logo' => 'https://tantricactivation.s3.amazonaws.com/content/uploads/settings/5a74fc50ee6c5-Tantric%20Activation_Logo-with-stroke.png',
+    'headline'      => 'Community',
+    'description'   => 'A Place tp connect with other members.',
+    'headline_logo' => '',
 
     /*
     |--------------------------------------------------------------------------

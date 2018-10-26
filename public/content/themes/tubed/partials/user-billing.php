@@ -5,7 +5,7 @@
 <p><i class="fa fa-credit-card"></i> Past Invoices</p>
 	<ul class="invoices">
 	<?php foreach($invoices as $invoice): ?>
-		<li><span class="date"><?= $invoice->date()->toFormattedDateString().' - ('.$invoice->charge ?>)</span><span class="amount"><?= $invoice->total() ?></span>
+		<li><span class="date"><?= $invoice->dateString() ?></span><span class="amount"><?= $invoice->dollars() ?></span>
 		<div class="clear"></div>
 		</li>
 	<?php endforeach; ?>
@@ -52,7 +52,7 @@
 <?php else: ?>
 	
 		<div class="well">
-			<p>It looks like your account does not have an active recurring subscription.</p>
+			<p>It looks like your account has been cancelled.</p>
 		</div>
 
 

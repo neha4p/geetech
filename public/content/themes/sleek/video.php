@@ -49,6 +49,14 @@
 			<?= $video->title ?>
 			<span class="view-count"><i class="fa fa-eye"></i> <?php if(isset($view_increment) && $view_increment == true ): ?><?= $video->views + 1 ?><?php else: ?><?= $video->views ?><?php endif; ?> Views </span>
 			<div class="favorite btn btn-default <?php if(isset($favorited->id)): ?>active<?php endif; ?>" data-authenticated="<?= !Auth::guest() ?>" data-videoid="<?= $video->id ?>"><i class="fa fa-heart"></i> Favorite</div>
+
+            <?php if(isset($video->pdf_url)) { ?>
+                <div class="pdf-download">
+                    <a href="<?= $video->pdf_url; ?>">
+                    <img src="/content/themes/sleek/assets/img/pdf-download.png" height="40px"/>
+                    </a>
+                </div>
+            <?php } ?>
 		</h3>
 
 
@@ -80,7 +88,7 @@
 		
 	<script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = '<?= ThemeHelper::getThemeSetting(@$theme_settings->disqus_shortname, 'tantric') ?>';
+        var disqus_shortname = '<?= ThemeHelper::getThemeSetting(@$theme_settings->disqus_shortname, '') ?>';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {

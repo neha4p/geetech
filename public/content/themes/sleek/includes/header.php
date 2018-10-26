@@ -31,6 +31,7 @@
                     <?php else: ?>
                         
                         <li class="dropdown">
+                            <?php if(isset($user->avatar)){ $avatar = Auth::user()->avatar; } else{ $avatar = 'default.jpg'; } ?>
                             <a href="#_" class="user-link-desktop dropdown-toggle" data-toggle="dropdown"><img src="<?= ImageHandler::getImage( $avatar,'','avatars/'); ?>" class="img-circle" /> <?= ucwords(Auth::user()->username) ?> <i class="fa fa-chevron-down"></i></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="<?= ($settings->enable_https) ? secure_url('user') : URL::to('user'); ?><?= '/' . Auth::user()->username; ?>">My Profile</a></li>
@@ -60,8 +61,6 @@
     <div class="clear"></div>
     <nav class="navbar navbar-default navbar-static-top second-nav">
         <div class="container">
-            
-            
             <div id="mobile-subnav"><i class="fa fa-bars"></i> Open Submenu</div>
             <ul class="navbar-right">
                 <li>
@@ -69,8 +68,6 @@
                         <form role="search" action="/search" method="GET">
                             <i class="fa fa-search"></i>
                             <input type="text" id="value" name="value" placeholder="Search...">
-
-                           
                         </form>
                     </div>
                 </li>

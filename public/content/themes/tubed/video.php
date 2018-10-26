@@ -8,39 +8,11 @@
 			<span class="label">You're watching:</span> <h1><?= $video->title ?></h1>
 		</div>
 	</div>
-	<div id="video_bg" style="background-image:url(<?php echo ImageHandler::getImage( $video->image,'','images/'); ?>)">
+	<div id="video_bg" style="background-image:url(<?= Config::get('site.uploads_url') . '/images/' . str_replace(' ', '%20', $video->image) ?>)">
 		<div id="video_bg_dim" <?php if($video->access == 'guest' || ($video->access == 'subscriber' && !Auth::guest()) ): ?><?php else: ?>class="darker"<?php endif; ?>></div>
 		<div class="container-fluid">
-
-            <?php
-                $drip_time = date('Y-m-d H:i:s', strtotime('-'.$video->drip_time.' '.$video->drip_interval));
-                $user_time = (string)Auth::user()->created_at;
-                //Convert to date
-                $release=strtotime($drip_time);
-                $user_release=strtotime($user_time);
-                //Calculate difference
-                $diff=$user_release-$release;//time returns current time in seconds
-                $years = floor($diff / (365*60*60*24));
-                $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-                $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-                $total_days = floor($diff/(60*60*24));//seconds/minute*minutes/hour*hours/day)
-                $release_date=date('F d Y', strtotime("+".$total_days." days"));
-                if(!empty($video->drip_time) && $drip_time < $user_time ):
-            ?>
-            <div id="subscribers_only">
-                <h2>Sorry, this video is Currently NOT Released <br/> Please check back on <br><?= $release_date; ?></h2>
-                <div class="clear"></div>
-            </div>
 			
-			<?php elseif($video->access == 'guest' ||
-                    ( ($video->access == 'subscriber' || $video->access == 'registered')
-                        && !Auth::guest() && Auth::user()->role == 'subscriber'
-                    ) ||
-                    (!Auth::guest() && (
-                            Auth::user()->role == 'demo' || Auth::user()->role == 'admin')
-                    ) ||
-                    (!Auth::guest() && $video->access == 'registered' && $settings->free_registration && Auth::user()->role == 'registered')
-            ): ?>
+			<?php if($video->access == 'guest' || ( ($video->access == 'subscriber' || $video->access == 'registered') && !Auth::guest() && Auth::user()->subscribed()) || (!Auth::guest() && (Auth::user()->role == 'demo' || Auth::user()->role == 'admin')) || (!Auth::guest() && $video->access == 'registered' && $settings->free_registration && Auth::user()->role == 'registered') ): ?>
 
 				
 					<?php if($video->type == 'embed'): ?>
@@ -49,7 +21,7 @@
 						</div>
 					<?php else: ?>
 						<div id="video_container">
-						<video id="video_player" class="video-js vjs-default-skin" controls preload="auto" poster="<?= config('site.uploads_url') . '/images/' . $video->image ?>" data-setup="{}" width="100%" style="width:100%;">
+						<video id="video_player" class="video-js vjs-default-skin" controls preload="auto" poster="<?= Config::get('site.uploads_url') . '/images/' . $video->image ?>" data-setup="{}" width="100%" style="width:100%;">
 							<source src="<?= $video->mp4_url; ?>" type='video/mp4'>
 							<source src="<?= $video->webm_url; ?>" type='video/webm'>
 							<source src="<?= $video->ogg_url; ?>" type='video/ogg'>
@@ -64,8 +36,8 @@
 				<div id="subscribers_only">
 					<h2>Sorry, this video is only available to <?php if($video->access == 'subscriber'): ?>Subscribers<?php elseif($video->access == 'registered'): ?>Registered Users<?php endif; ?></h2>
 					<div class="clear"></div>
-					<form method="get" action="/user/<?= Auth::user()->username ?>/upgrade_subscription">
-                        <button id="button">Signup Now<?php if($video->access == 'subscriber'): ?> to Become a Subscriber<?php elseif($video->access == 'registered'): ?>for Free!<?php endif; ?></button>
+					<form method="get" action="/signup">
+						<button id="button">Signup Now<?php if($video->access == 'subscriber'): ?>to Become a Subscriber<?php elseif($video->access == 'registered'): ?>for Free!<?php endif; ?></button>
 					</form>
 				</div>
 			
@@ -78,7 +50,7 @@
 
 		<h3>
 			<?= $video->title ?>
-			<!-- <span class="view-count"><i class="fa fa-eye"></i> <?php if(isset($view_increment) && $view_increment == true ): ?><?= $video->views + 1 ?><?php else: ?><?= $video->views ?><?php endif; ?> Views </span> -->
+			<span class="view-count"><i class="fa fa-eye"></i> <?php if(isset($view_increment) && $view_increment == true ): ?><?= $video->views + 1 ?><?php else: ?><?= $video->views ?><?php endif; ?> Views </span>
 			<div class="favorite btn btn-default <?php if(isset($favorited->id)): ?>active<?php endif; ?>" data-authenticated="<?= !Auth::guest() ?>" data-videoid="<?= $video->id ?>"><i class="fa fa-heart"></i> <span>Favorite</span></div>
 			<div class="expand btn btn-default "><i class="fa fa-expand"></i> Full Mode</div>
 		</h3>
@@ -88,7 +60,7 @@
 		<div class="video-details-container"><?= $video->details ?></div>
 
 		<div class="clear"></div>
-		<h2 id="tags">Tags:
+		<h2 id="tags">Tags: 
 		<?php foreach($video->tags as $key => $tag): ?>
 
 			<span><a href="/videos/tag/<?= $tag->name ?>"><?= $tag->name ?></a></span><?php if($key+1 != count($video->tags)): ?>,<?php endif; ?>
@@ -107,14 +79,14 @@
 		<div id="comments">
 			<div id="disqus_thread"></div>
 		</div>
-
+    
 	</div>
 
 </div>
 
-<div class="col-md-2" id="right_sidebar" style="height: 100%">
+<div class="col-md-2" id="right_sidebar">
 <h6>Recent Videos</h6>
-	<?php $videos = Video::where('active', '=', 1)->orderBy('created_at', 'DESC')->take(3)->get(); ?>
+	<?php $videos = Video::where('active', '=', 1)->orderBy('created_at', 'DESC')->take(4)->get(); ?>
 	<?php foreach($videos as $video): ?>
 		<?php include('partials/video-block.php'); ?>
 	<?php endforeach; ?>
@@ -124,7 +96,7 @@
 		
 	<script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = '<?= ThemeHelper::getThemeSetting(@$theme_settings->disqus_shortname, '') ?>';
+        var disqus_shortname = '<?= ThemeHelper::getThemeSetting(@$theme_settings->disqus_shortname, 'hellovideo') ?>';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
@@ -139,7 +111,7 @@
 	<script type="text/javascript">
 
 		$(document).ready(function(){
-            $('#video_container').fitVids();
+			$('#video_container').fitVids();
 			$('.favorite').click(function(){
 				if($(this).data('authenticated')){
 					$.post('/favorite', { video_id : $(this).data('videoid'), _token: '<?= csrf_token(); ?>' }, function(data){});
